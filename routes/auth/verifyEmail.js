@@ -1,5 +1,5 @@
 const express = require("express");
-const { UserModel } = require("../../database");
+const UserModel = require("../../models/User");
 const router = express.Router();
 
 const env = process.env.NODE_ENV;

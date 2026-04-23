@@ -38,7 +38,11 @@ const Content = () => {
                 <HiOutlineChevronLeft className="text-xl" />
                 <p>Back to sign up</p>
             </div>
-            <h1 className="authHeading">Verification Email</h1>
+            <div className="auth-header">
+                <h1 className='authHeading'>Verification Email</h1>
+                {/* <p className="authSubHeading">Join us today! Please fill in your details.</p> */}
+            </div>
+            {/* <h1 className="authHeading">Verification Email</h1> */}
             <p className="text-base text-gray-600 mb-4">
                 Verification email has been sent to:
             </p>
@@ -74,9 +78,9 @@ const Content = () => {
 const Content2 = () => {
     return (
         <>
-            <h1 className="authHeading">
-                Email Verified
-            </h1>
+            <div className="auth-header">
+                <h1 className='authHeading'>Email Verified</h1>
+            </div>
             <p className="text-base text-gray-600 mb-8">
                 Your verification email has been successfully verified.
             </p>
@@ -93,11 +97,11 @@ const Content2 = () => {
 const Content3 = () => {
     return (
         <>
-            <h1 className="authHeading">
-                Email Already Verified
-            </h1>
+            <div className="auth-header">
+                <h1 className='authHeading'>Email Already Verified</h1>
+            </div>
             <p className="text-base text-gray-600 mb-8">Verfication email has been Already Verified </p>
-            <p className="text-base text-gray-600"> Continue with login </p>
+            {/* <p className="text-base text-gray-600"> Continue with login </p> */}
             <NavLink
                 to="/login"
                 className="inline-block bg-[#ECB014] hover:bg-yellow-500 text-center font-bold text-white text-base px-6 py-2 rounded-md transition"

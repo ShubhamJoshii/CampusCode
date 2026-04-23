@@ -1,43 +1,41 @@
 import React, { useEffect, useState } from 'react'
-import ProblemList from '../../components/ProblemList';
+import ProblemList from './ProblemList';
+import { useDispatch, useSelector } from 'react-redux';
+
+import "./Problems.css"
+import { fetchProblems, searchProblems } from '../../redux/reducer/problemsSlice';
+import Loading from '../Loading';
 
 const Problems = () => {
     const [search, setSearch] = useState("");
-    const [difficulty, setDifficulty] = useState("");
-    const [solvedProblems, setSolvedProblems] = useState(
-        JSON.parse(localStorage.getItem("solved_problems")) || []
-    );
+    const [solvedProblems, setSolvedProblems] = useState([]);
 
-    // Sync state to LocalStorage whenever solvedProblems updates
+    const { problemsList, pageNo, limit, difficulty, tag } = useSelector((state) => state.problems)
+    const dispatch = useDispatch();
+
     useEffect(() => {
-        localStorage.setItem("solved_problems", JSON.stringify(solvedProblems));
-    }, [solvedProblems]);
+        dispatch(fetchProblems());
+    }, [pageNo, limit, difficulty, tag]);
 
+    useEffect(() => {
+        dispatch(searchProblems(search));
+    }, [search]);
+    
     return (
-        <div className="mainContent hide-scrollbar" style={{ backgroundColor: "#f9fafb" }}>
-            <div className="controls" style={{ marginBottom: '20px', display: 'flex', gap: '10px' }}>
+        <div className="mainContent hide-scrollbar">
+            <div className="controls">
                 <input
                     type="text"
                     placeholder="Search problems..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    style={{
-                        padding: '10px',
-                        borderRadius: '8px',
-                        border: '1px solid #e5e7eb',
-                        flex: 1,
-                        outline: 'none'
-                    }}
+                    className="searchInput"
                 />
 
                 <select
-                    onChange={(e) => setDifficulty(e.target.value)}
-                    style={{
-                        padding: '10px',
-                        borderRadius: '8px',
-                        border: '1px solid #e5e7eb',
-                        backgroundColor: 'white'
-                    }}
+                    // onChange={() => ()}
+                    // onChange={(e) => (setDifficulty(e.target.value))}
+                    className="difficultySelect"
                 >
                     <option value="">All Difficulty</option>
                     <option>Easy</option>
@@ -46,16 +44,14 @@ const Problems = () => {
                 </select>
             </div>
 
-            <div style={{ backgroundColor: 'white', borderRadius: '12px', border: '1px solid #e5e7eb'}}>
+            <div className="problemContainer">
                 <ProblemList
-                    search={search}
-                    difficulty={difficulty}
                     solvedProblems={solvedProblems}
                     setSolvedProblems={setSolvedProblems}
                 />
             </div>
         </div>
-    )
+    );
 }
 
 

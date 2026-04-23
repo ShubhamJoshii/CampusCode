@@ -1,7 +1,9 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 
-const { UserModel, OTPModel } = require("../../../database");
+const UserModel = require("../../../models/User");
+const OTPModel = require("../../../models/OTP");
+// const { UserModel, OTPModel } = require("../../../database");
 const { ValidationError } = require("../../../util/error");
 const OTPMail = require("../../../util/OTPMail");
 const { transporter } = require("../../../util/transporter");

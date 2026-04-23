@@ -34,7 +34,10 @@ const Content = () => {
 
     return (
         <>
-            <h1 className='authHeading'>Sign Up</h1>
+            <div className="auth-header">
+                <h1 className='authHeading'>Create Account</h1>
+                <p className="authSubHeading">Join us today! Please fill in your details.</p>
+            </div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="twoInputWrapper">
                     <Input
@@ -91,7 +94,11 @@ const Content = () => {
                 </div>
                 <SubmitBtn text={"Create Account"} />
             </form>
-            <p className='text-center'>Already have an account? <NavLink to={"/login"} className="text-blue-700  font-semibold  ">Login</NavLink></p>
+            {/* <p className='text-center'>Already have an account? <NavLink to={"/login"} className="text-blue-700  font-semibold  ">Login</NavLink></p> */}
+            <p className='auth-footer-text'>
+                Already have an account?
+                <NavLink to="/login" className="signup-link"> Sign In</NavLink>
+            </p>
         </>
     )
 }

@@ -1,29 +1,43 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Editor from "@monaco-editor/react";
 import "./ProblemEditor.css";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProblemDetails } from "../../redux/reducer/problemEditor";
+import Loading from "../Loading";
+import { RestrictUser } from "../../CheckAuth";
 
 function ProblemEditor() {
     const [activeTab, setActiveTab] = useState("description");
+    const { _id } = useParams();
+    const { problemDetails, status } = useSelector((state) => state.problemEditorDetails);
 
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchProblemDetails(_id))
+        console.log(_id);
+    }, [])
+
+    useEffect(() => {
+        console.log(problemDetails);
+    }, [problemDetails])
+
+    if (status == "loading") {
+        return <Loading style="flex-1 !h-[100%] bg-white" />
+    }
     return (
-        <div className="mainContent hide-scrollbar ProblemEditor">
-
-            {/* Top Bar */}
+        <div className="mainContent hide-scrollbar ProblemEditor relative ">
+            <RestrictUser text="Problem question" style="flex-1 !h-[100%] bg-white" />
             <div className="topbar">
-                <h1>Problem List</h1>
-
+                <h1>1. {problemDetails?.title}</h1>
                 <div className="buttons">
                     <button className="run-btn">Run</button>
                     <button className="submit-btn">Submit</button>
                 </div>
             </div>
-
-            {/* Main */}
             <div className="main">
-
-                {/* LEFT */}
                 <div className="left">
-
                     <div className="tabs">
                         <button onClick={() => setActiveTab("description")}>
                             Description
@@ -39,14 +53,20 @@ function ProblemEditor() {
                     <div className="content">
                         {activeTab === "description" && (
                             <>
-                                <h2>1. Two Sum</h2>
-                                <p>
-                                    Given an array of integers <b>nums</b> and an integer <b>target</b>, return indices of the two numbers such that they add up to target.
-                                </p>
-                                <h3>Example:</h3>
-                                <p className="code-box">
-                                    Input: nums = [2,7,11,15], target = 9 <br /> Output: [0,1]
-                                </p>
+                                {/* <h2>1. {problemDetails?.title}</h2> */}
+                                <p>{problemDetails?.description}</p>
+                                <h3>Test Cases:</h3>
+                                {
+                                    problemDetails?.testCases?.map((curr, id) => {
+                                        return <>
+                                            <p className="code-box">
+                                                Input: {curr.input}<br />
+                                                Output: {curr.output}
+                                            </p>
+                                        </>
+
+                                    })
+                                }
                             </>
                         )}
 

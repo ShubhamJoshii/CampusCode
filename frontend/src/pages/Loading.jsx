@@ -1,8 +1,8 @@
 import React from 'react'
 import Logo from "../assets/CampusCode4.png"
-const Loading = () => {
+const Loading = ({style = "h-[100]"}) => {
     return (
-        <div className='loadingPage'>
+        <div className={`loadingPage ${style}`}>
             <img src={Logo} alt='Loading'/>
         </div>
     )

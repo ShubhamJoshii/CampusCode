@@ -34,7 +34,11 @@ const Content = () => {
 
     return (
         <>
-            <h1 className='authHeading'>Login</h1>
+            {/* <h1 className='authHeading'>Login</h1> */}
+            <div className="auth-header">
+                <h1 className='authHeading'>Welcome Back</h1>
+                <p className="authSubHeading">Please enter your details to sign in.</p>
+            </div>
             <form onSubmit={handleSubmit(onSubmit)} >
                 <Input
                     Text={"Email"}
@@ -63,7 +67,9 @@ const Content = () => {
                 <SubmitBtn text={"Login"} />
             </form>
 
-            <p className='text-center  '>Don't have an account? <NavLink to={"/register"} className="text-blue-700  font-semibold  ">Sign Up </NavLink></p>
+            <p className='auth-footer-text'>Don't have an account?
+                <NavLink to="/register" className="signup-link"> Sign Up</NavLink>
+            </p>
         </>
     )
 }
@@ -75,8 +81,6 @@ const Login = () => {
         <div className='authContainer'>
             <div className='authContainer-inner'>
                 <Content />
-                {/* {(page !== "forgetPasswordNew" && page !== "forgetPasswordOTP" && page != "forgetPassword") ? <Content /> :
-                    <ForgetPassword page={page} />} */}
             </div>
         </div>
     )

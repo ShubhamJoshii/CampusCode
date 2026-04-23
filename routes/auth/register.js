@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { UserModel } = require("../../database");
+const UserModel = require("../../models/User");
 const { ValidationError } = require("../../util/error");
 const verifyEmailMail = require("../../util/verifyEmailMail");
 const { transporter } = require("../../util/transporter.js");

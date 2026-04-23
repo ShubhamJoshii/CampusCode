@@ -1,6 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
-const { UserModel, OTPModel } = require("../../../database");
+const UserModel = require("../../../models/User");
+const OTPModel = require("../../../models/OTP");
 const { ValidationError } = require("../../../util/error");
 const router = express.Router();
 

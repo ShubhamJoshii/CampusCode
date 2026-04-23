@@ -22,7 +22,7 @@ const ForgetPassword = () => {
 
     const { data, status, error, otpID } = useSelector((state) => state.user);
     const dispatch = useDispatch();
-        const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const handelOTP = (e, index) => {
         if (isNaN(e.target.value)) return false;
@@ -48,7 +48,7 @@ const ForgetPassword = () => {
             toast.error(error?.msg?.message || "Failed to send OTP");
         }
     };
-    
+
     const resendOTP = async (data1) => {
         try {
             const response = await dispatch(sendOTP({ email: data?.user?.email })).unwrap();
@@ -57,8 +57,8 @@ const ForgetPassword = () => {
             toast.error(error?.msg?.message || "Failed to send OTP");
         }
     };
-    
-    
+
+
     const onVerifyOTP = async (data) => {
         setforgetData({ ...forgetData, otpID: otpID });
         try {
@@ -83,8 +83,12 @@ const ForgetPassword = () => {
 
     return (<div className='authContainer'>
         <div className='authContainer-inner'>
-            <h1 className='font-bold text-2xl p-[10]'>Forget Password</h1>
-            <p className='w-100 mb-8'>Enter your email address that you used to register. We'll send you an email with a link to reset your password. If you don’t see the email, check other places it might be, like your junk, spam, social, or other folders.</p>
+            <div className="auth-header">
+                <h1 className='authHeading'>Forget Password</h1>
+                <p className="authSubHeading w-100 mb-8">Enter your email address that you used to register. We'll send you an email with a link to reset your password. If you don’t see the email, check other places it might be, like your junk, spam, social, or other folders.</p>
+            </div>
+            {/* <h1 className='font-bold text-2xl p-[10]'>Forget Password</h1>
+            <p className='w-100 mb-8'>Enter your email address that you used to register. We'll send you an email with a link to reset your password. If you don’t see the email, check other places it might be, like your junk, spam, social, or other folders.</p> */}
             {page == "forgetPassword" &&
                 <form onSubmit={handleSubmit(onSendOTP)} className='flex flex-col  gap-3 '>
                     <Input

@@ -11,4 +11,9 @@ router.use("/",require("./auth/deleteUser"));
 router.use("/",require("./auth/forgetPassword/sendOTP"));
 router.use("/",require("./auth/forgetPassword/verifyOTP"));
 
+router.use("/",require("./Problems/addproblem"));
+router.use("/",require("./Problems/problemDetails"));
+router.use("/",require("./Problems/fetchAllProblems"));
+router.use("/",require("./Problems/searchProblems"));
+
 module.exports = router;

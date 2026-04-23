@@ -22,22 +22,11 @@ const Problems = lazy(() => import('./pages/Problems/Problems'));
 const Progress = lazy(() => import('./pages/Progress/Progress'));
 const Settings = lazy(() => import('./pages/Setting/Settings'));
 const ProblemEditor = lazy(() => import('./pages/ProblemEditor/ProblemEditor'));
-const ForgetPassword = lazy(()=>import("./pages/auth/ForgetPassword"));
+const ForgetPassword = lazy(() => import("./pages/auth/ForgetPassword"));
 
 import './App.css'
-const RedirectIfAuthenticated = ({ children }) => {
-  const { data } = useSelector((state) => state.user);
+import { RedirectIfAuthenticated } from "./CheckAuth";
 
-  const isAuthenticated = Boolean(
-    data?.user?.email &&
-    data?.user?._id &&
-    data?.user?.firstName
-  );
-  if (isAuthenticated) {
-    return <Navigate to="/" replace />;
-  }
-  return children
-};
 
 // const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -69,7 +58,6 @@ function App() {
         theme="light"
         transition={Bounce}
       />
-
       <Router>
         <Suspense fallback={<Loading />}>
           <Routes>
@@ -94,8 +82,9 @@ function App() {
             <Route path="/problemeditor" element={<Wrapper>
               <ProblemEditor />
             </Wrapper>} />
-
-
+            <Route path="/problemeditor/:_id" element={<Wrapper>
+              <ProblemEditor />
+            </Wrapper>} />
 
             <Route
               path="/login"
