@@ -1,0 +1,85 @@
+import React, { useState } from 'react'
+import Input from '../../components/Input/Input'
+import { useForm } from "react-hook-form";
+import { NavLink, useNavigate } from 'react-router-dom';
+import { Oval } from "react-loader-spinner";
+import { useDispatch, useSelector } from 'react-redux';
+import { changePassword, loginUser, sendOTP, userExist, verifyOTP } from '../../redux/reducer/userSlice';
+import './auth.css'
+import SubmitBtn from './SubmitBtn';
+import ForgetPassword from './ForgetPassword';
+import { toast } from 'react-toastify';
+
+const Content = () => {
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors },
+    } = useForm();
+
+    const { data, status, error } = useSelector((state) => state.user);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const onSubmit = async (data1) => {
+        try {
+            const response = await dispatch(loginUser(data1)).unwrap();
+            toast.success(response?.msg || "Login successful");
+            // setTimeout(() => window.location.href = "/", 1000);
+        } catch (error) {
+            toast.error(error?.msg?.message || "Login failed");
+        }
+    };
+
+    return (
+        <>
+            <h1 className='authHeading'>Login</h1>
+            <form onSubmit={handleSubmit(onSubmit)} >
+                <Input
+                    Text={"Email"}
+                    name={"Email"}
+                    type={"text"}
+                    errors={errors}
+                    {...register("email", {
+                        required: "Email is required",
+                    })}
+                />
+                <Input
+                    Text={"Password"}
+                    name={"Password"}
+                    type={"password"}
+                    password={true}
+                    errors={errors}
+                    {...register("password", {
+                        required: "Password is required",
+                    })}
+                />
+                <button type="button" className='text-[#ecb014] text-right text-[14px] font-semibold hover:text-[#ecaf14bd] cursor-pointer' onClick={() => {
+                    console.log("Click");
+                    navigate("/forgotPassword");
+                }}>Forgot Password?</button>
+
+                <SubmitBtn text={"Login"} />
+            </form>
+
+            <p className='text-center  '>Don't have an account? <NavLink to={"/register"} className="text-blue-700  font-semibold  ">Sign Up </NavLink></p>
+        </>
+    )
+}
+
+const Login = () => {
+    const { page } = useSelector((state) => state.user);
+
+    return (
+        <div className='authContainer'>
+            <div className='authContainer-inner'>
+                <Content />
+                {/* {(page !== "forgetPasswordNew" && page !== "forgetPasswordOTP" && page != "forgetPassword") ? <Content /> :
+                    <ForgetPassword page={page} />} */}
+            </div>
+        </div>
+    )
+}
+
+export default Login;
