@@ -1,10 +1,34 @@
 import React, { useState } from 'react';
 import "./CreateGroup.css";
+import { useDispatch, useSelector } from 'react-redux';
+import { createGroupName, createNewGroup, fetchGroups } from '../../redux/reducer/groupSlice';
 
-const CreateGroup = ({ createGroupShow, setCreateGroupShow, name, setName }) => {
+const CreateGroup = ({ createGroupShow, setCreateGroupShow }) => {
     const [isCreated, setIsCreated] = useState(false);
-    const [loading, setLoading] = useState(false);
     const [copySuccess, setCopySuccess] = useState(false);
+
+    const { groups, status, groupName, invitationCode } = useSelector(state => state.groups);
+    const dispatch = useDispatch();
+
+    const handleCreateSubmit = async() => {
+        await dispatch(createNewGroup()).unwrap();
+        setIsCreated(true);
+        dispatch(fetchGroups());
+    };
+
+    const copyToClipboard = () => {
+        const link = `${window.location.origin}/join/${invitationCode}`;
+        navigator.clipboard.writeText(link);
+        setCopySuccess(true);
+        setTimeout(() => setCopySuccess(false), 2000);
+    };
+
+    function formatCode(str) {
+  return str
+    ?.toUpperCase()
+    .match(/.{1,4}/g)
+    ?.join(" ") || "";
+}
 
     return (
         <>
@@ -22,13 +46,13 @@ const CreateGroup = ({ createGroupShow, setCreateGroupShow, name, setName }) => 
                                     <label>Group Name</label>
                                     <input
                                         autoFocus
-                                        value={name}
+                                        value={groupName}
                                         maxLength={30}
-                                        onChange={(e) => setName(e.target.value)}
+                                        onChange={(e) => dispatch(createGroupName(e.target.value))}
                                         placeholder="e.g. Alpha Coders"
                                     />
                                     <p className="warning">
-                                        {name.length > 0 && name.length < 3 && "⚠️ Minimum 3 characters required"}
+                                        {groupName.length > 0 && groupName.length < 3 && "⚠️ Minimum 3 characters required"}
                                     </p>
                                 </div>
 
@@ -38,11 +62,11 @@ const CreateGroup = ({ createGroupShow, setCreateGroupShow, name, setName }) => 
                                     </button>
 
                                     <button
-                                        disabled={name.length < 3 || loading}
-                                        onClick={() => setIsCreated(true)}
+                                        disabled={groupName.length < 3 || status === "loading"}
+                                        onClick={handleCreateSubmit} // ✅ Updated reference
                                         className="create-btn"
                                     >
-                                        {loading ? "Creating..." : "Create Now"}
+                                        {status === "loading" ? "Creating..." : "Create Now"}
                                     </button>
                                 </div>
                             </>
@@ -54,7 +78,7 @@ const CreateGroup = ({ createGroupShow, setCreateGroupShow, name, setName }) => 
 
                                 <div className="invite-box">
                                     <span>Invitation Code</span>
-                                    <div className="code">generatedCode</div>
+                                    <div className="code">{formatCode(invitationCode)}</div>
                                 </div>
 
                                 <div className="share-box">
@@ -64,14 +88,17 @@ const CreateGroup = ({ createGroupShow, setCreateGroupShow, name, setName }) => 
                                     </div>
 
                                     <div className="share-input">
-                                        <p>{window.location.origin}/join/generatedCode</p>
-                                        <button onClick={() => console.log("copy")}>Copy</button>
+                                        <p>{window.location.origin}/join/{invitationCode}</p>
+                                        <button onClick={copyToClipboard}>Copy</button>
                                     </div>
                                 </div>
 
                                 <button
                                     className="done-btn"
-                                    onClick={() => { setIsCreated(false); setCreateGroupShow(false) }}
+                                    onClick={() => { 
+                                        setIsCreated(false); 
+                                        setCreateGroupShow(false);
+                                    }}
                                 >
                                     Done
                                 </button>

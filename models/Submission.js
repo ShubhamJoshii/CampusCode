@@ -7,7 +7,6 @@ const SubmissionSchema = new mongoose.Schema(
       ref: "User",
       required: true
     },
-
     problem: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Problem",

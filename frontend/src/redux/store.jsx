@@ -4,6 +4,7 @@ import problemsSlice from "./reducer/problemsSlice";
 import ProblemEditorSlice from "./reducer/problemEditorSlice";
 import progressSlice from "./reducer/progressSlice";
 import leaderboardSlice from "./reducer/leaderBoardSlice";
+import groupSlice from "./reducer/groupSlice";
 
 const store = configureStore({
     reducer:{
@@ -11,7 +12,8 @@ const store = configureStore({
         problems: problemsSlice,
         problemEditorDetails:ProblemEditorSlice,
         progress:progressSlice,
-        leaderboard:leaderboardSlice
+        leaderboard:leaderboardSlice,
+        groups:groupSlice
     }
 })
 

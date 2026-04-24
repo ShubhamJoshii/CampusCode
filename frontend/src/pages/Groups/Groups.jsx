@@ -1,87 +1,125 @@
-import { useParams, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import CreateGroup from '../../components/CreateGroup.jsx/CreateGroup';
+import { createGroupName, fetchGroups } from '../../redux/reducer/groupSlice';
+import "./Groups.css";
 
-function Groups() {
-  const { id } = useParams();
+const Groups = () => {
+  const [createGroupShow, setCreateGroupShow] = useState(false);
+  const [code, setCode] = useState("");
+  const [name, setName] = useState("");
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { groups, groupName } = useSelector(state => state.groups);
 
-  // 👉 Dummy group data (replace backend later if needed)
-  const groupData = {
-    id: id || "GROUP-12345",
-    totalMembers: 128,
-    totalQuestions: 56,
-    yourRank: 7,
+  const stats = [
+    { head: "Total groups", text: groups.length },
+    { head: "🔥 Streak", text: "5 days" },
+    { head: "Status", text: "active" },
+  ];
+
+  useEffect(() => {
+    dispatch(fetchGroups());
+  }, [dispatch]);
+
+  const createGroup = () => {
+    setCreateGroupShow(true);
+  };
+
+  const joinGroup = () => {
+    console.log("Joining group with code:", code);
   };
 
   return (
-    <div className="mainContent hide-scrollbar p-6">
-      {/* HEADER */}
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">Group Dashboard 🚀</h1>
+    <div className='groups-container mainContent hide-scrollbar'>
+      <CreateGroup
+        createGroupShow={createGroupShow}
+        setCreateGroupShow={setCreateGroupShow}
+      />
 
-        <button
-          onClick={() => navigate("/dashboard")}
-          className="bg-white/20 px-4 py-2 rounded hover:bg-white/30"
-        >
-          Back
-        </button>
+      {/* Stats Section */}
+      <div className="stats-row">
+        {stats.map((curr, id) => {
+          let typeClass = "";
+          if (curr.head === "Total groups") typeClass = "groups-card";
+          if (curr.head === "🔥 Streak") typeClass = "streak-card";
+          if (curr.head === "Status") typeClass = "status-card";
+
+          return (
+            <div className={`cardBorder stat-item ${typeClass}`} key={id}>
+              <h2 className="cardHeading">{curr.head}</h2>
+              <div className='stat-value'>
+                <p>{curr.text}</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
-      {/* GROUP CARD */}
-      <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-xl mb-6">
-        <h2 className="text-xl font-semibold mb-2">Group ID</h2>
-        <p className="text-gray-200 break-all">{groupData.id}</p>
+      {/* Actions Section */}
+      <div className="actions-grid">
+        <div className="cardBorder action-card">
+          <h2 className="action-title">
+            <span className="icon-box green">➕</span>
+            Create Group
+          </h2>
+          <input
+            value={groupName}
+            onChange={(e) => dispatch(createGroupName(e.target.value))}
+            placeholder="e.g. Design Team"
+            className="group-input"
+          />
+          <button onClick={createGroup} className="btn-primary">
+            Create New Group
+          </button>
+        </div>
+
+        <div className="cardBorder action-card">
+          <h2 className="action-title">
+            <span className="icon-box blue">🔗</span>
+            Join Group
+          </h2>
+          <input
+            value={code}
+            onChange={(e) => setCode(e.target.value)}
+            placeholder="Enter invitation code"
+            className="group-input"
+          />
+          <button onClick={joinGroup} className="btn-secondary">
+            Join with Code
+          </button>
+        </div>
       </div>
 
-      {/* QUICK STATS */}
-      <div className="grid md:grid-cols-3 gap-4 mb-6">
-        <div className="bg-white/10 p-4 rounded-xl">
-          <h2>Total Members 👥</h2>
-          <p className="text-2xl font-bold">{groupData.totalMembers}</p>
-        </div>
+      {/* List Section */}
+      <div className="groups-list-wrapper">
+        <h2 className="list-title">
+          Your Groups <span className="count">({groups.length})</span>
+        </h2>
 
-        <div className="bg-white/10 p-4 rounded-xl">
-          <h2>Total Questions 📚</h2>
-          <p className="text-2xl font-bold">{groupData.totalQuestions}</p>
-        </div>
-
-        <div className="bg-white/10 p-4 rounded-xl">
-          <h2>Your Rank 🏆</h2>
-          <p className="text-2xl font-bold">{groupData.yourRank}</p>
-        </div>
-      </div>
-
-      {/* ACTION BUTTONS */}
-      <div className="grid md:grid-cols-2 gap-4">
-        <button
-          onClick={() => navigate(`/leaderboard/${groupData.id}`)}
-          className="bg-yellow-400 text-black p-4 rounded-xl hover:scale-105 transition"
-        >
-          🏆 Leaderboard
-        </button>
-
-        <button
-          onClick={() => alert("Coming Soon 🚧")}
-          className="bg-green-500 p-4 rounded-xl hover:scale-105 transition"
-        >
-          📚 Add Question
-        </button>
-
-        <button
-          onClick={() => alert("Coming Soon 🚧")}
-          className="bg-blue-500 p-4 rounded-xl hover:scale-105 transition"
-        >
-          👥 Members
-        </button>
-
-        <button
-          onClick={() => alert("Coming Soon 🚧")}
-          className="bg-pink-500 p-4 rounded-xl hover:scale-105 transition"
-        >
-          💬 Chat
-        </button>
+        {groups.length === 0 ? (
+          <div className="empty-state">
+            <p>No groups joined yet. Start by creating one! ❌</p>
+          </div>
+        ) : (
+          <div className="groups-grid">
+            {groups?.map((g) => (
+              <div
+                key={g._id}
+                onClick={() => navigate(`/groups/${g._id}`)}
+                className="group-item-card"
+              >
+                <h3>{g.name}</h3>
+                <span className="group-code">CODE: {g.invitationCode}</span>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
-}
+};
 
 export default Groups;
