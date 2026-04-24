@@ -23,7 +23,6 @@ const Progress = () => {
   } = useSelector((state) => state.progress);
 
   useEffect(() => {
-    console.log("Running");
     dispatch(fetchSubmissions());
   }, [dispatch]);
 
@@ -107,7 +106,6 @@ const Progress = () => {
               </div>
             </div>
 
-            {/* Category */}
             <CategoryBreakdown data={categoryBreakdown} />
           </div>
 

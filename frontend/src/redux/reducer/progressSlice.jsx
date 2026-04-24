@@ -14,6 +14,19 @@ export const fetchSubmissions = createAsyncThunk(
     }
 );
 
+export const fetchStreak = createAsyncThunk(
+    "progress/streak",
+    async (args = {}, thunkAPI) => {
+        try {
+            const response = await axios.get(`/api/streak`);
+            // console.log(response.data)
+            return response.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.response?.data || "Something went wrong");
+        }
+    }
+);
+
 const progressSlice = createSlice({
     name: "progress",
     initialState: {
@@ -49,10 +62,15 @@ const progressSlice = createSlice({
     reducers: {
     },
     extraReducers: (builder) => {
+        const handlePending = (state) => {
+            state.status = "loading";
+        };
+        const handleRejected = (state, action) => {
+            state.status = "failed";
+            state.error = action.payload?.msg || "Failed to fetch";
+        };
         builder
-            .addCase(fetchSubmissions.pending, (state) => {
-                state.status = "loading";
-            })
+            .addCase(fetchSubmissions.pending, handlePending)
             .addCase(fetchSubmissions.fulfilled, (state, action) => {
                 state.status = "succeeded";
                 state.submissions = action.payload.data;
@@ -64,10 +82,14 @@ const progressSlice = createSlice({
                 state.totalQuestion = action.payload.totalQuestion || 0;
                 state.error = null;
             })
-            .addCase(fetchSubmissions.rejected, (state, action) => {
-                state.status = "failed";
-                state.error = action.payload?.message || "Failed to fetch problems";
-            });
+            .addCase(fetchSubmissions.rejected, handleRejected)
+            .addCase(fetchStreak.pending, handlePending)
+            .addCase(fetchStreak.fulfilled, (state, action) => {
+                state.status = "succeeded";
+                state.streak = action.payload.streak || 0;
+                state.error = null;
+            })
+            .addCase(fetchStreak.rejected, handleRejected);
     }
 });
 

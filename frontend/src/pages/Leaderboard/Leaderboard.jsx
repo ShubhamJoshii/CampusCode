@@ -1,114 +1,106 @@
-import { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useState, useMemo, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Leaderboard.css";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchLeaderBoard } from "../../redux/reducer/leaderBoardSlice";
+import Loading from "../Loading";
+
+const DUMMY_DATA = [
+  { userId: "1", name: "Aman", score: 95, streak: 7 },
+  { userId: "2", name: "You", score: 88, streak: 5 },
+  { userId: "3", name: "Ravi", score: 82, streak: 4 },
+  { userId: "4", name: "Neha", score: 75, streak: 6 },
+  { userId: "5", name: "Karan", score: 70, streak: 3 },
+];
 
 function Leaderboard() {
-  const { id } = useParams();
   const navigate = useNavigate();
-
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("score");
+  const MY_ID = "2";
 
-  const myId = "2";
+  const processedData = useMemo(() => {
+    return [...DUMMY_DATA]
+      .filter((u) => u.name.toLowerCase().includes(search.toLowerCase()))
+      .sort((a, b) => (b[sortBy] || 0) - (a[sortBy] || 0));
+  }, [search, sortBy]);
 
-  // Dummy data
-  const data = [
-    { userId: "1", name: "Aman", score: 95, streak: 7 },
-    { userId: "2", name: "You", score: 88, streak: 5 },
-    { userId: "3", name: "Ravi", score: 82, streak: 4 },
-    { userId: "4", name: "Neha", score: 75, streak: 6 },
-    { userId: "5", name: "Karan", score: 70, streak: 3 },
+  const topThree = processedData.slice(0, 3);
+
+  const { leaderboard, status } = useSelector(state => state.leaderboard);
+  const { data } = useSelector(state => state.user);
+
+  const podiumConfigs = [
+    { class: "gold", icon: "🥇" },
+    { class: "silver", icon: "🥈" },
+    { class: "bronze", icon: "🥉" }
   ];
 
-  const sortedData = [...data].sort((a, b) =>
-    sortBy === "score"
-      ? b.score - a.score
-      : (b.streak || 0) - (a.streak || 0)
-  );
+  const podiumOrder = [
+    leaderboard[1],
+    leaderboard[0],
+    leaderboard[2]
+  ].filter(Boolean);
 
-  const filteredData = sortedData.filter((u) =>
-    u.name.toLowerCase().includes(search.toLowerCase())
-  );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchLeaderBoard());
+  }, [])
+
+    if (status == "loading") {
+    return <Loading style="flex-1 !h-[100%] bg-white" />
+  }
 
   return (
-    <div className="mainContent hide-scrollbar p-6 leaderBoard">
+    <div className="mainContent hide-scrollbar leaderBoard">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">Leaderboard 🏆</h1>
-        <button
-          onClick={() => navigate(-1)}
-          className="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400"
-        >
+        <h1>Leaderboard 🏆</h1>
+        <button onClick={() => navigate(-1)} className="px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition">
           Back
         </button>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-3 mb-6">
-        <input
-          placeholder="Search user..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="p-2 rounded border w-full"
-        />
+      {/* PODIUM SECTION */}
+      {search === "" && podiumOrder.length >= 1 && (
+        <div className="podium-container">
+          {podiumOrder.map((user, i) => {
+            const actualRank = leaderboard.indexOf(user);
+            const config = podiumConfigs[actualRank];
+            return (
+              <div key={user?.userID} className={`podium-step ${config.class}`}>
+                <div className="rank-icon">{config.icon}</div>
+                <p className="font-bold text-gray-800 truncate w-full">{user.name}</p>
+                <p className="font-mono text-sm opacity-70">{user.totalPointEarned} pts</p>
+              </div>
+            )
+          })}
+        </div>
+      )}
 
-        <select
-          value={sortBy}
-          onChange={(e) => setSortBy(e.target.value)}
-          className="p-2 rounded border"
-        >
-          <option value="score">Score</option>
-          <option value="streak">Streak</option>
-        </select>
-      </div>
-
-      <div className="flex gap-6">
-        {filteredData.slice(0, 3).map((user, i) => (
-          <div
-            key={user.userId}
-            className="flex-1 cardBorder p-4 text-center"
-          >
-            <h2 className="text-2xl">
-              {i === 0 && "🥇"}
-              {i === 1 && "🥈"}
-              {i === 2 && "🥉"}
-            </h2>
-            <p className="font-bold">{user.name}</p>
-            <p>{user.score} pts</p>
+      <div className="user-list">
+        { leaderboard?.map((user, index) => (
+          <div key={index} className={`user-card ${user?.userID === data?.user?._id ? "is-current-user" : ""}`} onClick={()=>{
+            user?.userID === data?.user?._id && navigate("/progress")
+          }}>
+            <div className="details">
+              <span className="rank">#{index + 1}</span>
+              <div className="nameProgress">
+                <div className="flex items-center gap-2">
+                  <span className="font-bold">{user.name}</span>
+                  {user.userID === data?.user?._id && <span className="text-[10px] bg-green-600 text-white px-2 py-0.5 rounded-full">YOU</span>}
+                </div>
+                <div className="progress-track">
+                  <div className="progress-fill" style={{ width: `${Math.min(user.totalPointEarned, 100)}%` }} />
+                </div>
+              </div>
+            </div>
+            <div className="text-right">
+              <span className="block font-black text-lg">{user.totalPointEarned}</span>
+              <span className="text-[10px] text-gray-400 uppercase tracking-tighter font-bold">Points</span>
+            </div>
           </div>
         ))}
       </div>
-
-      {/* LIST */}
-      {filteredData.map((user, index) => (
-        <div
-          key={user.userId}
-          className={`p-4 mb-3 rounded-xl flex justify-between items-center shadow bg-white
-            ${user.userId === myId ? "border-2 border-green-500" : ""}
-          `}
-        >
-          <div className="w-full">
-            <span className="font-bold">
-              #{index + 1} {user.name}
-              {user.userId === myId && (
-                <span className="text-green-600 ml-2">(You)</span>
-              )}
-            </span>
-
-            <p className="text-sm text-gray-600">
-              🔥 {user.streak || 0} days
-            </p>
-
-            <div className="w-full bg-gray-200 h-2 rounded mt-2">
-              <div
-                className="bg-green-500 h-2 rounded"
-                style={{
-                  width: `${Math.min(user.score * 10, 100)}%`,
-                }}
-              />
-            </div>
-          </div>
-
-          <span className="font-bold ml-4">{user.score}</span>
-        </div>
-      ))}
     </div>
   );
 }

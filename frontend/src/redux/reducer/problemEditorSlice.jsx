@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// Updated to accept an 'args' object containing pageNo, limit, difficulty, etc.
 export const fetchProblemDetails = createAsyncThunk(
     "problemEditor/problemDetails",
     async (args = {}, thunkAPI) => {

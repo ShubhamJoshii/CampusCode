@@ -16,6 +16,7 @@ const SubmissionSchema = new mongoose.Schema(
 
     code: String,
     language: String,
+    pointEarned:Number,
 
     status: {
       type: String,

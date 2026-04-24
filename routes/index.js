@@ -18,5 +18,8 @@ router.use("/",require("./Problems/searchProblems"));
 
 router.use("/",require("./Submission/fetchAllSubmissions"));
 router.use("/",require("./Submission/submitSolution"));
+router.use("/",require("./Submission/streak"));
+
+router.use("/",require("./Leaderboard/fetchLeaderBoard"));
 
 module.exports = router;

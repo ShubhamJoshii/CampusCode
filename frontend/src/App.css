@@ -18,14 +18,6 @@
   top: 130px;
 }
 
-.leaderBoard {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .problemList {
   display: flex;
   flex-direction: column;

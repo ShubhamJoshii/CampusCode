@@ -1,15 +1,17 @@
 import {configureStore} from "@reduxjs/toolkit";
 import userSlice from "./reducer/userSlice";
 import problemsSlice from "./reducer/problemsSlice";
-import ProblemEditor from "./reducer/problemEditorSlice";
-import progress from "./reducer/progressSlice";
+import ProblemEditorSlice from "./reducer/problemEditorSlice";
+import progressSlice from "./reducer/progressSlice";
+import leaderboardSlice from "./reducer/leaderBoardSlice";
 
 const store = configureStore({
     reducer:{
         user : userSlice,
         problems: problemsSlice,
-        problemEditorDetails:ProblemEditor,
-        progress:progress,
+        problemEditorDetails:ProblemEditorSlice,
+        progress:progressSlice,
+        leaderboard:leaderboardSlice
     }
 })
 

@@ -10,6 +10,7 @@ import {
   ChartColumn
 } from "lucide-react";
 import { logoutUser } from "../../redux/reducer/userSlice";
+import { fetchStreak } from "../../redux/reducer/progressSlice";
 
 const GridItem = ({ icon, label, link, onClick }) => (
   <NavLink to={link} className={`gridItem mb-4`} onClick={onClick}>
@@ -33,6 +34,8 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const {streak} = useSelector(state => state.progress);
+
   const isAuthenticated = Boolean(
     data?.user?.email &&
     data?.user?._id &&
@@ -44,6 +47,10 @@ const Header = () => {
     localStorage.clear();
   };
 
+  useEffect(()=>{
+    dispatch(fetchStreak());
+  },[])
+  
 
   return (
     <header className="cardBorder z-10">
@@ -55,7 +62,7 @@ const Header = () => {
 
         {isAuthenticated ?
           <>
-            <p>🔥10</p>
+            <p>🔥{streak}</p>
             <div className="profileWrapper">
               <button className="profile-trigger" onClick={() => setIsOpen(!isOpen)}>
                 <div className="avatar">
