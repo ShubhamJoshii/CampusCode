@@ -7,9 +7,10 @@ import { registerUser, updatePage } from '../../redux/reducer/userSlice';
 import VerifyEmail from './VerifyEmail';
 import { Oval } from "react-loader-spinner";
 import { useEffect } from 'react';
-import './auth.css'
+
 import SubmitBtn from './SubmitBtn';
 import { toast } from 'react-toastify';
+import AuthWrapper from './AuthWrapper';
 
 const Content = () => {
     const {
@@ -97,7 +98,7 @@ const Content = () => {
             {/* <p className='text-center'>Already have an account? <NavLink to={"/login"} className="text-blue-700  font-semibold  ">Login</NavLink></p> */}
             <p className='auth-footer-text'>
                 Already have an account?
-                <NavLink to="/login" className="signup-link"> Sign In</NavLink>
+                <NavLink to="/login" className="signup-link"> Login</NavLink>
             </p>
         </>
     )
@@ -113,17 +114,15 @@ const Register = () => {
         dispatch(updatePage(status));
     }, [])
     return (
-        <div className='authContainer'>
-            <div className='authContainer-inner'>
-                {page === "SendedVerificationMail" ||
-                    page === "EmailVerified" ||
-                    page === "alreadyVerified" ? (
-                    <VerifyEmail />
-                ) : (
-                    <Content />
-                )}
-            </div>
-        </div>
+        <AuthWrapper>
+            {page === "SendedVerificationMail" ||
+                page === "EmailVerified" ||
+                page === "alreadyVerified" ? (
+                <VerifyEmail />
+            ) : (
+                <Content />
+            )}
+        </AuthWrapper>
     )
 }
 

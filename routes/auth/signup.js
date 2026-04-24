@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const UserModel = require("../../models/User");
-const { ValidationError } = require("../../util/error");
-const verifyEmailMail = require("../../util/verifyEmailMail");
+const UserModel = require("../../models/User.js");
+const { ValidationError } = require("../../util/error.js");
+const verifyEmailMail = require("../../util/verifyEmailMail.js");
 const { transporter } = require("../../util/transporter.js");
 
 const crypto = require("crypto");
@@ -11,8 +11,8 @@ const env = process.env.NODE_ENV;
 const validator = require("../../middleware/validator.js");
 const registerSchema = require("../../validators/registerSchema.js");
 
-// router.post("/register",validator(registerSchema), async (req, res) => {
-router.post("/register", async (req, res) => {
+// router.post("/signup",validator(registerSchema), async (req, res) => {
+router.post("/signup", async (req, res) => {
   const { firstName, lastName, email, password, confirmPassword } = req.body;
 
   // const BASE_URL = `https://${req.headers.host}/api`;

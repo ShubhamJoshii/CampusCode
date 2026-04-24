@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.use("/",require("./auth/home"));
-router.use("/",require("./auth/register"));
+router.use("/",require("./auth/signup"));
 router.use("/",require("./auth/login"));
 router.use("/",require("./auth/logout"));
 router.use("/",require("./auth/updatePassword"));
@@ -15,5 +15,8 @@ router.use("/",require("./Problems/addproblem"));
 router.use("/",require("./Problems/problemDetails"));
 router.use("/",require("./Problems/fetchAllProblems"));
 router.use("/",require("./Problems/searchProblems"));
+
+router.use("/",require("./Submission/fetchAllSubmissions"));
+router.use("/",require("./Submission/submitSolution"));
 
 module.exports = router;

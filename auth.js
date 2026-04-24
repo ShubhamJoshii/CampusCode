@@ -25,7 +25,4 @@ router.get("/userExist/:email", async (req, res) => {
   }
 });
 
-
-
-
 module.exports = router;

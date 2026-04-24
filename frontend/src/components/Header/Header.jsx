@@ -18,7 +18,7 @@ const GridItem = ({ icon, label, link, onClick }) => (
   </NavLink>
 );
 
-const MenuItem = ({ icon, label, style, fun}) => (
+const MenuItem = ({ icon, label, style, fun }) => (
   <div className={`menu-item text-[#374151]  ${style}`} onClick={() => fun()}>
     <div className="menu-item-left">
       <span className="menu-icon">{icon}</span>
@@ -47,7 +47,9 @@ const Header = () => {
 
   return (
     <header className="cardBorder z-10">
-      <img src={Logo} alt="Logo" className="headerLogo" />
+      <NavLink to="/">
+        <img src={Logo} alt="Logo" className="headerLogo"/>
+      </NavLink>
 
       <div className="flex items-center gap-5 z-100 ">
 
@@ -80,7 +82,7 @@ const Header = () => {
                     </div>
 
                     <div className="dropdown-links">
-                      <MenuItem icon={<Settings size={18} />} label="Settings" style="hover:bg-gray-100" fun={()=>navigate("/setting")} />
+                      <MenuItem icon={<Settings size={18} />} label="Settings" style="hover:bg-gray-100" fun={() => navigate("/setting")} />
                       <MenuItem icon={<LogOut size={18} />} label="Sign Out" style="hover:bg-red-50 hover:text-red-600" fun={logout} />
                     </div>
                   </div>
@@ -90,9 +92,22 @@ const Header = () => {
           </>
 
           :
-          <button className="login" onClick={() => navigate("/login")}>
-            Sign In
-          </button>
+          <>
+            <button
+              onClick={() => navigate("/login")}
+              className="login text-gray-700 bg-gray-100 hover:bg-gray-200 "
+            >
+              Sign In
+            </button>
+
+            <button
+              onClick={() => navigate("/signup")}
+              className="signUp bg-[#1d4ed8] hover:blue text-white"
+            >
+              Sign Up
+            </button>
+          </>
+
         }
       </div>
 

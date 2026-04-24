@@ -24,7 +24,7 @@ const ProblemSchema = new mongoose.Schema({
   ],
   createdBy: { 
     type: mongoose.Schema.Types.ObjectId, 
-    ref: "Users" // Make sure this matches the string in mongoose.model("Users", ...)
+    ref: "Users"
   },
   group: { 
     type: mongoose.Schema.Types.ObjectId, 
@@ -32,4 +32,4 @@ const ProblemSchema = new mongoose.Schema({
   },
 }, { timestamps: true });
 
-module.exports = mongoose.model("Problems", ProblemSchema);
+module.exports = mongoose.model("Problem", ProblemSchema);

@@ -5,10 +5,11 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { Oval } from "react-loader-spinner";
 import { useDispatch, useSelector } from 'react-redux';
 import { changePassword, loginUser, sendOTP, userExist, verifyOTP } from '../../redux/reducer/userSlice';
-import './auth.css'
+
 import SubmitBtn from './SubmitBtn';
 import ForgetPassword from './ForgetPassword';
 import { toast } from 'react-toastify';
+import AuthWrapper from './AuthWrapper';
 
 const Content = () => {
     const {
@@ -68,7 +69,7 @@ const Content = () => {
             </form>
 
             <p className='auth-footer-text'>Don't have an account?
-                <NavLink to="/register" className="signup-link"> Sign Up</NavLink>
+                <NavLink to="/signup" className="signup-link"> Sign Up</NavLink>
             </p>
         </>
     )
@@ -76,13 +77,10 @@ const Content = () => {
 
 const Login = () => {
     const { page } = useSelector((state) => state.user);
-
     return (
-        <div className='authContainer'>
-            <div className='authContainer-inner'>
-                <Content />
-            </div>
-        </div>
+        <AuthWrapper>
+            <Content />
+        </AuthWrapper>
     )
 }
 

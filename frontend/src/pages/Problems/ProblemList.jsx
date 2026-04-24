@@ -92,7 +92,7 @@ const ProblemList = ({ solvedProblems, setSolvedProblems }) => {
                     {problemsList?.map((curr, id) => {
                         const diffClass = curr.difficulty;
                         return (
-                            <NavLink to={`/ProblemEditor/${curr._id}`} key={curr._id} className="problemRow">
+                            <NavLink to={`/problems/${curr._id}`} key={curr._id} className="problemRow">
                                 <div
                                     className="solveIcon"
                                     onClick={() => handleSolve(curr.title)}

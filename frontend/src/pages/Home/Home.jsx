@@ -26,10 +26,10 @@ const Home = () => {
           </p>
 
           <div className="hero-btns">
-            <button onClick={() => navigate('/register')} className="btn-primary">
+            <button onClick={() => navigate('/signup')} className="btn-primary">
               Start Learning for Free
             </button>
-            <button className="btn-secondary">
+            <button onClick={() => navigate('/problems')}  className="btn-secondary">
               Explore Problems <span>→</span>
             </button>
           </div>

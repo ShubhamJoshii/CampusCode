@@ -19,8 +19,8 @@ export const registerUser = createAsyncThunk(
     "user/registerUser",
     async (data, { rejectWithValue }) => {
         try {
-            const response = await axios.post("/api/register", { ...data });
-            console.log(response);
+            const response = await axios.post("/api/signup", { ...data });
+            // console.log(response);
             return response.data;
         } catch (error) {
             console.log(error.response);
@@ -120,6 +120,13 @@ const userSlice = createSlice({
     },
     reducers: {
         updateUser(state, action) { },
+        resetData(state, action) {
+            state.data = {};
+            state.status = "idle";
+            state.page = "";
+            state.otpID = null;
+            state.error = null;
+        },
         changeForgetPasswordStage(state, action) {
             state.forgetPasswordStage = action.payload;
         },
@@ -205,5 +212,5 @@ const userSlice = createSlice({
 })
 
 export default userSlice.reducer;
-export const { updateUser, updatePage, changeForgetPasswordStage } =
+export const { updateUser, updatePage, resetData, changeForgetPasswordStage } =
     userSlice.actions;

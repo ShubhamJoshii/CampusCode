@@ -11,11 +11,10 @@ export const fetchProblems = createAsyncThunk(
                 params: {
                     pageNo: state.pageNo || 1,
                     limit: state.limit || 10,
-                    difficulty: state.difficulty,
+                    difficulty: state.difficulty == "all" ? "" : state.difficulty,
                     tag: state.tag
                 }
             });
-            // console.log(response.data);
             return response.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.response?.data || "Something went wrong");
@@ -35,7 +34,6 @@ export const searchProblems = createAsyncThunk(
                     pageNo: state.pageNo || 1,
                 }
             });
-            console.log(response.data);
             return response.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.response?.data || "Something went wrong");

@@ -32,49 +32,53 @@ const Pagination = ({ totalPages = 10, initialPage = 1, limit = 10, changePagina
           <option value={100}>100</option>
         </select>
       </div>
-      <button
-        onClick={() => goToPage(currentPage - 1)}
-        disabled={currentPage === 1}
-        className="pagination-button"
-      >
-        <ChevronLeft size={20} />
-      </button>
+      <div className='paginationControls'>
 
-      <div className="page-numbers">
-        {[...Array(totalPages)].map((_, index) => {
-          const page = index + 1;
+        <button
+          onClick={() => goToPage(currentPage - 1)}
+          disabled={currentPage === 1}
+          className="pagination-button"
+        >
+          <ChevronLeft size={20} />
+        </button>
 
-          if (page === 1 || page === totalPages || (page >= currentPage - 1 && page <= currentPage + 1)) {
-            return (
-              <button
-                key={page}
-                onClick={() => goToPage(page)}
-                className={`page-number ${currentPage === page ? 'active' : ''}`}
-              >
-                {page}
-              </button>
-            );
-          }
+        <div className="page-numbers">
+          {[...Array(totalPages)].map((_, index) => {
+            const page = index + 1;
 
-          if (page === currentPage - 2 || page === currentPage + 2) {
-            return (
-              <span key={page} className="pagination-ellipsis">
-                <MoreHorizontal size={20} />
-              </span>
-            );
-          }
+            if (page === 1 || page === totalPages || (page >= currentPage - 1 && page <= currentPage + 1)) {
+              return (
+                <button
+                  key={page}
+                  onClick={() => goToPage(page)}
+                  className={`page-number ${currentPage === page ? 'active' : ''}`}
+                >
+                  {page}
+                </button>
+              );
+            }
 
-          return null;
-        })}
+            if (page === currentPage - 2 || page === currentPage + 2) {
+              return (
+                <span key={page} className="pagination-ellipsis">
+                  <MoreHorizontal size={20} />
+                </span>
+              );
+            }
+
+            return null;
+          })}
+        </div>
+
+        <button
+          onClick={() => goToPage(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          className="pagination-button"
+        >
+          <ChevronRight size={20} />
+        </button>
+
       </div>
-
-      <button
-        onClick={() => goToPage(currentPage + 1)}
-        disabled={currentPage === totalPages}
-        className="pagination-button"
-      >
-        <ChevronRight size={20} />
-      </button>
     </nav>
   );
 };

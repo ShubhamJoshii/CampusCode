@@ -18,18 +18,21 @@ export const RedirectIfAuthenticated = ({ children }) => {
 
 export const RedirectIfNotAuthenticated = ({ children }) => {
   const { data, status } = useSelector((state) => state.user);
-  
+
   // if (status === 'loading') return null;
-  
+
   if (!checkAuth(data)) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/" replace />;
   }
   return children;
 };
 
-export const RestrictUser = ({text="dashboard",style}) => {
+export const RestrictUser = ({ text = "dashboard", style, children }) => {
   const { data, status } = useSelector((state) => state.user);
   const navigate = useNavigate();
+  if (status == "loading") {
+    return <Loading style="flex-1 !h-[100%] bg-white" />
+  }
   if (!checkAuth(data)) {
     return (
       <div className={`absolute z-100 w-full flex flex-col items-center justify-center bg-gray-100 p-4 ${style}`}>
@@ -41,11 +44,12 @@ export const RestrictUser = ({text="dashboard",style}) => {
           </div>
           <h1 className="text-2xl font-bold text-gray-800 mb-2">Access Denied</h1>
           <p className="text-gray-600 mb-6">You must be logged in to view this {text}.</p>
-          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition duration-200" onClick={()=>navigate("/login")}>
+          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition duration-200" onClick={() => navigate("/login")}>
             Go to Login
           </button>
         </div>
       </div>
     );
   }
+  return children
 };

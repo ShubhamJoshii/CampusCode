@@ -7,7 +7,7 @@ export const fetchProblemDetails = createAsyncThunk(
     async (args = {}, thunkAPI) => {
         try {
             const response = await axios.get(`/api/problemDetails/${args}`);
-            console.log(response.data);
+            // console.log(response.data);
             return response.data.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.response?.data || "Something went wrong");

@@ -14,15 +14,15 @@ router.get("/verify-email", async (req, res) => {
     const token = req.query.token;
     const user = await UserModel.findOne({ emailToken: token });
     if (user.isVerified) {
-      return res.redirect(`${redirectbaseURL}/register?status=alreadyVerified`);
+      return res.redirect(`${redirectbaseURL}/signup?status=alreadyVerified`);
     }
     if (user) {
       user.isVerified = true;
       await user.save();
-      res.redirect(`${redirectbaseURL}/register?status=success`);
+      res.redirect(`${redirectbaseURL}/signup?status=success`);
     }
   } catch (error) {
-    res.redirect(`${redirectbaseURL}/register?status=failure`);
+    res.redirect(`${redirectbaseURL}/signup?status=failure`);
   }
 });
 
