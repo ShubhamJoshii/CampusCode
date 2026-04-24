@@ -9,7 +9,6 @@ import Loading from '../Loading';
 const Problems = () => {
     const [search, setSearch] = useState("");
     const [difficultyState, setDifficultyState] = useState("");
-    const [solvedProblems, setSolvedProblems] = useState([]);
 
     const { problemsList, pageNo, limit, difficulty, tag } = useSelector((state) => state.problems)
     const dispatch = useDispatch();
@@ -60,10 +59,7 @@ const Problems = () => {
             </div>
 
             <div className="problemContainer">
-                <ProblemList
-                    solvedProblems={solvedProblems}
-                    setSolvedProblems={setSolvedProblems}
-                />
+                <ProblemList />
             </div>
         </div>
     );

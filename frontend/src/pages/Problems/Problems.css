@@ -40,7 +40,7 @@
     background-color: white;
     border-radius: 12px;
     border: 1px solid #e5e7eb;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 
   .topicBar {
@@ -114,7 +114,7 @@
     .problemBox {
       border: 1px solid #f3f4f6;
       border-radius: 8px;
-      overflow: hidden;
+      /* overflow: hidden; */
       margin-bottom: 20px;
 
       .problemRow {
@@ -131,10 +131,31 @@
           background-color: white;
         }
 
-        .solveIcon {
+        .attemptIcon {
           width: 30px;
           cursor: pointer;
           flex-shrink: 0;
+        }
+
+        .tooltip {
+          position: absolute;
+          bottom: 120%;
+          left: 50%;
+          transform: translateX(-50%) scale(0.95);
+          background: #111;
+          color: white;
+          font-size: 12px;
+          padding: 4px 8px;
+          border-radius: 6px;
+          white-space: nowrap;
+          opacity: 0;
+          pointer-events: none;
+          transition: all 0.08s ease;
+        }
+
+        .attemptIcon:hover .tooltip {
+          opacity: 1;
+          transform: translateX(-50%) scale(1);
         }
 
         .problemTitle {

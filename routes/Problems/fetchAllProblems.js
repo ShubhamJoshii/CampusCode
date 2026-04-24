@@ -1,6 +1,11 @@
 const express = require("express");
 const Problems = require("../../models/Problems");
+const Submission = require("../../models/Submission");
 const router = express.Router();
+
+const jwt = require("jsonwebtoken");
+
+const SECRET_KEY = process.env.SECRET_KEY;
 
 router.get("/problems", async (req, res) => {
   // console.log("Hello world");
@@ -28,9 +33,42 @@ router.get("/problems", async (req, res) => {
       Problems.distinct("tags"),
       Problems.countDocuments(filter),
     ]);
+
+    let userId = null;
+
+    try {
+      const token = req.cookies?.LeetCodeToken;
+      if (token) {
+        const decoded = jwt.verify(token, SECRET_KEY);
+        userId = decoded._id;
+      }
+    } catch (err) {
+      userId = null;
+    }
+
+    let data = problems;
+    let attemptedProblems = [];
+
+    if (userId) {
+      attemptedProblems = await Submission.find(
+        { user: userId },
+        "problem status title",
+      );
+      data = problems.map((problem) => {
+        const found = attemptedProblems.find(
+          (e) => e.problem.toString() === problem._id.toString(),
+        );
+        return {
+          ...problem.toObject(),
+          attempt: found ? found.status : null,
+        };
+      });
+    }
+
     res.status(200).json({
       success: true,
-      data: problems,
+      data,
+      attemptedProblemsCount: attemptedProblems.length,
       categories: ["all", ...categories],
       pagination: {
         total: totalCount,

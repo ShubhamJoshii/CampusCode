@@ -4,11 +4,10 @@ const validator = (schema) => (req, res, next) => {
     next();
   } catch (err) {
     if (err.issues) {
-      return res.status(400).json({
-        errors: err.issues.map((e) => ({
-          field: e.path[0],
-          message: e.message,
-        })),
+      // console.log(err.issues);
+      return res.status(400).send({
+        msg: { message: err.issues[0].message, target: err.issues[0].path[0] },
+        success: false,
       });
     }
     return res.status(500).json({ message: "Internal server error" });

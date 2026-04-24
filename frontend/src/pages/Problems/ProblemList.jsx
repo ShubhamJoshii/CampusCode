@@ -1,11 +1,12 @@
 import React, { useState, useRef } from 'react';
-import {NavLink} from "react-router-dom";
-import { problems } from '../../assets/Problem'; 
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { NavLink } from "react-router-dom";
+import { problems } from '../../assets/Problem';
+import { AlertTriangle, ChevronLeft, ChevronRight, Clock } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import Pagination from '../../components/Pagination/Pagination';
 import { changeLimit, changePage, changeTag } from '../../redux/reducer/problemsSlice';
 import Loading from '../Loading';
+import { CheckCircle, XCircle, Circle } from "lucide-react";
 
 const getDiffStyle = (diff) => {
     switch (diff) {
@@ -16,26 +17,25 @@ const getDiffStyle = (diff) => {
     }
 };
 
-const ProblemList = ({ solvedProblems, setSolvedProblems }) => {
+const statusIcon = {
+    "Accepted": <CheckCircle className="text-green-500  w-3.5 h-3.5" />,
+    "Wrong Answer": <XCircle className="text-red-500  w-3.5 h-3.5" />,
+    "TLE": <Clock className="text-yellow-500  w-3.5 h-3.5" />,
+    "Runtime Error": <AlertTriangle className="text-orange-500  w-3.5 h-3.5" />,
+};
+
+
+
+const ProblemList = () => {
     const [selectedCategory, setSelectedCategory] = useState("all");
     const scrollRef = useRef(null);
 
-    const { problemsList, totalPages, status, totalProblems, limit, pageNo, categories } = useSelector((state) => state.problems);
+    const { problemsList, totalPages, attemptedProblemsCount, status, totalProblems, limit, pageNo, categories } = useSelector((state) => state.problems);
     const dispatch = useDispatch();
-
-    // const categories = ["All", "Array", "String", "DP", "Math", "Linked List", "Stack", "Backtracking", "Tree", "Binary Search", "Heap", "Hash Table", "Sorting", "Two Pointers", "Bit Manipulation", "Graph"];
 
     const scroll = (direction) => {
         if (scrollRef.current) {
             scrollRef.current.scrollBy({ left: direction === 'left' ? -200 : 200, behavior: 'smooth' });
-        }
-    };
-
-    const handleSolve = (title) => {
-        if (!solvedProblems.includes(title)) {
-            setSolvedProblems([...solvedProblems, title]);
-        } else {
-            setSolvedProblems(solvedProblems.filter(t => t !== title));
         }
     };
 
@@ -85,19 +85,24 @@ const ProblemList = ({ solvedProblems, setSolvedProblems }) => {
 
             <div className="listBody">
                 <div className="solvedText">
-                    Solved: {solvedProblems.length} / {totalProblems}
+                    Solved: {attemptedProblemsCount} / {totalProblems}
                 </div>
 
                 <div className="problemBox">
                     {problemsList?.map((curr, id) => {
                         const diffClass = curr.difficulty;
+                        // console.log(curr.attempt);
+
                         return (
                             <NavLink to={`/problems/${curr._id}`} key={curr._id} className="problemRow">
-                                <div
-                                    className="solveIcon"
-                                    onClick={() => handleSolve(curr.title)}
-                                >
-                                    {solvedProblems.includes(curr.title) ? '✔' : '○'}
+                                <div className="attemptIcon relative inline-block">
+                                    {statusIcon[curr.attempt] || (
+                                        <Circle className="text-gray-400 w-3.5 h-3.5" />
+                                    )}
+
+                                    <span className="tooltip">
+                                        {curr.attempt == "TLE" ? "Time Limit Exceeded" : curr.attempt || "Not Attempted"}
+                                    </span>
                                 </div>
 
                                 <div className="problemTitle">

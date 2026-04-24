@@ -2,14 +2,16 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const UserModel = require("../../models/User");
 const { ValidationError } = require("../../util/error");
-const router = express.Router();
+const validator = require("../../middleware/validator.js");
+const loginValidator = require("../../validators/loginValidator.js");
 
-router.post("/login", async (req, res) => {
+const router = express.Router();
+router.post("/login", validator(loginValidator), async (req, res) => {
   const { email, password, rememberMe } = req.body;
 
   try {
     const user = await UserModel.findOne({ email });
-    if (!user) throw new ValidationError("email", "Email is incorrect");
+    if (!user) throw new ValidationError("email", "Invalid email!");
     if (!user.isVerified)
       throw new ValidationError(
         "email",
@@ -20,13 +22,13 @@ router.post("/login", async (req, res) => {
     if (isPasswordValid) {
       const Token = await user.generateAuthToken();
       // if (rememberMe) {
-        res.cookie("LeetCodeToken", Token, {
-          expires: new Date(Date.now() + 31 * 24 * 60 * 60 * 1000),
-          httpOnly: true,
-          secure: isProduction, // true on Vercel, false on localhost
-          sameSite: isProduction ? "none" : "lax", 
-        });
-        // });
+      res.cookie("LeetCodeToken", Token, {
+        expires: new Date(Date.now() + 31 * 24 * 60 * 60 * 1000),
+        httpOnly: true,
+        secure: isProduction, // true on Vercel, false on localhost
+        sameSite: isProduction ? "none" : "lax",
+      });
+      // });
       // } else {
       //   res.cookie("LeetCodeToken", Token, { httpOnly: true });
       // }
@@ -49,6 +51,5 @@ router.post("/login", async (req, res) => {
     });
   }
 });
-
 
 module.exports = router;

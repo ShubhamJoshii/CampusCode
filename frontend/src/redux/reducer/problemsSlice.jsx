@@ -47,6 +47,7 @@ const problemsSlice = createSlice({
         problemsList: [],
         pageNo: 1,
         limit: 10,
+        attemptedProblemsCount:0,
         difficulty: "",
         tag: "",
         totalProblems: 0,
@@ -82,6 +83,8 @@ const problemsSlice = createSlice({
                 state.totalProblems = action.payload.pagination.total;
                 state.categories = action.payload.categories;
                 state.totalPages = action.payload.pagination.totalPages;
+                state.attemptedProblemsCount = action.payload.attemptedProblemsCount;
+                // console.log(action.payload);
                 state.error = null;
             })
             .addCase(fetchProblems.rejected, (state, action) => {

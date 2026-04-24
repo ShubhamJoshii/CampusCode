@@ -9,10 +9,10 @@ const crypto = require("crypto");
 
 const env = process.env.NODE_ENV;
 const validator = require("../../middleware/validator.js");
-const registerSchema = require("../../validators/registerSchema.js");
+const registerValidator = require("../../validators/registerValidator.js");
 
-// router.post("/signup",validator(registerSchema), async (req, res) => {
-router.post("/signup", async (req, res) => {
+router.post("/signup",validator(registerValidator), async (req, res) => {
+// router.post("/signup", async (req, res) => {
   const { firstName, lastName, email, password, confirmPassword } = req.body;
 
   // const BASE_URL = `https://${req.headers.host}/api`;
@@ -26,6 +26,8 @@ router.post("/signup", async (req, res) => {
   var VerfiedLink = `${BASE_URL}/verify-email?token=${emailToken}`;
 
   try {
+    console.log(firstName, lastName, email, password, confirmPassword);
+    
     if (!firstName || !lastName || !email || !password)
       throw new ValidationError("All", "All Field are required");
     if (password != confirmPassword)
@@ -65,7 +67,6 @@ router.post("/signup", async (req, res) => {
       }
     }
     throw new ValidationError("email", "Email already exists!");
-    // return res.send("Hello World");
   } catch (error) {
     console.log(error);
     return res.status(400).send({

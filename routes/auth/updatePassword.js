@@ -3,8 +3,10 @@ const bcrypt = require("bcrypt");
 const UserModel = require("../../models/User");
 const { ValidationError } = require("../../util/error");
 const router = express.Router();
+const validator = require("../../middleware/validator.js");
+const passwordValidator = require("../../validators/passwordValidator.js");
 
-router.post("/changePassword", async (req, res) => {
+router.post("/changePassword",validator(passwordValidator), async (req, res) => {
   const { password, confirmPassword, email } = req.body;
   try {
     const userExist = await UserModel.findOne({ email });

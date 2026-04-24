@@ -8,9 +8,12 @@ const { ValidationError } = require("../../../util/error");
 const OTPMail = require("../../../util/OTPMail");
 const { transporter } = require("../../../util/transporter");
 const router = express.Router();
+const validator = require("../../../middleware/validator.js");
+const emailValidator = require("../../../validators/emailValidator.js");
 
-router.post("/sendOTP", async (req, res) => {
+router.post("/sendOTP", validator(emailValidator),async (req, res) => {
   const { email } = req.body;
+  console.log(email);
   try {
     const emailExist = await UserModel.findOne({ email });
     if (!emailExist) throw new ValidationError("email", "Invalid Email");
