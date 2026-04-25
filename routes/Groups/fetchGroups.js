@@ -7,7 +7,7 @@ router.get("/groups", authMiddleware, async (req, res) => {
   try {
     const joinedGroups = await Group.find(
       {
-        $or: [{ member: res.userId }, { admins: res.userId }],
+        $or: [{ members: req.userID }, { admins: req.userID }],
       },
       "name admins invitationCode",
     );

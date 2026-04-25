@@ -26,6 +26,7 @@ const ForgetPassword = lazy(() => import("./pages/auth/ForgetPassword"));
 import "./App.css";
 import { RedirectIfAuthenticated, RedirectIfNotAuthenticated } from "./CheckAuth";
 import GroupDashboard from "./pages/GroupDashboard/GroupDashboard";
+import MemberList from "./pages/MemberList/MemberList";
 
 // const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -108,6 +109,14 @@ function App() {
                 </Wrapper>
               }
             />
+            {/* <Route
+              path="/groups/:_id/members"
+              element={
+                <Wrapper>
+                  <MemberList />
+                </Wrapper>
+              }
+            /> */}
             <Route
               path="/problems"
               element={

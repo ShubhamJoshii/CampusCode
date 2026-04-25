@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import CreateGroup from '../../components/CreateGroup.jsx/CreateGroup';
-import { createGroupName, fetchGroups } from '../../redux/reducer/groupSlice';
+import { createGroupName, fetchGroups, joinNewGroup } from '../../redux/reducer/groupSlice';
 import "./Groups.css";
+import { toast } from 'react-toastify';
 
 const Groups = () => {
   const [createGroupShow, setCreateGroupShow] = useState(false);
@@ -28,8 +29,15 @@ const Groups = () => {
     setCreateGroupShow(true);
   };
 
-  const joinGroup = () => {
-    console.log("Joining group with code:", code);
+  const joinGroup = async() => {
+    try {
+      const response = await dispatch(joinNewGroup(code)).unwrap();
+      dispatch(fetchGroups());
+      toast.success(response?.msg || "Joined successful");
+    } catch (error) {
+      toast.error(error?.msg || "User already in group");
+      
+    }
   };
 
   return (
@@ -85,7 +93,7 @@ const Groups = () => {
             value={code}
             onChange={(e) => setCode(e.target.value)}
             placeholder="Enter invitation code"
-            className="group-input"
+            className="group-input uppercase"
           />
           <button onClick={joinGroup} className="btn-secondary">
             Join with Code
@@ -105,16 +113,23 @@ const Groups = () => {
           </div>
         ) : (
           <div className="groups-grid">
-            {groups?.map((g) => (
-              <div
+            {groups?.map((g) => {
+              return <div
                 key={g._id}
                 onClick={() => navigate(`/groups/${g._id}`)}
                 className="group-item-card"
               >
-                <h3>{g.name}</h3>
+                <div className='flex justify-between items-center'>
+                  <h3>{g.name}</h3>
+                  {g.isAdmin && (
+                    <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
+                      Admin
+                    </span>
+                  )}
+                </div>
                 <span className="group-code">CODE: {g.invitationCode}</span>
               </div>
-            ))}
+            })}
           </div>
         )}
       </div>

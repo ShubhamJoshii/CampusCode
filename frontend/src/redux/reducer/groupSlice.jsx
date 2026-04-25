@@ -32,10 +32,24 @@ export const createNewGroup = createAsyncThunk(
     "groups/createGroup",
     async (args = {}, thunkAPI) => {
         const state = thunkAPI.getState().groups;
-        console.log(args);
         try {
             const response = await axios.post(`/api/creategroup`, {
                 name: state.groupName
+            });
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.response?.data || "Something went wrong");
+        }
+    }
+);
+
+export const joinNewGroup = createAsyncThunk(
+    "groups/joingroup",
+    async (args = {}, thunkAPI) => {
+        try {
+            const response = await axios.post(`/api/joingroup`, {
+                invitationCode: args
             });
             console.log(response.data);
             return response.data;
@@ -89,7 +103,14 @@ const groupSlice = createSlice({
                 state.groupDetails = action.payload.data;
                 state.error = null;
             })
-            .addCase(fetchGroupDetails.rejected, handleRejected);
+            .addCase(fetchGroupDetails.rejected, handleRejected)
+            .addCase(joinNewGroup.pending, handlePending)
+            .addCase(joinNewGroup.fulfilled, (state, action) => {
+                state.status = "succeeded";
+                // state.groupDetails = action.payload.data;
+                state.error = null;
+            })
+            .addCase(joinNewGroup.rejected, handleRejected);
     }
 });
 

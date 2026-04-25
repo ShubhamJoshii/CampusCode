@@ -25,5 +25,6 @@ router.use("/",require("./Leaderboard/fetchLeaderBoard"));
 router.use("/",require("./Groups/createGroup"));
 router.use("/",require("./Groups/fetchGroups"));
 router.use("/",require("./Groups/fetchGroupDetails"));
+router.use("/",require("./Groups/joinGroup"));
 
 module.exports = router;
