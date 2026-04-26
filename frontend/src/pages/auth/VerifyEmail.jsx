@@ -28,11 +28,11 @@ const Content = () => {
         // Handle form submission here (e.g., send data to an API)
     };
 
-    const { data, error, status } = useSelector((state) => state.user);
+    const { user, error, status } = useSelector((state) => state.user);
     return (
         <>
             <div
-                onClick={() => { dispatch(deleteUser(data?.user?._id)) }}
+                onClick={() => { dispatch(deleteUser(user?._id)) }}
                 className="flex items-center gap-2 text-base text-gray-600 hover:text-black cursor-pointer mb-6"
             >
                 <HiOutlineChevronLeft className="text-xl" />
@@ -47,9 +47,9 @@ const Content = () => {
                 Verification email has been sent to:
             </p>
             <div className="flex items-center text-base mb-8">
-                <span className="text-gray-800 font-medium">{data?.user?.email}</span>
+                <span className="text-gray-800 font-medium">{user?.email}</span>
                 <span
-                    onClick={() => dispatch(deleteUser(data?.user?._id))}
+                    onClick={() => dispatch(deleteUser(user?._id))}
                     className="text-blue-500 cursor-pointer hover:underline"
                 >
                     (edit)
@@ -59,7 +59,7 @@ const Content = () => {
                 <p className="text-base text-gray-600">
                     Didn’t receive a code?{" "}
                     <span
-                        // onClick={() => dispatch(resendOtp(data?._id))}
+                        // onClick={() => dispatch(resendOtp(_id))}
                         className="text-blue-500 cursor-pointer hover:underline ml-3"
                     >
                         Resend

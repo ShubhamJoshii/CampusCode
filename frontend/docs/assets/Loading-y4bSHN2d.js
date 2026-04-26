@@ -1,1 +1,0 @@
-import{d as e,t}from"./jsx-runtime-CdNpLeVw.js";e();var n=`/assets/CampusCode4-0pAPpVwh.png`,r=t(),i=({style:e=`h-[100]`})=>(0,r.jsx)(`div`,{className:`loadingPage ${e}`,children:(0,r.jsx)(`img`,{src:n,alt:`Loading`})});export{i as t};

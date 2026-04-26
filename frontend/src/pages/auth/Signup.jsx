@@ -20,7 +20,7 @@ const Content = () => {
         formState: { errors },
     } = useForm();
 
-    const { data, status, error } = useSelector((state) => state.user);
+    const { status, error } = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
     const onSubmit = async (data) => {

@@ -30,16 +30,16 @@ const MenuItem = ({ icon, label, style, fun }) => (
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { data } = useSelector((state) => state.user);
+  const { user } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const {streak} = useSelector(state => state.progress);
 
   const isAuthenticated = Boolean(
-    data?.user?.email &&
-    data?.user?._id &&
-    data?.user?.firstName
+    user?.email &&
+    user?._id &&
+    user?.firstName
   );
 
   const logout = async () => {
@@ -78,8 +78,8 @@ const Header = () => {
                       <div className="avatar">
                         <User size={32} />
                       </div>
-                      <span className="username">{data?.user?.firstName
-                        ? `${data?.user?.firstName} ${data?.user?.lastName || ""}`
+                      <span className="username">{user?.firstName
+                        ? `${user?.firstName} ${user?.lastName || ""}`
                         : "Username"}</span>
                     </div>
                     <div className="dropdown-grid">

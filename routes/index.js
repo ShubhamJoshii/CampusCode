@@ -19,6 +19,7 @@ router.use("/",require("./Problems/searchProblems"));
 router.use("/",require("./Submission/fetchAllSubmissions"));
 router.use("/",require("./Submission/submitSolution"));
 router.use("/",require("./Submission/streak"));
+router.use("/",require("./Submission/runCode"));
 
 router.use("/",require("./Leaderboard/fetchLeaderBoard"));
 
@@ -26,5 +27,9 @@ router.use("/",require("./Groups/createGroup"));
 router.use("/",require("./Groups/fetchGroups"));
 router.use("/",require("./Groups/fetchGroupDetails"));
 router.use("/",require("./Groups/joinGroup"));
+router.use("/",require("./Groups/fetchGroupProblems"));
+router.use("/",require("./Groups/fetchGroupMembers"));
+router.use("/",require("./Groups/fetchGroupProblem(addtion)"));
+router.use("/",require("./Groups/addQuestion"));
 
 module.exports = router;

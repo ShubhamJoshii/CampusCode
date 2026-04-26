@@ -1,4 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import {
+  FiUser,
+  FiMail,
+  FiLock,
+  FiArrowLeft,
+  FiChevronRight,
+} from "react-icons/fi";
 import "./Settings.css";
 
 function Settings() {
@@ -9,12 +16,10 @@ function Settings() {
 
       {/* HEADER */}
       <div className="settings-header">
-        <h1>Settings ⚙️</h1>
+        <h1>Settings</h1>
 
-        <button
-          onClick={() => navigate(-1)}
-          className="back-btn"
-        >
+        <button onClick={() => navigate(-1)} className="back-btn">
+          <FiArrowLeft />
           Back
         </button>
       </div>
@@ -24,18 +29,27 @@ function Settings() {
         <h2>General</h2>
 
         <div className="row row-border">
-          <span>Username</span>
-          <span>→</span>
+          <div className="row-left">
+            <FiUser />
+            <span>Username</span>
+          </div>
+          <FiChevronRight className="arrow" />
         </div>
 
         <div className="row row-border">
-          <span>Email</span>
-          <span>→</span>
+          <div className="row-left">
+            <FiMail />
+            <span>Email</span>
+          </div>
+          <FiChevronRight className="arrow" />
         </div>
 
         <div className="row">
-          <span>Password</span>
-          <span>→</span>
+          <div className="row-left">
+            <FiLock />
+            <span>Password</span>
+          </div>
+          <FiChevronRight className="arrow" />
         </div>
       </div>
 
@@ -50,7 +64,7 @@ function Settings() {
 
         <div className="row">
           <span>GitHub</span>
-          <button className="connect-btn">Connect</button>
+          <button className="connect-btn connected">Connected</button>
         </div>
 
         <div className="row">

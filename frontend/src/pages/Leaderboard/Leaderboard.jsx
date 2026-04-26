@@ -28,7 +28,7 @@ function Leaderboard() {
   const topThree = processedData.slice(0, 3);
 
   const { leaderboard, status } = useSelector(state => state.leaderboard);
-  const { data } = useSelector(state => state.user);
+  const { user } = useSelector(state => state.user);
 
   const podiumConfigs = [
     { class: "gold", icon: "🥇" },
@@ -78,28 +78,29 @@ function Leaderboard() {
       )}
 
       <div className="user-list">
-        { leaderboard?.map((user, index) => (
-          <div key={index} className={`user-card ${user?.userID === data?.user?._id ? "is-current-user" : ""}`} onClick={()=>{
-            user?.userID === data?.user?._id && navigate("/progress")
+        { leaderboard?.map((curr, index) => {
+          return <div key={index} className={`user-card ${curr?.userID === user?._id ? "is-current-user" : ""}`} onClick={()=>{
+            curr?.userID === user?._id && navigate("/progress")
           }}>
             <div className="details">
               <span className="rank">#{index + 1}</span>
               <div className="nameProgress">
                 <div className="flex items-center gap-2">
-                  <span className="font-bold">{user.name}</span>
-                  {user.userID === data?.user?._id && <span className="text-[10px] bg-green-600 text-white px-2 py-0.5 rounded-full">YOU</span>}
+                  <span className="font-bold">{curr.name}</span>
+                  {curr.userID === user?._id && <span className="text-[10px] bg-green-600 text-white px-2 py-0.5 rounded-full">YOU</span>}
                 </div>
                 <div className="progress-track">
-                  <div className="progress-fill" style={{ width: `${Math.min(user.totalPointEarned, 100)}%` }} />
+                  <div className="progress-fill" style={{ width: `${Math.min(curr.totalPointEarned, 100)}%` }} />
                 </div>
               </div>
             </div>
             <div className="text-right">
-              <span className="block font-black text-lg">{user.totalPointEarned}</span>
+              <span className="block font-black text-lg">{curr.totalPointEarned}</span>
               <span className="text-[10px] text-gray-400 uppercase tracking-tighter font-bold">Points</span>
             </div>
           </div>
-        ))}
+        
+        })}
       </div>
     </div>
   );

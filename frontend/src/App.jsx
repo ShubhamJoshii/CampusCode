@@ -93,6 +93,7 @@ function App() {
                 </Wrapper>
               }
             />
+
             <Route
               path="/groups"
               element={
@@ -109,14 +110,14 @@ function App() {
                 </Wrapper>
               }
             />
-            {/* <Route
-              path="/groups/:_id/members"
+            <Route
+              path="/groups/:_id/:section"
               element={
                 <Wrapper>
-                  <MemberList />
+                  <GroupDashboard />
                 </Wrapper>
               }
-            /> */}
+            />
             <Route
               path="/problems"
               element={

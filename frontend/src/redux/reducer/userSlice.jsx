@@ -112,7 +112,7 @@ export const userExist = createAsyncThunk("user/userExist", async (data, { rejec
 const userSlice = createSlice({
     name: "user",
     initialState: {
-        data: {},
+        user: {},
         status: "idle",
         page: "",
         otpID: null,
@@ -121,7 +121,7 @@ const userSlice = createSlice({
     reducers: {
         updateUser(state, action) { },
         resetData(state, action) {
-            state.data = {};
+            state.user = {};
             state.status = "idle";
             state.page = "";
             state.otpID = null;
@@ -157,7 +157,7 @@ const userSlice = createSlice({
         };
 
         const handleFulfilled = (state, action) => {
-            state.data = action.payload;
+            state.user = action.payload.user;
             state.status = "succeeded";
             state.page = "";
             state.error = null;

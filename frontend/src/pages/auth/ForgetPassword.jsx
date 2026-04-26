@@ -22,13 +22,13 @@ const Content = () => {
         OTP: new Array(6).fill(""),
     });
 
-    const { data, status, error, otpID } = useSelector((state) => state.user);
+    const { user, status, error, otpID } = useSelector((state) => state.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const handelOTP = (e, index) => {
         if (isNaN(e.target.value)) return false;
-        setforgetData({ ...forgetData, OTP: [...forgetData.OTP.map((data, idx) => (idx === index ? e.target.value : data))] });
+        setforgetData({ ...forgetData, OTP: [...forgetData.OTP.map((user, idx) => (idx === index ? e.target.value : user))] });
         if (e.target.value && e.target.nextSibling) {
             e.target.nextSibling.focus();
         }
@@ -53,7 +53,7 @@ const Content = () => {
 
     const resendOTP = async (data1) => {
         try {
-            const response = await dispatch(sendOTP({ email: data?.user?.email })).unwrap();
+            const response = await dispatch(sendOTP({ email: user?.email })).unwrap();
             toast.success(response?.msg || "OTP sent successfully");
         } catch (error) {
             toast.error(error?.msg?.message || "Failed to send OTP");
@@ -106,7 +106,7 @@ const Content = () => {
             }
             {page == "forgetPasswordOTP" &&
                 <form onSubmit={handleSubmit(onVerifyOTP)} className='flex flex-col  gap-3 '>
-                    <span className="text-gray-800 font-medium">{data?.user?.email}</span>
+                    <span className="text-gray-800 font-medium">{user?.email}</span>
                     <div className='flex justify-between w-full'>
                         {forgetData.OTP.map((curr, id) => {
                             return <input type="text" key={id} id="otp" className='mt-3.5 w-12.5 aspect-square text-center border border-[#0000009f] rounded-md  ' name="otp" value={curr} maxLength={1} placeholder="_" onChange={(e) => handelOTP(e, id)} onKeyDown={(e) => handleOTPBackspace(e, id)} />;
@@ -121,7 +121,7 @@ const Content = () => {
             }
             {page == "forgetPasswordNew" &&
                 <form onSubmit={handleSubmit(onUpdatePassword)} className='flex flex-col  gap-3 '>
-                    <p>{data?.user?.email}</p>
+                    <p>{user?.email}</p>
                     <Input
                         Text={"Password"}
                         name={"Password"}

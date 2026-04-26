@@ -5,18 +5,39 @@ const router = express.Router();
 
 router.get("/groupdetails/:_id", authMiddleware, async (req, res) => {
   const _id = req.params._id;
-  console.log(_id);
+
   try {
-    const group = await Group.findOne({ _id }, "name admins members problems");
-    const totalMembers = group.members.length + group.admins.length
-    const totalQuestions = group.problems.length
-    const yourRank = 1
-    // console.log(group);
+    const group = await Group.findById(_id).select(
+      "name admins members problems",
+    );
+
+    const isAdmin = !!group.admins.find(
+      (e) => e.toString() == req.userID.toString(),
+    );
+    if (!group) {
+      return res.status(404).json({
+        success: false,
+        message: "Group not found",
+      });
+    }
+
+    const totalMembers = group.members.length + group.admins.length;
+
+    const totalQuestions = group.problems.length;
+
     const groupObj = group.toObject();
-    
+
+    delete groupObj.problems;
+
     res.status(200).json({
       success: true,
-      data: {...groupObj, totalMembers, totalQuestions, yourRank},
+      group: {
+        ...groupObj,
+        totalMembers,
+        totalQuestions,
+        yourRank: 1,
+        isAdmin
+      },
     });
   } catch (error) {
     console.error(error);
@@ -26,5 +47,4 @@ router.get("/groupdetails/:_id", authMiddleware, async (req, res) => {
     });
   }
 });
-
 module.exports = router;

@@ -3,37 +3,37 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import Loading from './pages/Loading';
 
 // 1. Helper function to keep logic consistent
-const checkAuth = (data) => {
-  return !!(data?.user?.email && data?.user?._id && data?.user?.firstName);
+export const checkAuth = (user) => {
+  return !!(user?.email && user?._id && user?.firstName);
 };
 
 export const RedirectIfAuthenticated = ({ children }) => {
-  const { data, status } = useSelector((state) => state.user);
+  const { user, status } = useSelector((state) => state.user);
 
-  if (checkAuth(data)) {
+  if (checkAuth(user)) {
     return <Navigate to="/" replace />;
   }
   return children;
 };
 
 export const RedirectIfNotAuthenticated = ({ children }) => {
-  const { data, status } = useSelector((state) => state.user);
+  const { user, status } = useSelector((state) => state.user);
 
   // if (status === 'loading') return null;
 
-  if (!checkAuth(data)) {
+  if (!checkAuth(user)) {
     return <Navigate to="/" replace />;
   }
   return children;
 };
 
 export const RestrictUser = ({ text = "dashboard", style, children }) => {
-  const { data, status } = useSelector((state) => state.user);
+  const { user, status } = useSelector((state) => state.user);
   const navigate = useNavigate();
   if (status == "loading") {
     return <Loading style="flex-1 !h-[100%] bg-white" />
   }
-  if (!checkAuth(data)) {
+  if (!checkAuth(user)) {
     return (
       <div className={`absolute z-100 w-full flex flex-col items-center justify-center bg-gray-100 p-4 ${style}`}>
         <div className="bg-white p-8 rounded-lg shadow-md text-center max-w-sm">

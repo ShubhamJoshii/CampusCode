@@ -27,7 +27,7 @@ router.get("/leaderboard", async (req, res) => {
       (a, b) => b.totalPointEarned - a.totalPointEarned,
     );
 
-    console.log(leaderData);
+    // console.log(leaderData);
     res.status(200).json({
       success: true,
       data: leaderData,

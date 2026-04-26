@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import Editor from "@monaco-editor/react";
 import "./ProblemEditor.css";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProblemDetails } from "../../redux/reducer/problemEditorSlice";
+import { fetchProblemDetails, runCode } from "../../redux/reducer/problemEditorSlice";
 import Loading from "../Loading";
 import { RestrictUser } from "../../CheckAuth";
+import WritterScreen from "./WritterScreen";
 
 function ProblemEditor() {
     const [activeTab, setActiveTab] = useState("description");
     const { _id } = useParams();
-    const { problemDetails, status } = useSelector((state) => state.problemEditorDetails);
+    const { problemDetails, status, code } = useSelector((state) => state.problemEditorDetails);
 
     const dispatch = useDispatch();
 
@@ -18,6 +18,17 @@ function ProblemEditor() {
         dispatch(fetchProblemDetails(_id))
     }, [])
 
+    const handleRunCode = async () => {
+        dispatch(runCode())
+        // console.log(code);
+
+    };
+
+    const handleSubmitCode = async () => {
+
+        console.log(code);
+
+    };
 
     if (status == "loading") {
         return <Loading style="flex-1 !h-[100%] bg-white" />
@@ -29,8 +40,8 @@ function ProblemEditor() {
                     <div className="topbar">
                         <h1>1. {problemDetails?.title}</h1>
                         <div className="buttons">
-                            <button className="run-btn">Run</button>
-                            <button className="submit-btn">Submit</button>
+                            <button className="run-btn" onClick={handleRunCode}>Run</button>
+                            <button className="submit-btn" onClick={handleSubmitCode}>Submit</button>
                         </div>
                     </div>
                     <div className="main">
@@ -59,8 +70,6 @@ function ProblemEditor() {
                                                     Input: {curr.input}<br />
                                                     Output: {curr.output}
                                                 </p>
-
-
                                             })
                                         }
                                     </>
@@ -72,33 +81,7 @@ function ProblemEditor() {
                         </div>
 
                         {/* RIGHT */}
-                        <div className="right">
-
-                            <div className="code-header">
-                                <span>Code</span>
-                                <select className="dropdown">
-                                    <option>Java</option>
-                                    <option>Python</option>
-                                </select>
-                            </div>
-
-                            <div style={{ flex: 1 }}>
-                                <Editor
-                                    height="100%"
-                                    defaultLanguage="java"
-                                    defaultValue={`class Solution {
-    public int[] twoSum(int[] nums, int target) {
-    
-    }
-}`}
-                                />
-                            </div>
-
-                            <div className="testcase">
-                                <p>Testcase</p>
-                                <p>You must run your code first</p>
-                            </div>
-                        </div>
+                        <WritterScreen />
                     </div>
                 </>
             </RestrictUser>

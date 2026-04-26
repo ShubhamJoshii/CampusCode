@@ -8,7 +8,6 @@ const jwt = require("jsonwebtoken");
 const SECRET_KEY = process.env.SECRET_KEY;
 
 router.get("/problems", async (req, res) => {
-  // console.log("Hello world");
   try {
     let { pageNo = 1, limit = 10, difficulty, tag } = req.query;
 

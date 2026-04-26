@@ -1,16 +1,31 @@
 import React, { useEffect, useState } from 'react'
-import ProblemList from './ProblemList';
+import ProblemList from '../../components/ProblemList/ProblemList';
 import { useDispatch, useSelector } from 'react-redux';
 
 import "./Problems.css"
 import { changeDifficulty, fetchProblems, searchProblems } from '../../redux/reducer/problemsSlice';
 import Loading from '../Loading';
+import { changeLimit, changePage, changeTag } from '../../redux/reducer/problemsSlice';
 
 const Problems = () => {
     const [search, setSearch] = useState("");
     const [difficultyState, setDifficultyState] = useState("");
 
-    const { problemsList, pageNo, limit, difficulty, tag } = useSelector((state) => state.problems)
+    const { problemsList, totalPages, tag, difficulty, attemptedProblemsCount, status, totalProblems, limit, pageNo, categories } = useSelector((state) => state.problems);
+    const props = {
+        problemsList,
+        totalPages,
+        tag,
+        attemptedProblemsCount,
+        status,
+        totalProblems,
+        limit,
+        pageNo,
+        categories,
+        changePage, changeLimit, changeTag
+    };
+
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -57,13 +72,12 @@ const Problems = () => {
                     <option value="hard">Hard</option>
                 </select>
             </div>
-
-            <div className="problemContainer">
-                <ProblemList />
-            </div>
+            <ProblemList {...props} />
         </div>
     );
 }
+
+
 
 
 export default Problems;

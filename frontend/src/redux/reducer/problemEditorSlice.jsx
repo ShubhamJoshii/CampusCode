@@ -14,31 +14,83 @@ export const fetchProblemDetails = createAsyncThunk(
     }
 );
 
+export const runCode = createAsyncThunk(
+    "problemEditor/runCode",
+    async (args = {}, thunkAPI) => {
+        try {
+            const state = thunkAPI.getState().problemEditorDetails;
+            console.log(state.code);
+            const response = await axios.post(`/api/runcode`, {
+                code: state.code.text || "",
+                language: state.code.language || "das",
+                input: state.code.input || 0
+            });
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            console.log(error);
+            return thunkAPI.rejectWithValue(error.response?.data || "Something went wrong");
+        }
+    }
+);
+
 const problemEditorSlice = createSlice({
     name: "problemEditor",
     initialState: {
         problemDetails: {},
-        staus: "idle",
+        code: {
+            input: "",
+            language: "java",
+            output: "",
+            text: `class Solution {
+    public int twoSum(int num1, int num2) {
+        System.out.println("Hello World");
+        return num1 + num2;
+    }
+}`},
+        status: "idle",
         error: null,
     },
     reducers: {
+        updateCode(state, action) {
+            state.code.text = action.payload;
+        },
+        updateCustomInput(state, action) {
+            state.code.input = action.payload;
+        },
+        updateSelectLanguage(state, action) {
+            state.code.language = action.payload;
+        },
     },
     extraReducers: (builder) => {
+        const handlePending = (state) => {
+            state.status = "loading";
+        };
+        const handleRejected = (state, action) => {
+            state.status = "failed";
+            state.error = action.payload?.msg || "Failed to fetch problems";
+        };
+
         builder
-            .addCase(fetchProblemDetails.pending, (state) => {
-                state.status = "loading";
-            })
+            .addCase(fetchProblemDetails.pending, handlePending)
             .addCase(fetchProblemDetails.fulfilled, (state, action) => {
                 state.status = "succeeded";
-                
                 state.problemDetails = action.payload;
                 state.error = null;
             })
-            .addCase(fetchProblemDetails.rejected, (state, action) => {
-                state.status = "failed";
-                state.error = action.payload?.message || "Failed to fetch problems";
-            });
+            .addCase(fetchProblemDetails.rejected, handleRejected)
+            .addCase(runCode.pending, (state) => {
+                state.status = "loadingRun";
+            })
+            .addCase(runCode.fulfilled, (state, action) => {
+                state.status = "succeeded";
+                console.log(action.payload);
+                state.code.output = action.payload.output || action.payload.error;
+                state.error = null;
+            })
+            .addCase(runCode.rejected, handleRejected);
     }
 });
 
 export default problemEditorSlice.reducer;
+export const { updateCode, updateCustomInput, updateSelectLanguage } = problemEditorSlice.actions;
