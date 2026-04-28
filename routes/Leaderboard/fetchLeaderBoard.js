@@ -6,7 +6,7 @@ router.get("/leaderboard", async (req, res) => {
   try {
     const leaderboardData = await Submission.find({}, "pointEarned").populate(
       "user",
-      "firstName lastName",
+      "firstName lastName userName",
     );
 
     let leaderData = leaderboardData.reduce((acc, curr) => {
@@ -14,7 +14,7 @@ router.get("/leaderboard", async (req, res) => {
       if (!acc[userID]) {
         acc[userID] = {
           userID,
-          name: `${curr.user.firstName} ${curr.user.lastName}`,
+          name: `${curr.user.userName || curr.user.firstName + " " + curr.user.lastName}`,
           totalPointEarned: curr.pointEarned,
         };
       } else {

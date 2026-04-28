@@ -17,8 +17,8 @@ router.get("/groupdetails/:_id/members", authMiddleware, async (req, res) => {
   try {
     const group = await Group.findById(_id)
       .select("members admins") // ✅ include admins
-      .populate("members", "firstName lastName email")
-      .populate("admins", "firstName lastName email");
+      .populate("members", "firstName lastName email userName")
+      .populate("admins", "firstName lastName email userName");
 
     if (!group) {
       return res.status(404).json({

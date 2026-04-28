@@ -10,10 +10,16 @@ const CreateGroup = ({ createGroupShow, setCreateGroupShow }) => {
     const { groups, status, groupName, invitationCode } = useSelector(state => state.groups);
     const dispatch = useDispatch();
 
-    const handleCreateSubmit = async() => {
-        await dispatch(createNewGroup()).unwrap();
-        setIsCreated(true);
-        dispatch(fetchGroups());
+    const handleCreateSubmit = async () => {
+        try {
+            await dispatch(createNewGroup()).unwrap();
+            setIsCreated(true);
+            await dispatch(fetchGroups()).unwrap();
+            // setCreateGroupShow(false);
+
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     const copyToClipboard = () => {
@@ -24,11 +30,11 @@ const CreateGroup = ({ createGroupShow, setCreateGroupShow }) => {
     };
 
     function formatCode(str) {
-  return str
-    ?.toUpperCase()
-    .match(/.{1,4}/g)
-    ?.join(" ") || "";
-}
+        return str
+            ?.toUpperCase()
+            .match(/.{1,4}/g)
+            ?.join(" ") || "";
+    }
 
     return (
         <>
@@ -95,8 +101,8 @@ const CreateGroup = ({ createGroupShow, setCreateGroupShow }) => {
 
                                 <button
                                     className="done-btn"
-                                    onClick={() => { 
-                                        setIsCreated(false); 
+                                    onClick={() => {
+                                        setIsCreated(false);
                                         setCreateGroupShow(false);
                                     }}
                                 >

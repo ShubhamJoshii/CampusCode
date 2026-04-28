@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import SubmitBtn from './SubmitBtn';
 import Input from '../../components/Input/Input';
-import { changePassword, sendOTP, verifyOTP } from '../../redux/reducer/userSlice';
+import { updatePassword, sendOTP, verifyOTP } from '../../redux/reducer/userSlice';
 import { toast } from 'react-toastify';
 
 import { useNavigate } from 'react-router-dom';
@@ -75,7 +75,7 @@ const Content = () => {
 
     const onUpdatePassword = async (data) => {
         try {
-            const response = await dispatch(changePassword(data)).unwrap();
+            const response = await dispatch(updatePassword(data)).unwrap();
             toast.success(response?.msg || "Password updated successfully! Now Login");
             navigate("/login");
         } catch (error) {

@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Oval } from "react-loader-spinner";
 import { useDispatch, useSelector } from 'react-redux';
-import { changePassword, loginUser, sendOTP, userExist, verifyOTP } from '../../redux/reducer/userSlice';
+import { updatePassword, loginUser, sendOTP, userExist, verifyOTP } from '../../redux/reducer/userSlice';
 
 import SubmitBtn from './SubmitBtn';
 import ForgetPassword from './ForgetPassword';

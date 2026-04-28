@@ -11,11 +11,23 @@ const env = process.env.NODE_ENV;
 const validator = require("../../middleware/validator.js");
 const registerValidator = require("../../validators/registerValidator.js");
 
-router.post("/signup",validator(registerValidator), async (req, res) => {
-// router.post("/signup", async (req, res) => {
-  const { firstName, lastName, email, password, confirmPassword } = req.body;
+const randomSuffix = ["dev", "code", "pro", "x", "hub"];
+function generateUsername(firstName, lastName) {
+  return `${firstName}${lastName}`
+    .toLowerCase()
+    .replace(/\s+/g, "")
+    .replace(/[^a-z0-9]/g, "");
+}
+function getRandomSuffix() {
+  return randomSuffix[Math.floor(Math.random() * randomSuffix.length)];
+}
 
-  // const BASE_URL = `https://${req.headers.host}/api`;
+router.post("/signup", validator(registerValidator), async (req, res) => {
+  // router.post("/signup", async (req, res) => {
+  const { firstName, lastName, email, password, confirmPassword } = req.body;
+  let base = generateUsername(firstName, lastName);
+  let userName = `${base}_${getRandomSuffix()}`;
+
   const BASE_URL =
     env === "PRODUCTION"
       ? `https://${req.headers.host}/api`
@@ -26,18 +38,26 @@ router.post("/signup",validator(registerValidator), async (req, res) => {
   var VerfiedLink = `${BASE_URL}/verify-email?token=${emailToken}`;
 
   try {
-    console.log(firstName, lastName, email, password, confirmPassword);
-    
     if (!firstName || !lastName || !email || !password)
       throw new ValidationError("All", "All Field are required");
     if (password != confirmPassword)
       throw new ValidationError("password", "Password doen't Matched");
-
+    
     const userAlreadyExist = await UserModel.findOne({ email });
+    let exists = await UserModel.findOne({ userName });
+    let counter = 1;
+    while (exists) {
+      userName = `${base}_${getRandomSuffix()}${Math.floor(Math.random() * 1000)}${counter}`;
+      exists = await User.findOne({ userName });
+      counter++;
+    }
+    console.log(userName);
+
     if (!userAlreadyExist) {
       const newUser = new UserModel({
         firstName,
         lastName,
+        userName,
         email,
         emailToken,
         password,

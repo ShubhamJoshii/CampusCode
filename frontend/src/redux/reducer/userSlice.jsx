@@ -88,11 +88,11 @@ export const verifyOTP = createAsyncThunk(
     }
 );
 
-export const changePassword = createAsyncThunk(
-    "user/changePassword",
+export const updatePassword = createAsyncThunk(
+    "user/updatePassword",
     async (data, { rejectWithValue }) => {
         try {
-            const response = await axios.post(`/api/changePassword`, { ...data });
+            const response = await axios.post(`/api/updatePassword`, { ...data });
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response.data);
@@ -205,9 +205,9 @@ const userSlice = createSlice({
             .addCase(verifyOTP.pending, handlePending)
             .addCase(verifyOTP.fulfilled, handleFulfilled)
             .addCase(verifyOTP.rejected, handleRejected)
-            .addCase(changePassword.pending, handlePending)
-            .addCase(changePassword.fulfilled, handleFulfilled)
-            .addCase(changePassword.rejected, handleRejected)
+            .addCase(updatePassword.pending, handlePending)
+            .addCase(updatePassword.fulfilled, handleFulfilled)
+            .addCase(updatePassword.rejected, handleRejected)
     }
 })
 

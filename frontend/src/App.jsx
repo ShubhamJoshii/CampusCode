@@ -135,6 +135,14 @@ function App() {
               }
             />
             <Route
+              path="/problems/:_id/:groupId"
+              element={
+                <Wrapper>
+                  <ProblemEditor />
+                </Wrapper>
+              }
+            />
+            <Route
               path="/setting"
               element={
                 <RedirectIfNotAuthenticated>

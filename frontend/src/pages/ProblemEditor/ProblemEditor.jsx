@@ -6,10 +6,13 @@ import { fetchProblemDetails, runCode } from "../../redux/reducer/problemEditorS
 import Loading from "../Loading";
 import WritterScreen from "./WritterScreen";
 import { checkAuth } from "../../CheckAuth";
+import Split from 'react-split'
+import { AlignHorizontalJustifyCenter, AlignHorizontalSpaceBetween, AlignVerticalJustifyCenter } from "lucide-react"
 
 function ProblemEditor() {
     const [activeTab, setActiveTab] = useState("description");
-    const { _id } = useParams();
+    const [position, setPosition] = useState("horizontal")
+    const { _id, groupId } = useParams();
     const { problemDetails, status, code } = useSelector((state) => state.problemEditorDetails);
     const { user } = useSelector((state) => state.user);
 
@@ -26,9 +29,7 @@ function ProblemEditor() {
     };
 
     const handleSubmitCode = async () => {
-
         console.log(code);
-
     };
 
     if (status == "loading") {
@@ -38,15 +39,34 @@ function ProblemEditor() {
         <div className="mainContent hide-scrollbar ProblemEditor relative ">
             <div className="topbar">
                 <h1>{problemDetails?.sno}. {problemDetails?.title}</h1>
-                {
-                    checkAuth(user) &&
-                    <div className="buttons">
-                        <button className="run-btn" onClick={handleRunCode}>Run</button>
-                        <button className="submit-btn" onClick={handleSubmitCode}>Submit</button>
-                    </div>
-                }
+
+                <div className="topbarRight">
+                    {position == "vertical" ?
+                        <AlignVerticalJustifyCenter width={35} height={35} onClick={()=>setPosition("horizontal")} className="positionVerticalHorizontal"/>
+                        :
+                        <AlignHorizontalJustifyCenter width={35} height={35} onClick={()=>setPosition("vertical")} className="positionVerticalHorizontal"/>
+                    }
+                    {
+                        checkAuth(user) &&
+                        <>
+                            <button className="run-btn" onClick={handleRunCode}>Run</button>
+                            <button className="submit-btn" onClick={handleSubmitCode}>Submit</button>
+                        </>
+                    }
+                </div>
             </div>
-            <div className="main">
+            <Split
+                sizes={[48, 52]}
+                expandToMin={false}
+                gutterSize={3}
+                gutterAlign="center"
+                snapOffset={30}
+                dragInterval={1}
+                direction={"horizontal"}
+                cursor="e-resize"
+                className={`main`}
+            >
+
                 <div className="left">
                     <div className="tabs">
                         <button className={`${activeTab == "description" ? "active" : ""} `} onClick={() => setActiveTab("description")}>
@@ -82,12 +102,12 @@ function ProblemEditor() {
                     </div>
                 </div>
 
-                {/* RIGHT */}
                 <WritterScreen />
-            </div>
-
+            </Split>
 
         </div>
+
+
     );
 }
 

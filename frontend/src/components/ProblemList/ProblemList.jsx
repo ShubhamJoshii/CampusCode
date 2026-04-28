@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { problems } from '../../assets/Problem';
 import { AlertTriangle, ChevronLeft, ChevronRight, Clock } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,7 +25,7 @@ const statusIcon = {
     "Runtime Error": <AlertTriangle className="text-orange-500  w-3.5 h-3.5" />,
 };
 
-const ProblemList = ({ problemsList, totalPages, tag, attemptedProblemsCount, status, totalProblems, limit, pageNo, categories, changePage, changeLimit, changeTag }) => {
+const ProblemList = ({ problemsList, totalPages, tag, attemptedProblemsCount, status, totalProblems, limit, pageNo, categories, changePage, changeLimit, changeTag, groupId = "" }) => {
     const scrollRef = useRef(null);
 
     const dispatch = useDispatch();
@@ -35,7 +35,7 @@ const ProblemList = ({ problemsList, totalPages, tag, attemptedProblemsCount, st
             scrollRef.current.scrollBy({ left: direction === 'left' ? -200 : 200, behavior: 'smooth' });
         }
     };
-
+    
     const changePagination = (page) => {
         dispatch(changePage(page));
     }
@@ -88,8 +88,10 @@ const ProblemList = ({ problemsList, totalPages, tag, attemptedProblemsCount, st
                     <div className="problemBox">
                         {problemsList?.map((curr, id) => {
                             const diffClass = curr.difficulty;
+                            let link = `/problems/${curr._id}`;
+                            if(groupId != "") link = `/problems/${curr._id}/${groupId}`
                             return (
-                                <NavLink to={`/problems/${curr._id}`} key={curr._id} className="problemRow">
+                                <NavLink to={link} key={curr._id} className="problemRow">
                                     <div className="attemptIcon relative inline-block">
                                         {statusIcon[curr.attempt] || (
                                             <Circle className="text-gray-400 w-3.5 h-3.5" />

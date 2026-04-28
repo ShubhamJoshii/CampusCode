@@ -10,6 +10,10 @@ router.use("/",require("./auth/verifyEmail"));
 router.use("/",require("./auth/deleteUser"));
 router.use("/",require("./auth/forgetPassword/sendOTP"));
 router.use("/",require("./auth/forgetPassword/verifyOTP"));
+router.use("/",require("./auth/changeusername"));
+router.use("/",require("./auth/changeemail"));
+router.use("/",require("./auth/changePassword"));
+router.use("/",require("./auth/deleteUser(Verified)"));
 
 router.use("/",require("./Problems/addproblem"));
 router.use("/",require("./Problems/problemDetails"));
@@ -22,6 +26,8 @@ router.use("/",require("./Submission/streak"));
 router.use("/",require("./Submission/runCode"));
 
 router.use("/",require("./Leaderboard/fetchLeaderBoard"));
+
+router.use("/",require("./Settings/fetchSettings"));
 
 router.use("/",require("./Groups/createGroup"));
 router.use("/",require("./Groups/fetchGroups"));

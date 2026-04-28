@@ -79,7 +79,7 @@ const Header = () => {
                         <User size={32} />
                       </div>
                       <span className="username">{user?.firstName
-                        ? `${user?.firstName} ${user?.lastName || ""}`
+                        ? `${user?.userName || user?.firstName + " " + user?.lastName }`
                         : "Username"}</span>
                     </div>
                     <div className="dropdown-grid">

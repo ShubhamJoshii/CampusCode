@@ -5,27 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchLeaderBoard } from "../../redux/reducer/leaderBoardSlice";
 import Loading from "../Loading";
 
-const DUMMY_DATA = [
-  { userId: "1", name: "Aman", score: 95, streak: 7 },
-  { userId: "2", name: "You", score: 88, streak: 5 },
-  { userId: "3", name: "Ravi", score: 82, streak: 4 },
-  { userId: "4", name: "Neha", score: 75, streak: 6 },
-  { userId: "5", name: "Karan", score: 70, streak: 3 },
-];
-
 function Leaderboard() {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
-  const [sortBy, setSortBy] = useState("score");
-  const MY_ID = "2";
-
-  const processedData = useMemo(() => {
-    return [...DUMMY_DATA]
-      .filter((u) => u.name.toLowerCase().includes(search.toLowerCase()))
-      .sort((a, b) => (b[sortBy] || 0) - (a[sortBy] || 0));
-  }, [search, sortBy]);
-
-  const topThree = processedData.slice(0, 3);
 
   const { leaderboard, status } = useSelector(state => state.leaderboard);
   const { user } = useSelector(state => state.user);
@@ -60,7 +42,6 @@ function Leaderboard() {
         </button>
       </div>
 
-      {/* PODIUM SECTION */}
       {search === "" && podiumOrder.length >= 1 && (
         <div className="podium-container">
           {podiumOrder.map((user, i) => {

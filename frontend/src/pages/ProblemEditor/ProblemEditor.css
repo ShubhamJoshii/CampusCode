@@ -6,6 +6,17 @@
   color: #1e293b;
 }
 
+.gutter {
+  background-color: #ddd;
+}
+
+.gutter-horizontal {
+  cursor: e-resize;
+  &:hover {
+    background-color: #d16820;
+  }
+}
+
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -19,14 +30,34 @@
   }
 }
 
-.buttons button {
-  margin-left: 8px;
-  padding: 6px 14px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  font-weight: 500;
-  transition: 0.2s ease;
+.topbarRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  .positionVerticalHorizontal{
+    background-color: #0f172a;
+    color: #6366f1;
+    padding: 8px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    &:hover{
+      transform: scale(1.02);
+      background-color: white;
+      color: #0f172a;
+      border: 1px solid #0f172a;
+
+    }
+  }
+  button {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s ease;
+  }
 }
 
 .run-btn {
@@ -49,7 +80,11 @@
 
 .main {
   display: flex;
+  gap: 5px;
   flex: 1;
+  &.horizontal{
+    flex-direction: column;
+  }
 }
 
 .left {
@@ -89,11 +124,7 @@
       background: #6366f1;
     }
   }
-  
-  
-  
 }
-
 
 .content {
   padding: 18px;
@@ -115,10 +146,11 @@
 .code-box {
   background-color: #f1f5f9;
   padding: 14px;
-  border-radius: 8px;
+  border-radius: 0px 8px 8px 0px;
   margin-top: 10px;
   font-size: 14px;
   border: 1px solid #e2e8f0;
+  border-left: 3px solid #d16820;
   font-family: monospace;
 }
 
@@ -152,7 +184,7 @@
     padding: 10px;
     min-height: 100px;
     border-top: 1px solid #ddd;
-    pre {
+    #outputText {
       background: #fafafa;
       padding: 10px;
       border-radius: 6px;

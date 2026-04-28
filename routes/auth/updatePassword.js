@@ -6,7 +6,7 @@ const router = express.Router();
 const validator = require("../../middleware/validator.js");
 const passwordValidator = require("../../validators/passwordValidator.js");
 
-router.post("/changePassword",validator(passwordValidator), async (req, res) => {
+router.post("/updatePassword",validator(passwordValidator), async (req, res) => {
   const { password, confirmPassword, email } = req.body;
   try {
     const userExist = await UserModel.findOne({ email });

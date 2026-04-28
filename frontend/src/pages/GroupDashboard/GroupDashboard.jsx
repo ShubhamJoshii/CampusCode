@@ -133,7 +133,7 @@ function GroupDashboard() {
             </div>
 
             <div className="list-wrapper">
-              {(section != "members" && section != "addquestion" && section != "chat") && <ProblemList {...props} />}
+              {(section != "members" && section != "addquestion" && section != "chat") && <ProblemList {...props} groupId={groupDetails?._id} />}
               {section == "members" && <Members {...props} />}
               {section == "addquestion" && <AddQuestion {...props} />}
               {section == "chat" && <GroupChat {...props} />}

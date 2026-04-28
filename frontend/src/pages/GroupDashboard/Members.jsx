@@ -11,6 +11,7 @@ const MembersList = () => {
     const [activeGroup, setActiveGroup] = useState("All");
     const [search, setSearch] = useState("");
     const { membersDetails, pageMembers, status, limitMembers, totalPagesMembers, totalMembers } = useSelector(state => state.groups);
+    const { user } = useSelector(state => state.user);
     const dispatch = useDispatch();
 
     const changePagination = (page) => {
@@ -41,14 +42,21 @@ const MembersList = () => {
             {/* MEMBERS LIST */}
             <div className="members-list">
                 {membersDetails?.map((curr, index) => (
-                    <div key={index} className="member-row">
+                    <div key={index} className={`member-row ${(curr?.userName == user?.userName )?"active" :""}`}>
                         <span className="name">
-                            {(index + 1) + ((pageMembers - 1) * limitMembers)}. {curr.firstName} {curr.lastName}
+                            {(index + 1) + ((pageMembers - 1) * limitMembers)}. {curr.firstName + " " + curr.lastName} <span className="text-blue-500 ">({curr.userName})</span>
+                            {
+                                curr?.userName == user?.userName &&
+                                <span className="roleAdmin ml-3 rounded-lg bg-green-400! text-white!">
+                                    you
+                                </span>
+                            }
                         </span>
+
 
                         {
                             curr?.role == "admin" &&
-                            <div className="roleAdmin">
+                            <div className="roleAdmin ml-2">
                                 {curr?.role}
                             </div>
                         }

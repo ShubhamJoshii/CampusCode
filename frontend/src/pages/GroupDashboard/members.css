@@ -39,7 +39,7 @@
 /* LIST */
 .members-list {
   background: white;
-  border-radius: 10px;
+  border-radius: 6  px;
   overflow: hidden;
   .member-row {
     display: flex;
@@ -48,6 +48,11 @@
     border-bottom: 1px solid #eee;
     &:hover {
       background: #f3f4f6;
+    }
+    &.active{
+      border: 2px solid rgba(0, 128, 0, 0.400) !important;
+      background-color: #f0fdf4;
+      border-radius: 6px;
     }
     .name {
       flex: 1;

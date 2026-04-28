@@ -5,7 +5,7 @@ const router = express.Router();
 router.get("/home", authMiddleware, async (req, res) => {
   if (req.rootUser) {
     res.send({
-      user: { ...req.rootUser._doc, password: null, tokens: null },
+      user: { ...req.rootUser._doc, password: null, login: null },
       success: true,
     });
   } else {
