@@ -49,7 +49,7 @@ const problemsSlice = createSlice({
         limit: 10,
         attemptedProblemsCount:0,
         difficulty: "",
-        tag: "",
+        tag: "all",
         totalProblems: 0,
         totalPages: 0,
         status: "idle",

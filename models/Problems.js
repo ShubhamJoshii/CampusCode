@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const ProblemSchema = new mongoose.Schema({
+  sno: { 
+    type: Number, 
+    unique: true 
+  },
   title: { 
     type: String, 
     required: [true, "Title is required"], 

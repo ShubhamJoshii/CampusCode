@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addProblem, changeProblemTag, fetchAllProblems } from "../../redux/reducer/groupSlice";
 import { useParams } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Clock, Timer } from "lucide-react";
+import Loading from "../Loading";
 
 const questionBank = [
     { id: 1, title: "Two Sum", difficulty: "Easy", tags: ["array"] },
@@ -22,7 +23,7 @@ const AddQuestion = () => {
     const [selected, setSelected] = useState(null);
 
     const [openId, setOpenId] = useState(null);
-    const { allProblems, problemsTag } = useSelector(state => state.groups);
+    const { allProblems, problemsTag, status } = useSelector(state => state.groups);
 
     const dispatch = useDispatch();
 
@@ -96,6 +97,10 @@ const AddQuestion = () => {
             console.error("Error adding problem:", error);
         }
     };
+    if (status == "loading") {
+        return <Loading style="flex-1 !h-[100%] bg-white" />
+    }
+
 
     return (
         <div className="addGroupQuestion mx-3">
@@ -156,6 +161,7 @@ const AddQuestion = () => {
                             }}
                         >
                             <div className="flex items-center gap-2">
+                                <pre>{q.sno || (id)}</pre>
                                 <span className="title">{q.title}</span>
                                 <div className="attemptIcon relative inline-block">
                                     {q.isSchduled && (
@@ -185,28 +191,28 @@ const AddQuestion = () => {
                             {q.isSchduled && <p className="text-sm text-gray-800">Previous Scheduled for <b>{new Date(q.isSchduled).toDateString()}</b></p>}
                             <div className="flex justify-between">
 
-                            <div className="dropdown-left">
-                                <button className={`${!showDateInput && date == "today" ? "active" : ""}`} onClick={() => { setDate("today"); setShowDateInput(false); }}>Today</button>
-                                <button className={`${!showDateInput && date == "tomorrow" ? "active" : ""}`} onClick={() => { setDate("tomorrow"); setShowDateInput(false); }}>Tomorrow</button>
+                                <div className="dropdown-left">
+                                    <button className={`${!showDateInput && date == "today" ? "active" : ""}`} onClick={() => { setDate("today"); setShowDateInput(false); }}>Today</button>
+                                    <button className={`${!showDateInput && date == "tomorrow" ? "active" : ""}`} onClick={() => { setDate("tomorrow"); setShowDateInput(false); }}>Tomorrow</button>
 
-                                <button className={`${showDateInput ? "active" : ""}`} onClick={() => setShowDateInput(!showDateInput)}>
-                                    Select Date
-                                </button>
+                                    <button className={`${showDateInput ? "active" : ""}`} onClick={() => setShowDateInput(!showDateInput)}>
+                                        Select Date
+                                    </button>
 
-                                {showDateInput && (
-                                    <input
-                                        type="date"
-                                        className="date-input"
-                                        onChange={(e) => setDate(e.target.value)}
-                                    />
-                                )}
+                                    {showDateInput && (
+                                        <input
+                                            type="date"
+                                            className="date-input"
+                                            onChange={(e) => setDate(e.target.value)}
+                                        />
+                                    )}
+                                </div>
+
+                                <div className="dropdown-right">
+                                    <button className="confirm" onClick={() => handleAddQuestion(q._id)}>Add Question</button>
+                                </div>
                             </div>
 
-                            <div className="dropdown-right">
-                                <button className="confirm" onClick={() => handleAddQuestion(q._id)}>Add Question</button>
-                            </div>
-                            </div>
-                            
 
                         </div>
 

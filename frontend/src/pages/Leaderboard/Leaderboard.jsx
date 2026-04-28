@@ -47,14 +47,14 @@ function Leaderboard() {
     dispatch(fetchLeaderBoard());
   }, [])
 
-    if (status == "loading") {
+  if (status == "loading") {
     return <Loading style="flex-1 !h-[100%] bg-white" />
   }
 
   return (
     <div className="mainContent hide-scrollbar leaderBoard">
       <div className="flex justify-between items-center mb-6">
-        <h1>Leaderboard 🏆</h1>
+        <h1>World Leaderboard 🏆</h1>
         <button onClick={() => navigate(-1)} className="px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition">
           Back
         </button>
@@ -78,8 +78,8 @@ function Leaderboard() {
       )}
 
       <div className="user-list">
-        { leaderboard?.map((curr, index) => {
-          return <div key={index} className={`user-card ${curr?.userID === user?._id ? "is-current-user" : ""}`} onClick={()=>{
+        {leaderboard?.map((curr, index) => {
+          return <div key={index} className={`user-card ${curr?.userID === user?._id ? "is-current-user" : ""}`} onClick={() => {
             curr?.userID === user?._id && navigate("/progress")
           }}>
             <div className="details">
@@ -99,7 +99,7 @@ function Leaderboard() {
               <span className="text-[10px] text-gray-400 uppercase tracking-tighter font-bold">Points</span>
             </div>
           </div>
-        
+
         })}
       </div>
     </div>

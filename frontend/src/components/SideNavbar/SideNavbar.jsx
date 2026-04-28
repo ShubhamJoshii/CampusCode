@@ -23,7 +23,8 @@ const SideNavbar = () => {
       <Button icon={<List size={20} color="#f97316" />} label="Problems" link="/problems" />
       {checkAuth(user) && <Button icon={<PieChart size={20} color="#10b981" />} label="Progress" link="/progress" />}
        <Button icon={<ChartColumn size={20} color="#576DD7" />} label="Leader Board" link="/leaderboard" />
-      <Button icon={<Users size={20} color="#eab308" />} label="Groups" link="/groups" />
+      {checkAuth(user) && <Button icon={<Users size={20} color="#eab308" />} label="Groups" link="/groups" />}
+      {/* <Button icon={<Users size={20} color="#eab308" />} label="Groups" link="/groups" /> */}
       {/* <Button icon={<Coins size={20} color="#eab308" />} label="Points" link="/" /> */}
     </div>
   )

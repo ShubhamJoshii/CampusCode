@@ -101,7 +101,7 @@ const ProblemList = ({ problemsList, totalPages, tag, attemptedProblemsCount, st
                                     </div>
 
                                     <div className="problemTitle">
-                                        {(id + 1) + ((pageNo - 1) * limit)}. {curr.title}
+                                        {curr.sno || (id + 1) + ((pageNo - 1) * limit)}. {curr.title}
                                     </div>
                                     <div className='listRight'>
                                         <span className={`difficultyTag ${diffClass}`}>

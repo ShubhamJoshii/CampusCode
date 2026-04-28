@@ -26,7 +26,7 @@ router.get("/problems", async (req, res) => {
 
     const [problems, categories, totalCount] = await Promise.all([
       Problems.find(filter)
-        .select("title difficulty tags")
+        .select("sno title difficulty tags")
         .limit(limit)
         .skip((pageNo - 1) * limit),
       Problems.distinct("tags"),

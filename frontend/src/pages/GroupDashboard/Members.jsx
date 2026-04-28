@@ -3,13 +3,14 @@ import Pagination from "../../components/Pagination/Pagination";
 import "./members.css"
 import React, { useEffect, useState } from "react";
 import { changeLimitMembers, changePageMembers } from "../../redux/reducer/groupSlice";
+import Loading from "../Loading";
 
 const groups = ["All", "Frontend", "Backend", "AI"];
 
 const MembersList = () => {
     const [activeGroup, setActiveGroup] = useState("All");
     const [search, setSearch] = useState("");
-    const { membersDetails, pageMembers, limitMembers, totalPagesMembers, totalMembers } = useSelector(state => state.groups);
+    const { membersDetails, pageMembers, status, limitMembers, totalPagesMembers, totalMembers } = useSelector(state => state.groups);
     const dispatch = useDispatch();
 
     const changePagination = (page) => {
@@ -19,6 +20,11 @@ const MembersList = () => {
     const changePaginationLimit = (count) => {
         dispatch(changeLimitMembers(count));
     }
+    if (status == "loading") {
+        return <Loading style="flex-1 !h-[100%] bg-white" />
+    }
+    // return <Loading style="flex-1 !h-[inherit] bg-white" />
+
     return (
         <div className="members-container">
             <div className="filters">
@@ -43,7 +49,7 @@ const MembersList = () => {
                         {
                             curr?.role == "admin" &&
                             <div className="roleAdmin">
-                                    {curr?.role}
+                                {curr?.role}
                             </div>
                         }
                     </div>

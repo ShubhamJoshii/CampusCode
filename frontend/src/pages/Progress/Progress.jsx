@@ -32,7 +32,7 @@ const Progress = () => {
 
   return (
     <div className="mainContent hide-scrollbar relative">
-      <RestrictUser text="Problem question" style="flex-1 !h-[100%] bg-white" >
+      <RestrictUser text="You must be logged in to view this page and track your progress." style="flex-1 !h-[100%] bg-white" >
         <div className="progress-container ">
           {/* 1. METRICS */}
           <div className="metrics-grid">

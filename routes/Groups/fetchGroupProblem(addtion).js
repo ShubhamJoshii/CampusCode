@@ -12,7 +12,7 @@ const checkDateStatus = (storedDateString) => {
   today.setHours(0, 0, 0, 0);
   targetDate.setHours(0, 0, 0, 0);
 
-  if (targetDate.getTime() < today.getTime()) {
+  if (targetDate.getTime() <= today.getTime()) {
     return true;
   } else {
     return false;
@@ -51,7 +51,7 @@ router.get(
         {
           _id: { $nin: problemAlreadyAdded },
         },
-        "title description tags difficulty",
+        "sno title description tags difficulty",
       ).lean();
 
       const problems = problemsTemp.map((curr) => {

@@ -10,6 +10,7 @@ import "./GroupDashboard.css"; // 👈 Your new external CSS file
 import Members from "./Members";
 import GroupChat from "./GroupChat";
 import AddQuestion from "./AddQuestion";
+import Loading from "../Loading";
 
 function GroupDashboard() {
   const { _id, section = "question" } = useParams();
@@ -55,6 +56,10 @@ function GroupDashboard() {
       location.pathname === `/groups/${_id}/addquestion` ||
       location.pathname === `/groups/${_id}/members` ||
       location.pathname === `/groups/${_id}/chat`);
+
+  if (status == "loadingWhole") {
+    return <Loading style="flex-1 !h-[100%] bg-white" />
+  }
 
   return (
     <div className="mainContent relative  hide-scrollbar dashboard-container">
@@ -109,16 +114,15 @@ function GroupDashboard() {
           </div>
 
           <nav className="action-nav">
-            <NavLink className={`nav-item ${isQuestionActive ? "active" : ""}`} to={`/groups/${_id}/question`}><span>🤖</span> Question</NavLink>
+            <NavLink className={`nav-item ${isQuestionActive ? "active" : ""}`} to={`/groups/${_id}/question`}><span>🤖</span> Problems</NavLink>
             {isAdmin && <NavLink className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`} to={`/groups/${_id}/addquestion`}><span>➕</span> Add Question</NavLink>}
             <NavLink className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`} to={`/groups/${_id}/members`}><span>👥</span> Members List</NavLink>
             <NavLink className={({ isActive }) => `nav-item chat ${isActive ? "active" : ""}`} to={`/groups/${_id}/chat`}><span>💬</span> Community Chat</NavLink>
           </nav>
         </aside>
 
-        {/* SECTION: PROBLEM LIST */}
         <section className="dashboard-content">
-          <div className="content-card mb-25">
+          <div className="content-card">
             <div className="card-header">
               <h2 className="card-title">{(section != "members" && section != "addquestion" && section != "chat") && "AVAILABLE_PROBLEMS"} {section == "members" && "Group_Members"} {section == "addquestion" && "📚 Select_Question_from_Bank"} {section == "chat" && "Group_Chat"}</h2>
               <div className="window-controls">

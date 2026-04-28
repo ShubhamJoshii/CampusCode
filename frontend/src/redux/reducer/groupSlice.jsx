@@ -65,7 +65,7 @@ export const fetchGroupMembers = createAsyncThunk(
     async (args = {}, thunkAPI) => {
         try {
             const state = thunkAPI.getState().groups;
-            
+
             const response = await axios.get(`/api/groupdetails/${args}/members`, {
                 params: {
                     pageNo: state.pageMembers || 1,
@@ -116,8 +116,8 @@ export const addProblem = createAsyncThunk(
         try {
             const response = await axios.post(`/api/groupdetails/addproblem`, {
                 _id: args._id,
-                problemId:args.problemId,
-                date:args.date
+                problemId: args.problemId,
+                date: args.date
             });
             console.log(response.data);
             return response.data;
@@ -141,21 +141,21 @@ const groupSlice = createSlice({
         invitationCode: "",
         categories: [],
         tag: "all",
-        isAdmin:false,
+        isAdmin: false,
 
         limitQuestion: 10,
         pageQuestion: 0,
         totalQuestion: 0,
         totalPagesQuestion: 0,
-        
+
         membersDetails: [],
         pageMembers: 1,
         limitMembers: 10,
         totalPagesMembers: 0,
         totalMembers: 0,
 
-        allProblems:[],
-        problemsTag:"all"
+        allProblems: [],
+        problemsTag: "all"
 
 
     },
@@ -211,7 +211,9 @@ const groupSlice = createSlice({
                 state.error = null;
             })
             .addCase(createNewGroup.rejected, handleRejected)
-            .addCase(fetchGroupDetails.pending, handlePending)
+            .addCase(fetchGroupDetails.pending, (state) => {
+                state.status = "loadingWhole";
+            })
             .addCase(fetchGroupDetails.fulfilled, (state, action) => {
                 state.status = "succeeded";
                 state.groupDetails = action.payload.group;

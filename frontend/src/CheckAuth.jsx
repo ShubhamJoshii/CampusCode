@@ -43,7 +43,7 @@ export const RestrictUser = ({ text = "dashboard", style, children }) => {
             </svg>
           </div>
           <h1 className="text-2xl font-bold text-gray-800 mb-2">Access Denied</h1>
-          <p className="text-gray-600 mb-6">You must be logged in to view this {text}.</p>
+          <p className="text-gray-600 mb-6">{text}.</p>
           <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition duration-200" onClick={() => navigate("/login")}>
             Go to Login
           </button>
