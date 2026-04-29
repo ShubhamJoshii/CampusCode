@@ -78,9 +78,6 @@ const WritterScreen = () => {
         monaco.editor.setModelMarkers(model, "owner", markers);
     };
 
-    // Run Code API call
-
-
     return (
         <div className="writtenScreen">
             <RestrictUser text="You need to be logged in to run code and submit solutions." style="flex-1 relative !h-[100%] bg-white" >
@@ -88,9 +85,10 @@ const WritterScreen = () => {
                     <span>Code</span>
 
                     <select
-                        value={code.language}
+                        value={language}
                         onChange={(e) => {
-                            dispatch(updateSelectLanguage(e.target.value))
+                            setLanguage(e.target.value);
+                            // dispatch(updateSelectLanguage(e.target.value))
                             dispatch(updateCode(defaultCodeLanugage[e.target.value]))
                         }}
                     >
@@ -105,7 +103,7 @@ const WritterScreen = () => {
                     <Editor
                         height="100%"
                         language={language}
-                        value={code?.text}
+                        value={code[language]?.text}
                         theme="vs"
                         onMount={handleEditorDidMount}
                         onChange={(value) => {

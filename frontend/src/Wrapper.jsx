@@ -4,9 +4,9 @@ import SideNavbar from './components/SideNavbar/SideNavbar'
 
 const Wrapper = ({ children }) => {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 p-6 flex flex-col">
+    <div className="WrapperContainer">
       <Header />
-      <section className='wrapperSection'>
+      <section className='wrapperSection hide-scrollbar'>
         <SideNavbar />
         {children}
       </section>

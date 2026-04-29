@@ -1,0 +1,6760 @@
+[
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08530"
+    },
+    "title": "Two Sum",
+    "defaultCode": {
+      "java": "class Solution {\n    public int[] twoSum(int[] nums, int target) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<int> twoSum(vector<int>& nums, int target) {\n        \n    }\n};"
+    },
+    "description": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`. You may assume that each input would have exactly one solution.",
+    "difficulty": "easy",
+    "tags": [
+      "array"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [2,7,11,15], target = 9",
+        "output": "[0,1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08531"
+        }
+      },
+      {
+        "input": "nums = [3,2,4], target = 6",
+        "output": "[1,2]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08532"
+        }
+      },
+      {
+        "input": "nums = [3,3], target = 6",
+        "output": "[0,1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08533"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.059Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.059Z"
+    },
+    "sno": 1
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08534"
+    },
+    "title": "Add Two Numbers",
+    "defaultCode": {
+      "java": "/**\n * Definition for singly-linked list.\n * public class ListNode {\n * int val;\n * ListNode next;\n * ListNode() {}\n * ListNode(int val) { this.val = val; }\n * ListNode(int val, ListNode next) { this.val = val; this.next = next; }\n * }\n */\nclass Solution {\n    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {\n        \n    }\n}",
+      "c": "/**\n * Definition for singly-linked list.\n * struct ListNode {\n * int val;\n * struct ListNode *next;\n * };\n */\nstruct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {\n\n}"
+    },
+    "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.",
+    "difficulty": "medium",
+    "tags": [
+      "linked list"
+    ],
+    "testCases": [
+      {
+        "input": "l1 = [2,4,3], l2 = [5,6,4]",
+        "output": "[7,0,8]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08535"
+        }
+      },
+      {
+        "input": "l1 = [0], l2 = [0]",
+        "output": "[0]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08536"
+        }
+      },
+      {
+        "input": "l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]",
+        "output": "[8,9,9,9,0,0,0,1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08537"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.060Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.060Z"
+    },
+    "sno": 2
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08538"
+    },
+    "title": "Longest Substring Without Repeating",
+    "defaultCode": {
+      "java": "class Solution {\n    public int lengthOfLongestSubstring(String s) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int lengthOfLongestSubstring(string s) {\n        \n    }\n};"
+    },
+    "description": "Given a string `s`, find the length of the longest substring without repeating characters.",
+    "difficulty": "medium",
+    "tags": [
+      "string"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08539"
+        }
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0853a"
+        }
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0853b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.060Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.060Z"
+    },
+    "sno": 3
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0853c"
+    },
+    "title": "Median of Two Sorted Arrays",
+    "defaultCode": {
+      "java": "class Solution {\n    public double findMedianSortedArrays(int[] nums1, int[] nums2) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {\n        \n    }\n};"
+    },
+    "description": "Given two sorted arrays `nums1` and `nums2` of size `m` and `n` respectively, return the median of the two sorted arrays.",
+    "difficulty": "hard",
+    "tags": [
+      "array"
+    ],
+    "testCases": [
+      {
+        "input": "nums1 = [1,3], nums2 = [2]",
+        "output": "2.00000",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0853d"
+        }
+      },
+      {
+        "input": "nums1 = [1,2], nums2 = [3,4]",
+        "output": "2.50000",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0853e"
+        }
+      },
+      {
+        "input": "nums1 = [0,0], nums2 = [0,0]",
+        "output": "0.00000",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0853f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.060Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.060Z"
+    },
+    "sno": 4
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08540"
+    },
+    "title": "Valid Parentheses",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean isValid(String s) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool isValid(string s) {\n        \n    }\n};"
+    },
+    "description": "Given a string `s` containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.",
+    "difficulty": "easy",
+    "tags": [
+      "stack"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"()\"",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08541"
+        }
+      },
+      {
+        "input": "s = \"()[]{}\"",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08542"
+        }
+      },
+      {
+        "input": "s = \"(]\"",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08543"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.060Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.060Z"
+    },
+    "sno": 5
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08544"
+    },
+    "title": "Pow(x, n)",
+    "defaultCode": {
+      "java": "class Solution {\n    public double myPow(double x, int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    double myPow(double x, int n) {\n        \n    }\n};"
+    },
+    "description": "Implement pow(x, n), which calculates x raised to the power n (i.e., x^n).",
+    "difficulty": "medium",
+    "tags": [
+      "math"
+    ],
+    "testCases": [
+      {
+        "input": "x = 2.00000, n = 10",
+        "output": "1024.00000",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08545"
+        }
+      },
+      {
+        "input": "x = 2.10000, n = 3",
+        "output": "9.26100",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08546"
+        }
+      },
+      {
+        "input": "x = 2.00000, n = -2",
+        "output": "0.25000",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08547"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.060Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.060Z"
+    },
+    "sno": 6
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08548"
+    },
+    "title": "N-Queens",
+    "defaultCode": {
+      "java": "class Solution {\n    public List<List<String>> solveNQueens(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<vector<string>> solveNQueens(int n) {\n        \n    }\n};"
+    },
+    "description": "The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other. Return all distinct solutions.",
+    "difficulty": "hard",
+    "tags": [
+      "backtracking"
+    ],
+    "testCases": [
+      {
+        "input": "n = 4",
+        "output": "[ [\".Q..\",\"...Q\",\"Q...\",\"..Q.\"], [\"..Q.\",\"Q...\",\"...Q\",\".Q..\"] ]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08549"
+        }
+      },
+      {
+        "input": "n = 1",
+        "output": "[[\"Q\"]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0854a"
+        }
+      },
+      {
+        "input": "n = 2",
+        "output": "[]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0854b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 7
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0854c"
+    },
+    "title": "N-Queens II",
+    "defaultCode": {
+      "java": "class Solution {\n    public List<List<String>> solveNQueens(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<vector<string>> solveNQueens(int n) {\n        \n    }\n};"
+    },
+    "description": "Given n, return the number of distinct solutions to the n-queens puzzle.",
+    "difficulty": "hard",
+    "tags": [
+      "backtracking"
+    ],
+    "testCases": [
+      {
+        "input": "n = 4",
+        "output": "2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0854d"
+        }
+      },
+      {
+        "input": "n = 1",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0854e"
+        }
+      },
+      {
+        "input": "n = 8",
+        "output": "92",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0854f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 8
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08550"
+    },
+    "title": "Maximum Subarray",
+    "defaultCode": {
+      "java": "class Solution {\n    public int maxSubArray(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int maxSubArray(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given an integer array `nums`, find the subarray with the largest sum and return its sum.",
+    "difficulty": "medium",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08551"
+        }
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08552"
+        }
+      },
+      {
+        "input": "nums = [5,4,-1,7,8]",
+        "output": "23",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08553"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 9
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08554"
+    },
+    "title": "Spiral Matrix",
+    "defaultCode": {
+      "java": "class Solution {\n    public List<Integer> spiralOrder(int[][] matrix) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<int> spiralOrder(vector<vector<int>>& matrix) {\n        \n    }\n};"
+    },
+    "description": "Given an m x n matrix, return all elements of the matrix in spiral order.",
+    "difficulty": "medium",
+    "tags": [
+      "array"
+    ],
+    "testCases": [
+      {
+        "input": "matrix = [[1,2,3],[4,5,6],[7,8,9]]",
+        "output": "[1,2,3,6,9,8,7,4,5]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08555"
+        }
+      },
+      {
+        "input": "matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]",
+        "output": "[1,2,3,4,8,12,11,10,9,5,6,7]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08556"
+        }
+      },
+      {
+        "input": "matrix = [[7],[9],[6]]",
+        "output": "[7,9,6]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08557"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 10
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08558"
+    },
+    "title": "Jump Game",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean canJump(int[] nums) {\n        \n    }\n}",
+      "cpp  ": "class Solution {\npublic:\n    bool canJump(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "You are given an integer array `nums`. You are initially positioned at the array's first index, and each element represents your maximum jump length. Return true if you can reach the last index.",
+    "difficulty": "medium",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [2,3,1,1,4]",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08559"
+        }
+      },
+      {
+        "input": "nums = [3,2,1,0,4]",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0855a"
+        }
+      },
+      {
+        "input": "nums = [0]",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0855b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 11
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0855c"
+    },
+    "title": "Merge Intervals",
+    "defaultCode": {
+      "java": "class Solution {\n    public int[][] merge(int[][] intervals) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> merge(vector<vector<int>>& intervals) {\n        \n    }\n};"
+    },
+    "description": "Given an array of intervals where `intervals[i] = [start, end]`, merge all overlapping intervals.",
+    "difficulty": "medium",
+    "tags": [
+      "sorting"
+    ],
+    "testCases": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0855d"
+        }
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0855e"
+        }
+      },
+      {
+        "input": "intervals = [[1,10],[2,3],[4,5]]",
+        "output": "[[1,10]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0855f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 12
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08560"
+    },
+    "title": "Insert Interval",
+    "defaultCode": {
+      "java": "class Solution {\n    public int[][] insert(int[][] intervals, int[] newInterval) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {\n        \n    }\n};"
+    },
+    "description": "You are given an array of non-overlapping intervals sorted by start time. Insert a new interval into the array, merging if necessary.",
+    "difficulty": "medium",
+    "tags": [
+      "array"
+    ],
+    "testCases": [
+      {
+        "input": "intervals = [[1,3],[6,9]], newInterval = [2,5]",
+        "output": "[[1,5],[6,9]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08561"
+        }
+      },
+      {
+        "input": "intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]",
+        "output": "[[1,2],[3,10],[12,16]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08562"
+        }
+      },
+      {
+        "input": "intervals = [], newInterval = [5,7]",
+        "output": "[[5,7]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08563"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 13
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08564"
+    },
+    "title": "Length of Last Word",
+    "defaultCode": {
+      "java": "class Solution {\n    public int lengthOfLastWord(String s) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int lengthOfLastWord(string s) {\n        \n    }\n};"
+    },
+    "description": "Given a string `s` consisting of words and spaces, return the length of the last word in the string.",
+    "difficulty": "easy",
+    "tags": [
+      "string"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"Hello World\"",
+        "output": "5",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08565"
+        }
+      },
+      {
+        "input": "s = \"   fly me   to   the moon  \"",
+        "output": "4",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08566"
+        }
+      },
+      {
+        "input": "s = \"luffy is still joyboy\"",
+        "output": "6",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08567"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 14
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08568"
+    },
+    "title": "Spiral Matrix II",
+    "defaultCode": {
+      "java": "class Solution {\n    public int[][] generateMatrix(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> generateMatrix(int n) {\n        \n    }\n};"
+    },
+    "description": "Given a positive integer `n`, generate an n x n matrix filled with elements from 1 to n^2 in spiral order.",
+    "difficulty": "medium",
+    "tags": [
+      "array"
+    ],
+    "testCases": [
+      {
+        "input": "n = 3",
+        "output": "[[1,2,3],[8,9,4],[7,6,5]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08569"
+        }
+      },
+      {
+        "input": "n = 1",
+        "output": "[[1]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0856a"
+        }
+      },
+      {
+        "input": "n = 2",
+        "output": "[[1,2],[4,3]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0856b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 15
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0856c"
+    },
+    "title": "Permutation Sequence",
+    "defaultCode": {
+      "java": "class Solution {\n    public String getPermutation(int n, int k) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    string getPermutation(int n, int k) {\n        \n    }\n};"
+    },
+    "description": "The set [1, 2, 3, ..., n] contains n! unique permutations. Given n and k, return the kth permutation sequence.",
+    "difficulty": "hard",
+    "tags": [
+      "backtracking"
+    ],
+    "testCases": [
+      {
+        "input": "n = 3, k = 3",
+        "output": "\"213\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0856d"
+        }
+      },
+      {
+        "input": "n = 4, k = 9",
+        "output": "\"2314\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0856e"
+        }
+      },
+      {
+        "input": "n = 3, k = 1",
+        "output": "\"123\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0856f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 16
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08570"
+    },
+    "title": "Rotate List",
+    "defaultCode": {
+      "java": "class Solution {\n    public ListNode rotateRight(ListNode head, int k) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    ListNode* rotateRight(ListNode* head, int k) {\n        \n    }\n};"
+    },
+    "description": "Given the head of a linked list, rotate the list to the right by `k` places.",
+    "difficulty": "medium",
+    "tags": [
+      "linked list"
+    ],
+    "testCases": [
+      {
+        "input": "head = [1,2,3,4,5], k = 2",
+        "output": "[4,5,1,2,3]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08571"
+        }
+      },
+      {
+        "input": "head = [0,1,2], k = 4",
+        "output": "[2,0,1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08572"
+        }
+      },
+      {
+        "input": "head = [], k = 0",
+        "output": "[]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08573"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 17
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08574"
+    },
+    "title": "Unique Paths",
+    "defaultCode": {
+      "java": "class Solution {\n    public int uniquePaths(int m, int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int uniquePaths(int m, int n) {\n        \n    }\n};"
+    },
+    "description": "A robot is located at the top-left corner of an m x n grid. The robot can only move either down or right. Return the number of possible unique paths to reach the bottom-right corner.",
+    "difficulty": "medium",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "m = 3, n = 7",
+        "output": "28",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08575"
+        }
+      },
+      {
+        "input": "m = 3, n = 2",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08576"
+        }
+      },
+      {
+        "input": "m = 3, n = 3",
+        "output": "6",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08577"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 18
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08578"
+    },
+    "title": "Unique Paths II",
+    "defaultCode": {
+      "java": "class Solution {\n    public int uniquePathsWithObstacles(int[][] obstacleGrid) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {\n        \n    }\n};"
+    },
+    "description": "Same as Unique Paths, but now there are obstacles in the grid (marked by 1). A path cannot pass through an obstacle.",
+    "difficulty": "medium",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "obstacleGrid = [[0,0,0],[0,1,0],[0,0,0]]",
+        "output": "2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08579"
+        }
+      },
+      {
+        "input": "obstacleGrid = [[0,1],[0,0]]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0857a"
+        }
+      },
+      {
+        "input": "obstacleGrid = [[1,0]]",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0857b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 19
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0857c"
+    },
+    "title": "Minimum Path Sum",
+    "defaultCode": {
+      "java": "class Solution {\n    public int minPathSum(int[][] grid) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int minPathSum(vector<vector<int>>& grid) {\n        \n    }\n};"
+    },
+    "description": "Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path.",
+    "difficulty": "medium",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "grid = [[1,3,1],[1,5,1],[4,2,1]]",
+        "output": "7",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0857d"
+        }
+      },
+      {
+        "input": "grid = [[1,2,3],[4,5,6]]",
+        "output": "12",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0857e"
+        }
+      },
+      {
+        "input": "grid = [[10]]",
+        "output": "10",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0857f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 20
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08580"
+    },
+    "title": "Valid Number",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean isNumber(String s) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool isNumber(string s) {\n        \n    }\n};"
+    },
+    "description": "A valid number can be split into an integer or a decimal number and optionally an exponent part. Determine if a given string is a valid number.",
+    "difficulty": "hard",
+    "tags": [
+      "string"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"0\"",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08581"
+        }
+      },
+      {
+        "input": "s = \"e\"",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08582"
+        }
+      },
+      {
+        "input": "s = \" -90.3e-7 \"",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08583"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 21
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08584"
+    },
+    "title": "Plus One",
+    "defaultCode": {
+      "java": "class Solution {\n    public int[] plusOne(int[] digits) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<int> plusOne(vector<int>& digits) {\n        \n    }\n};"
+    },
+    "description": "You are given a large integer represented as an integer array `digits`, where each `digits[i]` is the ith digit of the integer. Increment the large integer by one and return the resulting array of digits.",
+    "difficulty": "easy",
+    "tags": [
+      "array"
+    ],
+    "testCases": [
+      {
+        "input": "digits = [1,2,3]",
+        "output": "[1,2,4]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08585"
+        }
+      },
+      {
+        "input": "digits = [9]",
+        "output": "[1,0]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08586"
+        }
+      },
+      {
+        "input": "digits = [4,3,2,1]",
+        "output": "[4,3,2,2]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08587"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 22
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08588"
+    },
+    "title": "Add Binary",
+    "defaultCode": {
+      "java": "class Solution {\n    public String addBinary(String a, String b) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    string addBinary(string a, string b) {\n        \n    }\n};"
+    },
+    "description": "Given two binary strings `a` and `b`, return their sum as a binary string.",
+    "difficulty": "easy",
+    "tags": [
+      "string"
+    ],
+    "testCases": [
+      {
+        "input": "a = \"11\", b = \"1\"",
+        "output": "\"100\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08589"
+        }
+      },
+      {
+        "input": "a = \"1010\", b = \"1011\"",
+        "output": "\"10101\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0858a"
+        }
+      },
+      {
+        "input": "a = \"0\", b = \"0\"",
+        "output": "\"0\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0858b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 23
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0858c"
+    },
+    "title": "Text Justification",
+    "defaultCode": {
+      "java": "class Solution {\n    public List<String> fullJustify(String[] words, int maxWidth) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<string> fullJustify(vector<string>& words, int maxWidth) {\n        \n    }\n};"
+    },
+    "description": "Given an array of strings `words` and a width `maxWidth`, format the text such that each line has exactly `maxWidth` characters and is fully (left and right) justified.",
+    "difficulty": "hard",
+    "tags": [
+      "string"
+    ],
+    "testCases": [
+      {
+        "input": "words = [\"This\", \"is\", \"an\", \"example\"], maxWidth = 16",
+        "output": "[\"This    is    an\", \"example         \"]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0858d"
+        }
+      },
+      {
+        "input": "words = [\"What\",\"must\",\"be\"], maxWidth = 16",
+        "output": "[\"What    must  be\"]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0858e"
+        }
+      },
+      {
+        "input": "words = [\"Science\",\"is\",\"everything\"], maxWidth = 20",
+        "output": "[\"Science  is  everything\"]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0858f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 24
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08590"
+    },
+    "title": "Sqrt(x)",
+    "defaultCode": {
+      "java": "class Solution {\n    public int mySqrt(int x) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int mySqrt(int x) {\n        \n    }\n};"
+    },
+    "description": "Given a non-negative integer `x`, compute and return the square root of `x`. Since the return type is an integer, the decimal digits are truncated.",
+    "difficulty": "easy",
+    "tags": [
+      "binary search"
+    ],
+    "testCases": [
+      {
+        "input": "x = 4",
+        "output": "2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08591"
+        }
+      },
+      {
+        "input": "x = 8",
+        "output": "2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08592"
+        }
+      },
+      {
+        "input": "x = 0",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08593"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 25
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08594"
+    },
+    "title": "Climbing Stairs",
+    "defaultCode": {
+      "java": "class Solution {\n    public int climbStairs(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int climbStairs(int n) {\n        \n    }\n};"
+    },
+    "description": "You are climbing a staircase. It takes `n` steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+    "difficulty": "easy",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "n = 2",
+        "output": "2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08595"
+        }
+      },
+      {
+        "input": "n = 3",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08596"
+        }
+      },
+      {
+        "input": "n = 5",
+        "output": "8",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08597"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 26
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08598"
+    },
+    "title": "Simplify Path",
+    "defaultCode": {
+      "java": "class Solution {\n    public String simplifyPath(String path) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    string simplifyPath(string path) {\n        \n    }\n};"
+    },
+    "description": "Given a string `path`, which is an absolute path (starting with a slash '/') for a file or directory in a Unix-style file system, convert it to the simplified canonical path.",
+    "difficulty": "medium",
+    "tags": [
+      "stack"
+    ],
+    "testCases": [
+      {
+        "input": "path = \"/home/\"",
+        "output": "\"/home\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08599"
+        }
+      },
+      {
+        "input": "path = \"/../\"",
+        "output": "\"/\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0859a"
+        }
+      },
+      {
+        "input": "path = \"/home//foo/\"",
+        "output": "\"/home/foo\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0859b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 27
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0859c"
+    },
+    "title": "Edit Distance",
+    "defaultCode": {
+      "java": "class Solution {\n    public int minDistance(String word1, String word2) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int minDistance(string word1, string word2) {\n        \n    }\n};"
+    },
+    "description": "Given two strings `word1` and `word2`, return the minimum number of operations required to convert `word1` to `word2`. Operations: Insert, Delete, Replace.",
+    "difficulty": "medium",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "word1 = \"horse\", word2 = \"ros\"",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0859d"
+        }
+      },
+      {
+        "input": "word1 = \"intention\", word2 = \"execution\"",
+        "output": "5",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0859e"
+        }
+      },
+      {
+        "input": "word1 = \"\", word2 = \"abc\"",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0859f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 28
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085a0"
+    },
+    "title": "Set Matrix Zeroes",
+    "defaultCode": {
+      "java": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    void setZeroes(vector<vector<int>>& matrix) {\n        \n    }\n};"
+    },
+    "description": "Given an `m x n` integer matrix, if an element is 0, set its entire row and column to 0's. Do it in-place.",
+    "difficulty": "medium",
+    "tags": [
+      "array"
+    ],
+    "testCases": [
+      {
+        "input": "matrix = [[1,1,1],[1,0,1],[1,1,1]]",
+        "output": "[[1,0,1],[0,0,0],[1,0,1]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085a1"
+        }
+      },
+      {
+        "input": "matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]",
+        "output": "[[0,0,0,0],[0,4,5,0],[0,3,1,0]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085a2"
+        }
+      },
+      {
+        "input": "matrix = [[1]]",
+        "output": "[[1]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085a3"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 29
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085a4"
+    },
+    "title": "Search a 2D Matrix",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean searchMatrix(int[][] matrix, int target) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool searchMatrix(vector<vector<int>>& matrix, int target) {\n        \n    }\n};"
+    },
+    "description": "Write an efficient algorithm that searches for a value `target` in an `m x n` integer matrix. Rows are sorted, and the first integer of each row is greater than the last integer of the previous row.",
+    "difficulty": "medium",
+    "tags": [
+      "binary search"
+    ],
+    "testCases": [
+      {
+        "input": "matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085a5"
+        }
+      },
+      {
+        "input": "matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085a6"
+        }
+      },
+      {
+        "input": "matrix = [[1]], target = 1",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085a7"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 30
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085a8"
+    },
+    "title": "Sort Colors",
+    "defaultCode": {
+      "java": "class Solution {\n    public void sortColors(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    void sortColors(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given an array `nums` with `n` objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent (order: red, white, blue represented as 0, 1, 2).",
+    "difficulty": "medium",
+    "tags": [
+      "sorting"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [2,0,2,1,1,0]",
+        "output": "[0,0,1,1,2,2]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085a9"
+        }
+      },
+      {
+        "input": "nums = [2,0,1]",
+        "output": "[0,1,2]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085aa"
+        }
+      },
+      {
+        "input": "nums = [0]",
+        "output": "[0]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085ab"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 31
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085ac"
+    },
+    "title": "Minimum Window Substring",
+    "defaultCode": {
+      "java": "class Solution {\n    public String minWindow(String s, String t) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    string minWindow(string s, string t) {\n        \n    }\n};"
+    },
+    "description": "Given two strings `s` and `t`, return the minimum window substring of `s` such that every character in `t` (including duplicates) is included in the window.",
+    "difficulty": "hard",
+    "tags": [
+      "string"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"ADOBECODEBANC\", t = \"ABC\"",
+        "output": "\"BANC\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085ad"
+        }
+      },
+      {
+        "input": "s = \"a\", t = \"a\"",
+        "output": "\"a\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085ae"
+        }
+      },
+      {
+        "input": "s = \"a\", t = \"aa\"",
+        "output": "\"\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085af"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 32
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085b0"
+    },
+    "title": "Combinations",
+    "defaultCode": {
+      "java": "class Solution {\n    public List<List<Integer>> combine(int n, int k) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> combine(int n, int k) {\n        \n    }\n};"
+    },
+    "description": "Given two integers `n` and `k`, return all possible combinations of `k` numbers chosen from the range `[1, n]`.",
+    "difficulty": "medium",
+    "tags": [
+      "backtracking"
+    ],
+    "testCases": [
+      {
+        "input": "n = 4, k = 2",
+        "output": "[[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085b1"
+        }
+      },
+      {
+        "input": "n = 1, k = 1",
+        "output": "[[1]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085b2"
+        }
+      },
+      {
+        "input": "n = 5, k = 3",
+        "output": "10 total combinations.",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085b3"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 33
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085b4"
+    },
+    "title": "Subsets",
+    "defaultCode": {
+      "java": "class Solution {\n    public List<List<Integer>> subsets(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> subsets(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given an integer array `nums` of unique elements, return all possible subsets (the power set).",
+    "difficulty": "medium",
+    "tags": [
+      "backtracking"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [1,2,3]",
+        "output": "[[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085b5"
+        }
+      },
+      {
+        "input": "nums = [0]",
+        "output": "[[],[0]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085b6"
+        }
+      },
+      {
+        "input": "nums = [1,2]",
+        "output": "[[],[1],[2],[1,2]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085b7"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 34
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085b8"
+    },
+    "title": "Word Search",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean exist(char[][] board, String word) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool exist(vector<vector<char>>& board, string word) {\n        \n    }\n};"
+    },
+    "description": "Given an `m x n` grid of characters `board` and a string `word`, return true if `word` exists in the grid.",
+    "difficulty": "medium",
+    "tags": [
+      "backtracking"
+    ],
+    "testCases": [
+      {
+        "input": "board = [[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]], word = \"ABCCED\"",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085b9"
+        }
+      },
+      {
+        "input": "board = [[\"A\",\"B\"],[\"C\",\"D\"]], word = \"ABCD\"",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085ba"
+        }
+      },
+      {
+        "input": "board = [[\"A\"]], word = \"A\"",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085bb"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 35
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085bc"
+    },
+    "title": "Remove Duplicates from Sorted Array II",
+    "defaultCode": {
+      "java": "class Solution {\n    public int removeDuplicates(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int removeDuplicates(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given a sorted array `nums`, remove some duplicates in-place such that each unique element appears at most twice.",
+    "difficulty": "medium",
+    "tags": [
+      "two pointers"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [1,1,1,2,2,3]",
+        "output": "5, nums = [1,1,2,2,3]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085bd"
+        }
+      },
+      {
+        "input": "nums = [0,0,1,1,1,1,2,3,3]",
+        "output": "7, nums = [0,0,1,1,2,3,3]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085be"
+        }
+      },
+      {
+        "input": "nums = [1,2,3]",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085bf"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 36
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085c0"
+    },
+    "title": "Search in Rotated Array II",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean search(int[] nums, int target) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool search(vector<int>& nums, int target) {\n        \n    }\n};"
+    },
+    "description": "Same as Search in Rotated Sorted Array, but the array may contain duplicates. Return true if the target is found.",
+    "difficulty": "medium",
+    "tags": [
+      "binary search"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [2,5,6,0,0,1,2], target = 0",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085c1"
+        }
+      },
+      {
+        "input": "nums = [2,5,6,0,0,1,2], target = 3",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085c2"
+        }
+      },
+      {
+        "input": "nums = [1,1,1,1,1,1,1,1,2,1], target = 2",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085c3"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 37
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085c4"
+    },
+    "title": "Remove Duplicates from Sorted List II",
+    "defaultCode": {
+      "java": "class Solution {\n    public ListNode deleteDuplicates(ListNode head) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    ListNode* deleteDuplicates(ListNode* head) {\n        \n    }\n};"
+    },
+    "description": "Given the head of a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.",
+    "difficulty": "medium",
+    "tags": [
+      "linked list"
+    ],
+    "testCases": [
+      {
+        "input": "head = [1,2,3,3,4,4,5]",
+        "output": "[1,2,5]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085c5"
+        }
+      },
+      {
+        "input": "head = [1,1,1,2,3]",
+        "output": "[2,3]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085c6"
+        }
+      },
+      {
+        "input": "head = [1,1]",
+        "output": "[]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085c7"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 38
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085c8"
+    },
+    "title": "Remove Duplicates from Sorted List",
+    "defaultCode": {
+      "java": "class Solution {\n    public ListNode deleteDuplicates(ListNode head) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    ListNode* deleteDuplicates(ListNode* head) {\n        \n    }\n};"
+    },
+    "description": "Given the head of a sorted linked list, delete all duplicates such that each element appears only once.",
+    "difficulty": "easy",
+    "tags": [
+      "linked list"
+    ],
+    "testCases": [
+      {
+        "input": "head = [1,1,2]",
+        "output": "[1,2]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085c9"
+        }
+      },
+      {
+        "input": "head = [1,1,2,3,3]",
+        "output": "[1,2,3]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085ca"
+        }
+      },
+      {
+        "input": "head = [5,5,5,5]",
+        "output": "[5]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085cb"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 39
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085cc"
+    },
+    "title": "Largest Rectangle in Histogram",
+    "defaultCode": {
+      "java": "class Solution {\n    public int largestRectangleArea(int[] heights) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int largestRectangleArea(vector<int>& heights) {\n        \n    }\n};"
+    },
+    "description": "Given an array of integers `heights` representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram.",
+    "difficulty": "hard",
+    "tags": [
+      "stack"
+    ],
+    "testCases": [
+      {
+        "input": "heights = [2,1,5,6,2,3]",
+        "output": "10",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085cd"
+        }
+      },
+      {
+        "input": "heights = [2,4]",
+        "output": "4",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085ce"
+        }
+      },
+      {
+        "input": "heights = [1,1,1,1,1]",
+        "output": "5",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085cf"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 40
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085d0"
+    },
+    "title": "Maximal Rectangle",
+    "defaultCode": {
+      "java": "class Solution {\n    public int maximalRectangle(char[][] matrix) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int maximalRectangle(vector<vector<char>>& matrix) {\n        \n    }\n};"
+    },
+    "description": "Given a `rows x cols` binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.",
+    "difficulty": "hard",
+    "tags": [
+      "stack"
+    ],
+    "testCases": [
+      {
+        "input": "matrix = [[\"1\",\"0\",\"1\",\"0\",\"0\"],[\"1\",\"0\",\"1\",\"1\",\"1\"],[\"1\",\"1\",\"1\",\"1\",\"1\"],[\"1\",\"0\",\"0\",\"1\",\"0\"]]",
+        "output": "6",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085d1"
+        }
+      },
+      {
+        "input": "matrix = [[\"0\"]]",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085d2"
+        }
+      },
+      {
+        "input": "matrix = [[\"1\"]]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085d3"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 41
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085d4"
+    },
+    "title": "Partition List",
+    "defaultCode": {
+      "java": "/**\n * Definition for singly-linked list.\n * public class ListNode {\n * int val;\n * ListNode next;\n * ListNode(int x) { val = x; }\n * }\n */\nclass Solution {\n    public ListNode partition(ListNode head, int x) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    ListNode* partition(ListNode* head, int x) {\n        \n    }\n};"
+    },
+    "description": "Given the head of a linked list and a value `x`, partition it such that all nodes less than `x` come before nodes greater than or equal to `x`.",
+    "difficulty": "medium",
+    "tags": [
+      "linked list"
+    ],
+    "testCases": [
+      {
+        "input": "head = [1,4,3,2,5,2], x = 3",
+        "output": "[1,2,2,4,3,5]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085d5"
+        }
+      },
+      {
+        "input": "head = [2,1], x = 2",
+        "output": "[1,2]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085d6"
+        }
+      },
+      {
+        "input": "head = [1], x = 0",
+        "output": "[1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085d7"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 42
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085d8"
+    },
+    "title": "Scramble String",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean isScramble(String s1, String s2) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool isScramble(string s1, string s2) {\n        \n    }\n};"
+    },
+    "description": "Given two strings `s1` and `s2` of the same length, determine if `s2` is a scrambled string of `s1`.",
+    "difficulty": "hard",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "s1 = \"great\", s2 = \"rgeat\"",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085d9"
+        }
+      },
+      {
+        "input": "s1 = \"abcde\", s2 = \"caebd\"",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085da"
+        }
+      },
+      {
+        "input": "s1 = \"a\", s2 = \"a\"",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085db"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.061Z"
+    },
+    "sno": 43
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085dc"
+    },
+    "title": "Merge Sorted Array",
+    "defaultCode": {
+      "java": "class Solution {\n    public void merge(int[] nums1, int m, int[] nums2, int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {\n        \n    }\n};"
+    },
+    "description": "You are given two integer arrays `nums1` and `nums2`, sorted in non-decreasing order, and two integers `m` and `n`. Merge `nums2` into `nums1` as one sorted array.",
+    "difficulty": "easy",
+    "tags": [
+      "two pointers"
+    ],
+    "testCases": [
+      {
+        "input": "nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3",
+        "output": "[1,2,2,3,5,6]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085dd"
+        }
+      },
+      {
+        "input": "nums1 = [1], m = 1, nums2 = [], n = 0",
+        "output": "[1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085de"
+        }
+      },
+      {
+        "input": "nums1 = [0], m = 0, nums2 = [1], n = 1",
+        "output": "[1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085df"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 44
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085e0"
+    },
+    "title": "Gray Code",
+    "defaultCode": {
+      "java": "class Solution {\n    public List<Integer> grayCode(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<int> grayCode(int n) {\n        \n    }\n};"
+    },
+    "description": "An n-bit gray code sequence is a sequence of 2^n integers where every adjacent pair of integers differs by exactly one bit. Given `n`, return any valid gray code sequence.",
+    "difficulty": "medium",
+    "tags": [
+      "backtracking"
+    ],
+    "testCases": [
+      {
+        "input": "n = 2",
+        "output": "[0,1,3,2]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085e1"
+        }
+      },
+      {
+        "input": "n = 1",
+        "output": "[0,1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085e2"
+        }
+      },
+      {
+        "input": "n = 3",
+        "output": "[0,1,3,2,6,7,5,4]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085e3"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 45
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085e4"
+    },
+    "title": "Subsets II",
+    "defaultCode": {
+      "java": "class Solution {\n    public List<List<Integer>> subsetsWithDup(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> subsetsWithDup(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given an integer array `nums` that may contain duplicates, return all possible subsets. The solution set must not contain duplicate subsets.",
+    "difficulty": "medium",
+    "tags": [
+      "backtracking"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [1,2,2]",
+        "output": "[[],[1],[1,2],[1,2,2],[2],[2,2]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085e5"
+        }
+      },
+      {
+        "input": "nums = [0]",
+        "output": "[[],[0]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085e6"
+        }
+      },
+      {
+        "input": "nums = [1,1]",
+        "output": "[[],[1],[1,1]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085e7"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 46
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085e8"
+    },
+    "title": "Decode Ways",
+    "defaultCode": {
+      "java": "class Solution {\n    public int numDecodings(String s) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int numDecodings(string s) {\n        \n    }\n};"
+    },
+    "description": "A message containing letters from A-Z can be encoded into numbers (A=1, B=2, ...). Given a string `s` containing digits, return the number of ways to decode it.",
+    "difficulty": "medium",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"12\"",
+        "output": "2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085e9"
+        }
+      },
+      {
+        "input": "s = \"226\"",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085ea"
+        }
+      },
+      {
+        "input": "s = \"06\"",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085eb"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 47
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085ec"
+    },
+    "title": "Reverse Linked List II",
+    "defaultCode": {
+      "java": "class Solution {\n    public ListNode reverseBetween(ListNode head, int left, int right) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    ListNode* reverseBetween(ListNode* head, int left, int right) {\n        \n    }\n};"
+    },
+    "description": "Given the head of a singly linked list and two integers `left` and `right` where `left <= right`, reverse the nodes of the list from position `left` to position `right`.",
+    "difficulty": "medium",
+    "tags": [
+      "linked list"
+    ],
+    "testCases": [
+      {
+        "input": "head = [1,2,3,4,5], left = 2, right = 4",
+        "output": "[1,4,3,2,5]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085ed"
+        }
+      },
+      {
+        "input": "head = [5], left = 1, right = 1",
+        "output": "[5]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085ee"
+        }
+      },
+      {
+        "input": "head = [1,2,3], left = 1, right = 3",
+        "output": "[3,2,1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085ef"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 48
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085f0"
+    },
+    "title": "Restore IP Addresses",
+    "defaultCode": {
+      "java": "class Solution {\n    public List<String> restoreIpAddresses(String s) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<string> restoreIpAddresses(string s) {\n        \n    }\n};"
+    },
+    "description": "A valid IP address consists of four integers separated by dots. Given a string `s` containing only digits, return all possible valid IP addresses.",
+    "difficulty": "medium",
+    "tags": [
+      "backtracking"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"25525511135\"",
+        "output": "[\"255.255.11.135\",\"255.255.111.35\"]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085f1"
+        }
+      },
+      {
+        "input": "s = \"0000\"",
+        "output": "[\"0.0.0.0\"]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085f2"
+        }
+      },
+      {
+        "input": "s = \"101023\"",
+        "output": "[\"1.0.10.23\",\"1.0.102.3\",...]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085f3"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 49
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085f4"
+    },
+    "title": "Binary Tree Inorder Traversal",
+    "defaultCode": {
+      "java": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n * int val;\n * TreeNode left;\n * TreeNode right;\n * TreeNode(int x) { val = x; }\n * }\n */\nclass Solution {\n    public List<Integer> inorderTraversal(TreeNode root) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<int> inorderTraversal(TreeNode* root) {\n        \n    }\n};"
+    },
+    "description": "Given the root of a binary tree, return the inorder traversal of its nodes' values.",
+    "difficulty": "easy",
+    "tags": [
+      "tree"
+    ],
+    "testCases": [
+      {
+        "input": "root = [1,null,2,3]",
+        "output": "[1,3,2]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085f5"
+        }
+      },
+      {
+        "input": "root = []",
+        "output": "[]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085f6"
+        }
+      },
+      {
+        "input": "root = [1]",
+        "output": "[1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085f7"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 50
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085f8"
+    },
+    "title": "Unique Binary Search Trees II",
+    "defaultCode": {
+      "java": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n * int val;\n * TreeNode left;\n * TreeNode right;\n * TreeNode(int x) { val = x; }\n * }\n */\nclass Solution {\n    public List<TreeNode> generateTrees(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<TreeNode*> generateTrees(int n) {\n        \n    }\n};"
+    },
+    "description": "Given an integer `n`, return all the structurally unique BST's (binary search trees) that have exactly `n` nodes of unique values from 1 to `n`.",
+    "difficulty": "medium",
+    "tags": [
+      "tree"
+    ],
+    "testCases": [
+      {
+        "input": "n = 3",
+        "output": "5 trees",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085f9"
+        }
+      },
+      {
+        "input": "n = 1",
+        "output": "[[1]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085fa"
+        }
+      },
+      {
+        "input": "n = 2",
+        "output": "Two trees",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085fb"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 51
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a085fc"
+    },
+    "title": "Evaluate Reverse Polish Notation",
+    "defaultCode": {
+      "java": "class Solution {\n    public int evalRPN(String[] tokens) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int evalRPN(vector<string>& tokens) {\n        \n    }\n};"
+    },
+    "description": "Evaluate the value of an arithmetic expression in Reverse Polish Notation (RPN). Valid operators are +, -, *, and /. Each operand may be an integer or another expression.",
+    "difficulty": "medium",
+    "tags": [
+      "stack"
+    ],
+    "testCases": [
+      {
+        "input": "tokens = [\"2\",\"1\",\"+\",\"3\",\"*\"]",
+        "output": "9",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085fd"
+        }
+      },
+      {
+        "input": "tokens = [\"4\",\"13\",\"5\",\"/\",\"+\"]",
+        "output": "6",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085fe"
+        }
+      },
+      {
+        "input": "tokens = [\"10\",\"6\",\"9\",\"3\",\"+\",\"-11\",\"*\",\"/\",\"*\",\"17\",\"+\",\"5\",\"+\"]",
+        "output": "22",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a085ff"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 52
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08600"
+    },
+    "title": "Reverse Words in a String",
+    "defaultCode": {
+      "java": "class Solution {\n    public String reverseWords(String s) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    string reverseWords(string s) {\n        \n    }\n};"
+    },
+    "description": "Given an input string `s`, reverse the order of the words. A word is defined as a sequence of non-space characters.",
+    "difficulty": "medium",
+    "tags": [
+      "string"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"the sky is blue\"",
+        "output": "\"blue is sky the\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08601"
+        }
+      },
+      {
+        "input": "s = \"  hello world  \"",
+        "output": "\"world hello\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08602"
+        }
+      },
+      {
+        "input": "s = \"a good   example\"",
+        "output": "\"example good a\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08603"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 53
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08604"
+    },
+    "title": "Maximum Product Subarray",
+    "defaultCode": {
+      "java": "class Solution {\n    public int maxProduct(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int maxProduct(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given an integer array `nums`, find a contiguous non-empty subarray within the array that has the largest product, and return the product.",
+    "difficulty": "medium",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [2,3,-2,4]",
+        "output": "6",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08605"
+        }
+      },
+      {
+        "input": "nums = [-2,0,-1]",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08606"
+        }
+      },
+      {
+        "input": "nums = [-2,3,-4]",
+        "output": "24",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08607"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 54
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08608"
+    },
+    "title": "Find Minimum in Rotated Sorted Array",
+    "defaultCode": {
+      "java": "class Solution {\n    public int findMin(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int findMin(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Suppose an array of length `n` sorted in ascending order is rotated between 1 and `n` times. Given the sorted rotated array `nums` of unique elements, return the minimum element of this array.",
+    "difficulty": "medium",
+    "tags": [
+      "binary search"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [3,4,5,1,2]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08609"
+        }
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2]",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0860a"
+        }
+      },
+      {
+        "input": "nums = [11,13,15,17]",
+        "output": "11",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0860b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 55
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0860c"
+    },
+    "title": "Find Minimum in Rotated Sorted Array II",
+    "defaultCode": {
+      "java": "class Solution {\n    public int findMin(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int findMin(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Similar to the previous problem, but the array `nums` may contain duplicates. Return the minimum element.",
+    "difficulty": "hard",
+    "tags": [
+      "binary search"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [1,3,5]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0860d"
+        }
+      },
+      {
+        "input": "nums = [2,2,2,0,1]",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0860e"
+        }
+      },
+      {
+        "input": "nums = [10,1,10,10,10]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0860f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 56
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08610"
+    },
+    "title": "Min Stack",
+    "defaultCode": {
+      "java": "class MinStack {\n    public MinStack() {}\n    public void push(int val) {}\n    public void pop() {}\n    public int top() {}\n    public int getMin() {}\n}",
+      "cpp": "class MinStack {\npublic:\n    MinStack() {}\n    void push(int val) {}\n    void pop() {}\n    int top() {}\n    int getMin() {}\n};"
+    },
+    "description": "Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.",
+    "difficulty": "medium",
+    "tags": [
+      "stack"
+    ],
+    "testCases": [
+      {
+        "input": "[\"MinStack\",\"push\",\"push\",\"push\",\"getMin\",\"pop\",\"top\",\"getMin\"]",
+        "output": "[null,null,null,null,-3,null,0,-2]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08611"
+        }
+      },
+      {
+        "input": "[\"MinStack\",\"push\",\"getMin\"]",
+        "output": "[null,5,5]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08612"
+        }
+      },
+      {
+        "input": "[\"MinStack\",\"push\",\"push\",\"pop\",\"getMin\"]",
+        "output": "[null,2,1,null,2]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08613"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 57
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08614"
+    },
+    "title": "Intersection of Two Linked Lists",
+    "defaultCode": {
+      "java": "public class Solution {\n    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {\n        \n    }\n};"
+    },
+    "description": "Given the heads of two singly linked-lists `headA` and `headB`, return the node at which the two lists intersect. If they do not intersect, return null.",
+    "difficulty": "easy",
+    "tags": [
+      "linked list"
+    ],
+    "testCases": [
+      {
+        "input": "intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5]",
+        "output": "Node with value 8",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08615"
+        }
+      },
+      {
+        "input": "listA = [1,9,1,2,4], listB = [3,2,4]",
+        "output": "Node with value 2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08616"
+        }
+      },
+      {
+        "input": "listA = [2,6,4], listB = [1,5]",
+        "output": "null",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08617"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 58
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08618"
+    },
+    "title": "Find Peak Element",
+    "defaultCode": {
+      "java": "class Solution {\n    public int findPeakElement(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int findPeakElement(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "A peak element is an element that is strictly greater than its neighbors. Given an integer array `nums`, find a peak element and return its index.",
+    "difficulty": "medium",
+    "tags": [
+      "binary search"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [1,2,3,1]",
+        "output": "2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08619"
+        }
+      },
+      {
+        "input": "nums = [1,2,1,3,5,6,4]",
+        "output": "1 or 5",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0861a"
+        }
+      },
+      {
+        "input": "nums = [1,2]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0861b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 59
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0861c"
+    },
+    "title": "Maximum Gap",
+    "defaultCode": {
+      "java": "class Solution {\n    public int maximumGap(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int maximumGap(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given an integer array `nums`, return the maximum difference between two successive elements in its sorted form. If the array contains less than two elements, return 0.",
+    "difficulty": "hard",
+    "tags": [
+      "sorting"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [3,6,9,1]",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0861d"
+        }
+      },
+      {
+        "input": "nums = [10]",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0861e"
+        }
+      },
+      {
+        "input": "nums = [1,100]",
+        "output": "99",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0861f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 60
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08620"
+    },
+    "title": "Compare Version Numbers",
+    "defaultCode": {
+      "java": "class Solution {\n    public int compareVersion(String version1, String version2) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int compareVersion(string version1, string version2) {\n        \n    }\n};"
+    },
+    "description": "Given two version numbers, `version1` and `version2`, compare them. If version1 > version2 return 1; if version1 < version2 return -1; otherwise return 0.",
+    "difficulty": "medium",
+    "tags": [
+      "string"
+    ],
+    "testCases": [
+      {
+        "input": "v1 = \"1.01\", v2 = \"1.001\"",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08621"
+        }
+      },
+      {
+        "input": "v1 = \"1.0\", v2 = \"1.0.0\"",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08622"
+        }
+      },
+      {
+        "input": "v1 = \"0.1\", v2 = \"1.1\"",
+        "output": "-1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08623"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 61
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08624"
+    },
+    "title": "Fraction to Recurring Decimal",
+    "defaultCode": {
+      "java": "class Solution {\n    public String fractionToDecimal(int numerator, int denominator) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    string fractionToDecimal(int numerator, int denominator) {\n        \n    }\n};"
+    },
+    "description": "Given two integers representing the `numerator` and `denominator` of a fraction, return the fraction in string format. If the fractional part is repeating, enclose it in parentheses.",
+    "difficulty": "medium",
+    "tags": [
+      "math"
+    ],
+    "testCases": [
+      {
+        "input": "num = 1, den = 2",
+        "output": "\"0.5\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08625"
+        }
+      },
+      {
+        "input": "num = 2, den = 1",
+        "output": "\"2\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08626"
+        }
+      },
+      {
+        "input": "num = 4, den = 333",
+        "output": "\"0.(012)\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08627"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 62
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08628"
+    },
+    "title": "Two Sum II - Input Array Is Sorted",
+    "defaultCode": {
+      "java": "class Solution {\n    public int[] twoSum(int[] numbers, int target) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<int> twoSum(vector<int>& numbers, int target) {\n        \n    }\n};"
+    },
+    "description": "Given a 1-indexed array of integers `numbers` that is already sorted in non-decreasing order, find two numbers such that they add up to a specific `target`.",
+    "difficulty": "medium",
+    "tags": [
+      "two pointers"
+    ],
+    "testCases": [
+      {
+        "input": "numbers = [2,7,11,15], target = 9",
+        "output": "[1,2]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08629"
+        }
+      },
+      {
+        "input": "numbers = [2,3,4], target = 6",
+        "output": "[1,3]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0862a"
+        }
+      },
+      {
+        "input": "numbers = [-1,0], target = -1",
+        "output": "[1,2]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0862b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 63
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0862c"
+    },
+    "title": "Excel Sheet Column Title",
+    "defaultCode": {
+      "java": "class Solution {\n    public String convertToTitle(int columnNumber) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    string convertToTitle(int columnNumber) {\n        \n    }\n};"
+    },
+    "description": "Given an integer `columnNumber`, return its corresponding column title as it appears in an Excel sheet (e.g., 1 -> A, 27 -> AA).",
+    "difficulty": "easy",
+    "tags": [
+      "math"
+    ],
+    "testCases": [
+      {
+        "input": "columnNumber = 1",
+        "output": "\"A\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0862d"
+        }
+      },
+      {
+        "input": "columnNumber = 28",
+        "output": "\"AB\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0862e"
+        }
+      },
+      {
+        "input": "columnNumber = 701",
+        "output": "\"ZY\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0862f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 64
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08630"
+    },
+    "title": "Majority Element",
+    "defaultCode": {
+      "java": "class Solution {\n    public int majorityElement(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int majorityElement(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given an array `nums` of size `n`, return the majority element. The majority element is the element that appears more than `⌊n / 2⌋` times.",
+    "difficulty": "easy",
+    "tags": [
+      "array"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [3,2,3]",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08631"
+        }
+      },
+      {
+        "input": "nums = [2,2,1,1,1,2,2]",
+        "output": "2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08632"
+        }
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08633"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 65
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08634"
+    },
+    "title": "Excel Sheet Column Number",
+    "defaultCode": {
+      "java": "class Solution {\n    public int titleToNumber(String columnTitle) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int titleToNumber(string columnTitle) {\n        \n    }\n};"
+    },
+    "description": "Given a string `columnTitle` that represents the column title as appear in an Excel sheet, return its corresponding column number.",
+    "difficulty": "easy",
+    "tags": [
+      "math"
+    ],
+    "testCases": [
+      {
+        "input": "title = \"A\"",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08635"
+        }
+      },
+      {
+        "input": "title = \"AB\"",
+        "output": "28",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08636"
+        }
+      },
+      {
+        "input": "title = \"ZY\"",
+        "output": "701",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08637"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 66
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08638"
+    },
+    "title": "Factorial Trailing Zeroes",
+    "defaultCode": {
+      "java": "class Solution {\n    public int trailingZeroes(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int trailingZeroes(int n) {\n        \n    }\n};"
+    },
+    "description": "Given an integer `n`, return the number of trailing zeroes in `n!`.",
+    "difficulty": "medium",
+    "tags": [
+      "math"
+    ],
+    "testCases": [
+      {
+        "input": "n = 3",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08639"
+        }
+      },
+      {
+        "input": "n = 5",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0863a"
+        }
+      },
+      {
+        "input": "n = 0",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0863b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 67
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0863c"
+    },
+    "title": "Binary Search Tree Iterator",
+    "defaultCode": {
+      "java": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n * int val;\n * TreeNode left;\n * TreeNode right;\n * TreeNode(int x) { val = x; }\n * }\n */\nclass BSTIterator {\n    public BSTIterator(TreeNode root) {\n        \n    }\n    public int next() {\n        \n    }\n    public boolean hasNext() {\n        \n    }\n}",
+      "cpp": "class BSTIterator {\npublic:\n    BSTIterator(TreeNode* root) {\n        \n    }\n    int next() {\n        \n    }\n    bool hasNext() {\n        \n    }\n};"
+    },
+    "description": "Implement the `BSTIterator` class that represents an iterator over the in-order traversal of a binary search tree (BST).",
+    "difficulty": "medium",
+    "tags": [
+      "tree"
+    ],
+    "testCases": [
+      {
+        "input": "[\"BSTIterator\", \"next\", \"next\", \"hasNext\"]",
+        "output": "[null, 3, 7, true]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0863d"
+        }
+      },
+      {
+        "input": "root = [1]",
+        "output": "next() -> 1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0863e"
+        }
+      },
+      {
+        "input": "hasNext()",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0863f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 68
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08640"
+    },
+    "title": "Dungeon Game",
+    "defaultCode": {
+      "java": "class Solution {\n    public int calculateMinimumHP(int[][] dungeon) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int calculateMinimumHP(vector<vector<int>>& dungeon) {\n        \n    }\n};"
+    },
+    "description": "The demons had captured the princess and imprisoned her in the bottom-right corner of a dungeon. Determine the knight's minimum initial health so that he can reach the princess.",
+    "difficulty": "hard",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "dungeon = [[-2,-3,3],[-5,-10,1],[10,30,-5]]",
+        "output": "7",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08641"
+        }
+      },
+      {
+        "input": "dungeon = [[0]]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08642"
+        }
+      },
+      {
+        "input": "dungeon = [[-10]]",
+        "output": "11",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08643"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 69
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08644"
+    },
+    "title": "Largest Number",
+    "defaultCode": {
+      "java": "class Solution {\n    public String largestNumber(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    string largestNumber(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given a list of non-negative integers `nums`, arrange them such that they form the largest number and return it as a string.",
+    "difficulty": "medium",
+    "tags": [
+      "sorting"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [10,2]",
+        "output": "\"210\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08645"
+        }
+      },
+      {
+        "input": "nums = [3,30,34,5,9]",
+        "output": "\"9534330\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08646"
+        }
+      },
+      {
+        "input": "nums = [0,0]",
+        "output": "\"0\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08647"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 70
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08648"
+    },
+    "title": "Repeated DNA Sequences",
+    "defaultCode": {
+      "java": "class Solution {\n    public List<String> findRepeatedDnaSequences(String s) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<string> findRepeatedDnaSequences(string s) {\n        \n    }\n};"
+    },
+    "description": "The DNA sequence is composed of a series of nucleotides abbreviated as 'A', 'C', 'G', and 'T'. Find all the 10-letter-long sequences (substrings) that occur more than once.",
+    "difficulty": "medium",
+    "tags": [
+      "hash table"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT\"",
+        "output": "[\"AAAAACCCCC\",\"CCCCCAAAAA\"]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08649"
+        }
+      },
+      {
+        "input": "s = \"AAAAAAAAAAAAA\"",
+        "output": "[\"AAAAAAAAAA\"]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0864a"
+        }
+      },
+      {
+        "input": "s = \"ACGT\"",
+        "output": "[]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0864b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 71
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0864c"
+    },
+    "title": "Best Time to Buy and Sell Stock IV",
+    "defaultCode": {
+      "java": "class Solution {\n    public int maxProfit(int k, int[] prices) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int maxProfit(int k, vector<int>& prices) {\n        \n    }\n};"
+    },
+    "description": "You are given an integer array `prices` and an integer `k`. Find the maximum profit you can achieve by completing at most `k` transactions.",
+    "difficulty": "hard",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "k = 2, prices = [2,4,1]",
+        "output": "2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0864d"
+        }
+      },
+      {
+        "input": "k = 2, prices = [3,2,6,5,0,3]",
+        "output": "7",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0864e"
+        }
+      },
+      {
+        "input": "k = 100, prices = [1,2]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0864f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 72
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08650"
+    },
+    "title": "Rotate Array",
+    "defaultCode": {
+      "java": "class Solution {\n    public void rotate(int[] nums, int k) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    void rotate(vector<int>& nums, int k) {\n        \n    }\n};"
+    },
+    "description": "Given an array, rotate the array to the right by `k` steps, where `k` is non-negative.",
+    "difficulty": "medium",
+    "tags": [
+      "array"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [1,2,3,4,5,6,7], k = 3",
+        "output": "[5,6,7,1,2,3,4]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08651"
+        }
+      },
+      {
+        "input": "nums = [-1,-100,3,99], k = 2",
+        "output": "[3,99,-1,-100]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08652"
+        }
+      },
+      {
+        "input": "nums = [1,2], k = 3",
+        "output": "[2,1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08653"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 73
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08654"
+    },
+    "title": "Reverse Bits",
+    "defaultCode": {
+      "java": "public class Solution {\n    // you need treat n as an unsigned value\n    public int reverseBits(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    uint32_t reverseBits(uint32_t n) {\n        \n    }\n};"
+    },
+    "description": "Reverse bits of a given 32 bits unsigned integer.",
+    "difficulty": "easy",
+    "tags": [
+      "bit manipulation"
+    ],
+    "testCases": [
+      {
+        "input": "00000010100101000001111010011100",
+        "output": "00111001011110000010100101000000",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08655"
+        }
+      },
+      {
+        "input": "11111111111111111111111111111101",
+        "output": "10111111111111111111111111111111",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08656"
+        }
+      },
+      {
+        "input": "1",
+        "output": "2147483648",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08657"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 74
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08658"
+    },
+    "title": "Number of 1 Bits",
+    "defaultCode": {
+      "java": "public class Solution {\n    // you need to treat n as an unsigned value\n    public int hammingWeight(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int hammingWeight(uint32_t n) {\n        \n    }\n};"
+    },
+    "description": "Write a function that takes an unsigned integer and returns the number of '1' bits it has (also known as the Hamming weight).",
+    "difficulty": "easy",
+    "tags": [
+      "bit manipulation"
+    ],
+    "testCases": [
+      {
+        "input": "n = 11",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08659"
+        }
+      },
+      {
+        "input": "n = 128",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0865a"
+        }
+      },
+      {
+        "input": "n = 2147483645",
+        "output": "30",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0865b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 75
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0865c"
+    },
+    "title": "House Robber",
+    "defaultCode": {
+      "java": "class Solution {\n    public int rob(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int rob(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. You cannot rob two adjacent houses.",
+    "difficulty": "medium",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [1,2,3,1]",
+        "output": "4",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0865d"
+        }
+      },
+      {
+        "input": "nums = [2,7,9,3,1]",
+        "output": "12",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0865e"
+        }
+      },
+      {
+        "input": "nums = [0]",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0865f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 76
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08660"
+    },
+    "title": "Bitwise AND of Numbers Range",
+    "defaultCode": {
+      "java": "class Solution {\n    public int rangeBitwiseAnd(int left, int right) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int rangeBitwiseAnd(int left, int right) {\n        \n    }\n};"
+    },
+    "description": "Given a range [left, right], return the bitwise AND of all numbers in this range, inclusive.",
+    "difficulty": "medium",
+    "tags": [
+      "bit manipulation"
+    ],
+    "testCases": [
+      {
+        "input": "left = 5, right = 7",
+        "output": "4",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08661"
+        }
+      },
+      {
+        "input": "left = 0, right = 0",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08662"
+        }
+      },
+      {
+        "input": "left = 1, right = 2147483647",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08663"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 77
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08664"
+    },
+    "title": "Happy Number",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean isHappy(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool isHappy(int n) {\n        \n    }\n};"
+    },
+    "description": "A happy number is a number defined by replacing it with the sum of the squares of its digits until it equals 1, or it loops endlessly in a cycle.",
+    "difficulty": "easy",
+    "tags": [
+      "math"
+    ],
+    "testCases": [
+      {
+        "input": "n = 19",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08665"
+        }
+      },
+      {
+        "input": "n = 2",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08666"
+        }
+      },
+      {
+        "input": "n = 7",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08667"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 78
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08668"
+    },
+    "title": "Remove Linked List Elements",
+    "defaultCode": {
+      "java": "class Solution {\n    public ListNode removeElements(ListNode head, int val) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    ListNode* removeElements(ListNode* head, int val) {\n        \n    }\n};"
+    },
+    "description": "Given the head of a linked list and an integer `val`, remove all the nodes of the linked list that has `Node.val == val`.",
+    "difficulty": "easy",
+    "tags": [
+      "linked list"
+    ],
+    "testCases": [
+      {
+        "input": "head = [1,2,6,3,4,5,6], val = 6",
+        "output": "[1,2,3,4,5]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08669"
+        }
+      },
+      {
+        "input": "head = [], val = 1",
+        "output": "[]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0866a"
+        }
+      },
+      {
+        "input": "head = [7,7,7,7], val = 7",
+        "output": "[]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0866b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 79
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0866c"
+    },
+    "title": "Count Primes",
+    "defaultCode": {
+      "java": "class Solution {\n    public int countPrimes(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int countPrimes(int n) {\n        \n    }\n};"
+    },
+    "description": "Count the number of prime numbers less than a non-negative number, `n`.",
+    "difficulty": "medium",
+    "tags": [
+      "math"
+    ],
+    "testCases": [
+      {
+        "input": "n = 10",
+        "output": "4",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0866d"
+        }
+      },
+      {
+        "input": "n = 0",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0866e"
+        }
+      },
+      {
+        "input": "n = 1",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0866f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 80
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08670"
+    },
+    "title": "Isomorphic Strings",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean isIsomorphic(String s, String t) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool isIsomorphic(string s, string t) {\n        \n    }\n};"
+    },
+    "description": "Two strings `s` and `t` are isomorphic if the characters in `s` can be replaced to get `t`.",
+    "difficulty": "easy",
+    "tags": [
+      "string"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"egg\", t = \"add\"",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08671"
+        }
+      },
+      {
+        "input": "s = \"foo\", t = \"bar\"",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08672"
+        }
+      },
+      {
+        "input": "s = \"paper\", t = \"title\"",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08673"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 81
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08674"
+    },
+    "title": "Reverse Linked List",
+    "defaultCode": {
+      "java": "/**\n * Definition for singly-linked list.\n * public class ListNode {\n * int val;\n * ListNode next;\n * ListNode(int x) { val = x; }\n * }\n */\nclass Solution {\n    public ListNode reverseList(ListNode head) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    ListNode* reverseList(ListNode* head) {\n        \n    }\n};"
+    },
+    "description": "Given the head of a singly linked list, reverse the list and return the reversed list.",
+    "difficulty": "easy",
+    "tags": [
+      "linked list"
+    ],
+    "testCases": [
+      {
+        "input": "head = [1,2,3,4,5]",
+        "output": "[5,4,3,2,1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08675"
+        }
+      },
+      {
+        "input": "head = [1,2]",
+        "output": "[2,1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08676"
+        }
+      },
+      {
+        "input": "head = []",
+        "output": "[]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08677"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 82
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08678"
+    },
+    "title": "Course Schedule",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean canFinish(int numCourses, int[][] prerequisites) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {\n        \n    }\n};"
+    },
+    "description": "There are a total of `numCourses` courses you have to take, labeled from 0 to `numCourses - 1`. Some courses may have prerequisites. Return true if you can finish all courses.",
+    "difficulty": "medium",
+    "tags": [
+      "graph"
+    ],
+    "testCases": [
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0]]",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08679"
+        }
+      },
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0867a"
+        }
+      },
+      {
+        "input": "numCourses = 3, prerequisites = [[1,0],[2,1]]",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0867b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 83
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0867c"
+    },
+    "title": "Implement Tree (Prefix Tree)",
+    "defaultCode": {
+      "java": "class Trie {\n    public Trie() {}\n    public void insert(String word) {}\n    public boolean search(String word) {}\n    public boolean startsWith(String prefix) {}\n}",
+      "cpp": "class Trie {\npublic:\n    Trie() {}\n    void insert(string word) {}\n    bool search(string word) {}\n    bool startsWith(string prefix) {}\n};"
+    },
+    "description": "A trie (pronounced as 'try') or prefix tree is a tree data structure used to efficiently store and retrieve keys in a dataset of strings. Implement insert, search, and startsWith.",
+    "difficulty": "medium",
+    "tags": [
+      "tree"
+    ],
+    "testCases": [
+      {
+        "input": "[\"Trie\", \"insert\", \"search\", \"startsWith\"]",
+        "output": "[null, null, true, true]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0867d"
+        }
+      },
+      {
+        "input": "search(\"apple\")",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0867e"
+        }
+      },
+      {
+        "input": "startsWith(\"app\")",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0867f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.062Z"
+    },
+    "sno": 84
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08680"
+    },
+    "title": "Minimum Size Subarray Sum",
+    "defaultCode": {
+      "java": "class Solution {\n    public int minSubArrayLen(int target, int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int minSubArrayLen(int target, vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given an array of positive integers `nums` and a positive integer `target`, return the minimal length of a contiguous subarray of which the sum is greater than or equal to `target`.",
+    "difficulty": "medium",
+    "tags": [
+      "array"
+    ],
+    "testCases": [
+      {
+        "input": "target = 7, nums = [2,3,1,2,4,3]",
+        "output": "2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08681"
+        }
+      },
+      {
+        "input": "target = 4, nums = [1,4,4]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08682"
+        }
+      },
+      {
+        "input": "target = 11, nums = [1,1,1]",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08683"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 85
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08684"
+    },
+    "title": "Course Schedule II",
+    "defaultCode": {
+      "java": "class Solution {\n    public int[] findOrder(int numCourses, int[][] prerequisites) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {\n        \n    }\n};"
+    },
+    "description": "Given the total number of courses and a list of prerequisite pairs, return the ordering of courses you should take to finish all courses.",
+    "difficulty": "medium",
+    "tags": [
+      "graph"
+    ],
+    "testCases": [
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0]]",
+        "output": "[0,1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08685"
+        }
+      },
+      {
+        "input": "numCourses = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]]",
+        "output": "[0,2,1,3]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08686"
+        }
+      },
+      {
+        "input": "numCourses = 1, prerequisites = []",
+        "output": "[0]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08687"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 86
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08688"
+    },
+    "title": "Design Add and Search Words Data Structure",
+    "defaultCode": {
+      "java": "class WordDictionary {\n    public WordDictionary() {}\n    public void addWord(String word) {}\n    public boolean search(String word) {}\n}",
+      "cpp": "class WordDictionary {\npublic:\n    WordDictionary() {}\n    void addWord(string word) {}\n    bool search(string word) {}\n};"
+    },
+    "description": "Design a data structure that supports adding new words and finding if a string matches any previously added string. The string may contain '.' as a wildcard.",
+    "difficulty": "medium",
+    "tags": [
+      "tree"
+    ],
+    "testCases": [
+      {
+        "input": "addWord(\"bad\"), search(\".ad\")",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08689"
+        }
+      },
+      {
+        "input": "search(\"b..\")",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0868a"
+        }
+      },
+      {
+        "input": "search(\"pad\")",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0868b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 87
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0868c"
+    },
+    "title": "Word Search II",
+    "defaultCode": {
+      "java": "class Solution {\n    public List<String> findWords(char[][] board, String[] words) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {\n        \n    }\n};"
+    },
+    "description": "Given an `m x n` board of characters and a list of strings `words`, return all words on the board.",
+    "difficulty": "hard",
+    "tags": [
+      "backtracking"
+    ],
+    "testCases": [
+      {
+        "input": "board = [[\"o\",\"a\",\"a\",\"n\"],[\"e\",\"t\",\"a\",\"e\"]], words = [\"oath\",\"pea\"]",
+        "output": "[\"oath\"]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0868d"
+        }
+      },
+      {
+        "input": "board = [[\"a\",\"b\"],[\"c\",\"d\"]], words = [\"abcd\"]",
+        "output": "[]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0868e"
+        }
+      },
+      {
+        "input": "board = [[\"a\"]], words = [\"a\"]",
+        "output": "[\"a\"]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0868f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 88
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08690"
+    },
+    "title": "House Robber II",
+    "defaultCode": {
+      "java": "class Solution {\n    public int rob(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int rob(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Same as House Robber, but houses are arranged in a circle. This means the first house is the neighbor of the last one.",
+    "difficulty": "medium",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [2,3,2]",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08691"
+        }
+      },
+      {
+        "input": "nums = [1,2,3,1]",
+        "output": "4",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08692"
+        }
+      },
+      {
+        "input": "nums = [1,2,3]",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08693"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 89
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08694"
+    },
+    "title": "Shortest Palindrome",
+    "defaultCode": {
+      "java": "class Solution {\n    public String shortestPalindrome(String s) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    string shortestPalindrome(string s) {\n        \n    }\n};"
+    },
+    "description": "You are given a string `s`. You can convert `s` to a palindrome by adding characters in front of it. Find and return the shortest palindrome you can find.",
+    "difficulty": "hard",
+    "tags": [
+      "string"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"aacecaaa\"",
+        "output": "\"aaacecaaa\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08695"
+        }
+      },
+      {
+        "input": "s = \"abcd\"",
+        "output": "\"dcbabcd\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08696"
+        }
+      },
+      {
+        "input": "s = \"\"",
+        "output": "\"\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08697"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 90
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08698"
+    },
+    "title": "Kth Largest Element in an Array",
+    "defaultCode": {
+      "java": "class Solution {\n    public int findKthLargest(int[] nums, int k) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int findKthLargest(vector<int>& nums, int k) {\n        \n    }\n};"
+    },
+    "description": "Given an integer array `nums` and an integer `k`, return the kth largest element in the array.",
+    "difficulty": "medium",
+    "tags": [
+      "heap"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [3,2,1,5,6,4], k = 2",
+        "output": "5",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08699"
+        }
+      },
+      {
+        "input": "nums = [3,2,3,1,2,4,5,5,6], k = 4",
+        "output": "4",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0869a"
+        }
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0869b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 91
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0869c"
+    },
+    "title": "Combination Sum III",
+    "defaultCode": {
+      "java": "class Solution {\n    public List<List<Integer>> combinationSum3(int k, int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> combinationSum3(int k, int n) {\n        \n    }\n};"
+    },
+    "description": "Find all valid combinations of `k` numbers that sum up to `n` such that only numbers from 1 to 9 are used and each number is used at most once.",
+    "difficulty": "medium",
+    "tags": [
+      "backtracking"
+    ],
+    "testCases": [
+      {
+        "input": "k = 3, n = 7",
+        "output": "[[1,2,4]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0869d"
+        }
+      },
+      {
+        "input": "k = 3, n = 9",
+        "output": "[[1,2,6],[1,3,5],[2,3,4]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0869e"
+        }
+      },
+      {
+        "input": "k = 4, n = 1",
+        "output": "[]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0869f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 92
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086a0"
+    },
+    "title": "Contains Duplicate",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean containsDuplicate(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool containsDuplicate(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given an integer array `nums`, return true if any value appears at least twice in the array.",
+    "difficulty": "easy",
+    "tags": [
+      "array"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [1,2,3,1]",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086a1"
+        }
+      },
+      {
+        "input": "nums = [1,2,3,4]",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086a2"
+        }
+      },
+      {
+        "input": "nums = [1,1,1,3,3,4,3,2,4,2]",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086a3"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 93
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086a4"
+    },
+    "title": "The Skyline Problem",
+    "defaultCode": {
+      "java": "class Solution {\n    public List<List<Integer>> getSkyline(int[][] buildings) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> getSkyline(vector<vector<int>>& buildings) {\n        \n    }\n};"
+    },
+    "description": "A city's skyline is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Return the key points.",
+    "difficulty": "hard",
+    "tags": [
+      "heap"
+    ],
+    "testCases": [
+      {
+        "input": "buildings = [[2,9,10],[3,7,15]]",
+        "output": "[[2,10],[3,15],[7,10],[9,0]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086a5"
+        }
+      },
+      {
+        "input": "buildings = [[0,2,3],[2,5,3]]",
+        "output": "[[0,3],[5,0]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086a6"
+        }
+      },
+      {
+        "input": "buildings = [[1,2,1]]",
+        "output": "[[1,1],[2,0]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086a7"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 94
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086a8"
+    },
+    "title": "Contains Duplicate II",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean containsNearbyDuplicate(int[] nums, int k) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool containsNearbyDuplicate(vector<int>& nums, int k) {\n        \n    }\n};"
+    },
+    "description": "Given an integer array `nums` and an integer `k`, return true if there are two distinct indices `i` and `j` such that `nums[i] == nums[j]` and `abs(i - j) <= k`.",
+    "difficulty": "easy",
+    "tags": [
+      "array"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [1,2,3,1], k = 3",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086a9"
+        }
+      },
+      {
+        "input": "nums = [1,0,1,1], k = 1",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086aa"
+        }
+      },
+      {
+        "input": "nums = [1,2,3,1,2,3], k = 2",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086ab"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 95
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086ac"
+    },
+    "title": "Maximal Square",
+    "defaultCode": {
+      "java": "class Solution {\n    public int maximalSquare(char[][] matrix) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int maximalSquare(vector<vector<char>>& matrix) {\n        \n    }\n};"
+    },
+    "description": "Given an `m x n` binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.",
+    "difficulty": "medium",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "matrix = [[\"1\",\"0\",\"1\",\"0\"],[\"1\",\"0\",\"1\",\"1\"],[\"1\",\"1\",\"1\",\"1\"]]",
+        "output": "4",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086ad"
+        }
+      },
+      {
+        "input": "matrix = [[\"0\",\"1\"],[\"1\",\"0\"]]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086ae"
+        }
+      },
+      {
+        "input": "matrix = [[\"0\"]]",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086af"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 96
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086b0"
+    },
+    "title": "Count Complete Tree Nodes",
+    "defaultCode": {
+      "java": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n * int val;\n * TreeNode left;\n * TreeNode right;\n * }\n */\nclass Solution {\n    public int countNodes(TreeNode root) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int countNodes(TreeNode* root) {\n        \n    }\n};"
+    },
+    "description": "Given the root of a complete binary tree, return the number of nodes in the tree. Try to do it in less than O(n) time.",
+    "difficulty": "easy",
+    "tags": [
+      "tree"
+    ],
+    "testCases": [
+      {
+        "input": "root = [1,2,3,4,5,6]",
+        "output": "6",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086b1"
+        }
+      },
+      {
+        "input": "root = []",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086b2"
+        }
+      },
+      {
+        "input": "root = [1]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086b3"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 97
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086b4"
+    },
+    "title": "Rectangle Area",
+    "defaultCode": {
+      "java": "class Solution {\n    public int computeArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int computeArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {\n        \n    }\n};"
+    },
+    "description": "Given the coordinates of two rectilinear rectangles in a 2D plane, return the total area covered by the two rectangles.",
+    "difficulty": "medium",
+    "tags": [
+      "math"
+    ],
+    "testCases": [
+      {
+        "input": "ax1=-3, ay1=0, ax2=3, ay2=4, bx1=0, by1=-1, bx2=9, by2=2",
+        "output": "45",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086b5"
+        }
+      },
+      {
+        "input": "ax1=-2, ay1=-2, ax2=2, ay2=2, bx1=-2, by1=-2, bx2=2, by2=2",
+        "output": "16",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086b6"
+        }
+      },
+      {
+        "input": "ax1=0, ay1=0, ax2=1, ay2=1, bx1=2, by1=2, bx2=3, by2=3",
+        "output": "2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086b7"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 98
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086b8"
+    },
+    "title": "Basic Calculator",
+    "defaultCode": {
+      "java": "class Solution {\n    public int calculate(String s) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int calculate(string s) {\n        \n    }\n};"
+    },
+    "description": "Implement a basic calculator to evaluate a simple expression string containing parentheses, plus, and minus.",
+    "difficulty": "hard",
+    "tags": [
+      "stack"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"1 + 1\"",
+        "output": "2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086b9"
+        }
+      },
+      {
+        "input": "s = \"(1+(4+5+2)-3)+(6+8)\"",
+        "output": "23",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086ba"
+        }
+      },
+      {
+        "input": "s = \" 2-1 + 2 \"",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086bb"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 99
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086bc"
+    },
+    "title": "Invert Binary Tree",
+    "defaultCode": {
+      "java": "class Solution {\n    public TreeNode invertTree(TreeNode root) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    TreeNode* invertTree(TreeNode* root) {\n        \n    }\n};"
+    },
+    "description": "Given the root of a binary tree, invert the tree (swap left and right children) and return its root.",
+    "difficulty": "easy",
+    "tags": [
+      "tree"
+    ],
+    "testCases": [
+      {
+        "input": "root = [4,2,7,1,3,6,9]",
+        "output": "[4,7,2,9,6,3,1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086bd"
+        }
+      },
+      {
+        "input": "root = [2,1,3]",
+        "output": "[2,3,1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086be"
+        }
+      },
+      {
+        "input": "root = []",
+        "output": "[]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086bf"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 100
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086c0"
+    },
+    "title": "Kth Smallest Element in a BST",
+    "defaultCode": {
+      "java": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n * int val;\n * TreeNode left;\n * TreeNode right;\n * TreeNode(int x) { val = x; }\n * }\n */\nclass Solution {\n    public int kthSmallest(TreeNode root, int k) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int kthSmallest(TreeNode* root, int k) {\n        \n    }\n};"
+    },
+    "description": "Given the root of a binary search tree, and an integer `k`, return the kth smallest value (1-indexed) of all the values of the nodes in the tree.",
+    "difficulty": "medium",
+    "tags": [
+      "tree"
+    ],
+    "testCases": [
+      {
+        "input": "root = [3,1,4,null,2], k = 1",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086c1"
+        }
+      },
+      {
+        "input": "root = [5,3,6,2,4,null,null,1], k = 3",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086c2"
+        }
+      },
+      {
+        "input": "root = [1], k = 1",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086c3"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 101
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086c4"
+    },
+    "title": "Palindrome Linked List",
+    "defaultCode": {
+      "java": "/**\n * Definition for singly-linked list.\n * public class ListNode {\n * int val;\n * ListNode next;\n * ListNode(int x) { val = x; }\n * }\n */\nclass Solution {\n    public boolean isPalindrome(ListNode head) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool isPalindrome(ListNode* head) {\n        \n    }\n};"
+    },
+    "description": "Given the head of a singly linked list, return true if it is a palindrome.",
+    "difficulty": "easy",
+    "tags": [
+      "linked list"
+    ],
+    "testCases": [
+      {
+        "input": "head = [1,2,2,1]",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086c5"
+        }
+      },
+      {
+        "input": "head = [1,2]",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086c6"
+        }
+      },
+      {
+        "input": "head = [1,2,3,2,1]",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086c7"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 102
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086c8"
+    },
+    "title": "Lowest Common Ancestor of a Binary Tree",
+    "defaultCode": {
+      "java": "class Solution {\n    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {\n        \n    }\n};"
+    },
+    "description": "Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.",
+    "difficulty": "medium",
+    "tags": [
+      "tree"
+    ],
+    "testCases": [
+      {
+        "input": "root = [3,5,1,6,2,0,8], p = 5, q = 1",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086c9"
+        }
+      },
+      {
+        "input": "root = [3,5,1,6,2,0,8], p = 5, q = 4",
+        "output": "5",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086ca"
+        }
+      },
+      {
+        "input": "root = [1,2], p = 1, q = 2",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086cb"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 103
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086cc"
+    },
+    "title": "Product of Array Except Self",
+    "defaultCode": {
+      "java": "class Solution {\n    public int[] productExceptSelf(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<int> productExceptSelf(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given an integer array `nums`, return an array `answer` such that `answer[i]` is equal to the product of all the elements of `nums` except `nums[i]`. Do it in O(n) without division.",
+    "difficulty": "medium",
+    "tags": [
+      "array"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [1,2,3,4]",
+        "output": "[24,12,8,6]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086cd"
+        }
+      },
+      {
+        "input": "nums = [-1,1,0,-3,3]",
+        "output": "[0,0,9,0,0]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086ce"
+        }
+      },
+      {
+        "input": "nums = [1,1]",
+        "output": "[1,1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086cf"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 104
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086d0"
+    },
+    "title": "Sliding Window Maximum",
+    "defaultCode": {
+      "java": "class Solution {\n    public int[] maxSlidingWindow(int[] nums, int k) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<int> maxSlidingWindow(vector<int>& nums, int k) {\n        \n    }\n};"
+    },
+    "description": "You are given an array of integers `nums`, there is a sliding window of size `k` which is moving from the very left of the array to the very right. Return the max in each window.",
+    "difficulty": "hard",
+    "tags": [
+      "array"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [1,3,-1,-3,5,3,6,7], k = 3",
+        "output": "[3,3,5,5,6,7]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086d1"
+        }
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086d2"
+        }
+      },
+      {
+        "input": "nums = [7,2,4], k = 2",
+        "output": "[7,4]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086d3"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 105
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086d4"
+    },
+    "title": "Valid Anagram",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean isAnagram(String s, String t) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool isAnagram(string s, string t) {\n        \n    }\n};"
+    },
+    "description": "Given two strings `s` and `t`, return true if `t` is an anagram of `s`, and false otherwise.",
+    "difficulty": "easy",
+    "tags": [
+      "string"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"anagram\", t = \"nagaram\"",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086d5"
+        }
+      },
+      {
+        "input": "s = \"rat\", t = \"car\"",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086d6"
+        }
+      },
+      {
+        "input": "s = \"a\", t = \"a\"",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086d7"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 106
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086d8"
+    },
+    "title": "Integer to English Words",
+    "defaultCode": {
+      "java": "class Solution {\n    public String numberToWords(int num) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    string numberToWords(int num) {\n        \n    }\n};"
+    },
+    "description": "Convert a non-negative integer `num` to its English words representation.",
+    "difficulty": "hard",
+    "tags": [
+      "string"
+    ],
+    "testCases": [
+      {
+        "input": "num = 123",
+        "output": "\"One Hundred Twenty Three\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086d9"
+        }
+      },
+      {
+        "input": "num = 1234567",
+        "output": "\"One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086da"
+        }
+      },
+      {
+        "input": "num = 0",
+        "output": "\"Zero\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086db"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 107
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086dc"
+    },
+    "title": "H-Index",
+    "defaultCode": {
+      "java": "class Solution {\n    public int hIndex(int[] citations) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int hIndex(vector<int>& citations) {\n        \n    }\n};"
+    },
+    "description": "Given an array of integers `citations`, return the researcher's h-index. The h-index is defined as the maximum value of h such that the researcher has published h papers that have each been cited at least h times.",
+    "difficulty": "medium",
+    "tags": [
+      "sorting"
+    ],
+    "testCases": [
+      {
+        "input": "citations = [3,0,6,1,5]",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086dd"
+        }
+      },
+      {
+        "input": "citations = [1,3,1]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086de"
+        }
+      },
+      {
+        "input": "citations = [10,8,5,4,3]",
+        "output": "4",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086df"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 108
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086e0"
+    },
+    "title": "H-Index II",
+    "defaultCode": {
+      "java": "class Solution {\n    public int hIndex(int[] citations) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int hIndex(vector<int>& citations) {\n        \n    }\n};"
+    },
+    "description": "Same as H-Index, but the `citations` array is already sorted in ascending order. Solve in O(log n) time.",
+    "difficulty": "medium",
+    "tags": [
+      "binary search"
+    ],
+    "testCases": [
+      {
+        "input": "citations = [0,1,3,5,6]",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086e1"
+        }
+      },
+      {
+        "input": "citations = [1,2,100]",
+        "output": "2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086e2"
+        }
+      },
+      {
+        "input": "citations = [0]",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086e3"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 109
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086e4"
+    },
+    "title": "First Bad Version",
+    "defaultCode": {
+      "java": "public class Solution extends VersionControl {\n    public int firstBadVersion(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int firstBadVersion(int n) {\n        \n    }\n};"
+    },
+    "description": "You are a product manager and currently leading a team to develop a new product. Find the first version that failed the quality test.",
+    "difficulty": "easy",
+    "tags": [
+      "binary search"
+    ],
+    "testCases": [
+      {
+        "input": "n = 5, bad = 4",
+        "output": "4",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086e5"
+        }
+      },
+      {
+        "input": "n = 1, bad = 1",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086e6"
+        }
+      },
+      {
+        "input": "n = 10, bad = 7",
+        "output": "7",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086e7"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 110
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086e8"
+    },
+    "title": "Perfect Squares",
+    "defaultCode": {
+      "java": "class Solution {\n    public int numSquares(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int numSquares(int n) {\n        \n    }\n};"
+    },
+    "description": "Given an integer `n`, return the least number of perfect square numbers that sum to `n`.",
+    "difficulty": "medium",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "n = 12",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086e9"
+        }
+      },
+      {
+        "input": "n = 13",
+        "output": "2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086ea"
+        }
+      },
+      {
+        "input": "n = 1",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086eb"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 111
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086ec"
+    },
+    "title": "Wiggle Sort",
+    "defaultCode": {
+      "java": "class Solution {\n    public void wiggleSort(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    void wiggleSort(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given an integer array `nums`, reorder it such that `nums[0] <= nums[1] >= nums[2] <= nums[3]...`",
+    "difficulty": "medium",
+    "tags": [
+      "sorting"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [3,5,2,1,6,4]",
+        "output": "[3,5,1,6,2,4]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086ed"
+        }
+      },
+      {
+        "input": "nums = [1,2,3]",
+        "output": "[1,3,2]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086ee"
+        }
+      },
+      {
+        "input": "nums = [6,6,5,5]",
+        "output": "[5,6,5,6]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086ef"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 112
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086f0"
+    },
+    "title": "Expression Add Operators",
+    "defaultCode": {
+      "java": "class Solution {\n    public List<String> addOperators(String num, int target) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<string> addOperators(string num, int target) {\n        \n    }\n};"
+    },
+    "description": "Given a string `num` containing only digits and an integer `target`, return all possibilities to insert binary operators '+', '-', and/or '*' between the digits so that the resultant expression evaluates to the target value.",
+    "difficulty": "hard",
+    "tags": [
+      "backtracking"
+    ],
+    "testCases": [
+      {
+        "input": "num = \"123\", target = 6",
+        "output": "[\"1*2*3\",\"1+2+3\"]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086f1"
+        }
+      },
+      {
+        "input": "num = \"105\", target = 5",
+        "output": "[\"1*0+5\",\"10-5\"]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086f2"
+        }
+      },
+      {
+        "input": "num = \"00\", target = 0",
+        "output": "[\"0+0\", \"0-0\", \"0*0\"]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086f3"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 113
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086f4"
+    },
+    "title": "Move Zeroes",
+    "defaultCode": {
+      "java": "class Solution {\n    public void moveZeroes(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    void moveZeroes(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given an integer array `nums`, move all 0's to the end of it while maintaining the relative order of the non-zero elements.",
+    "difficulty": "easy",
+    "tags": [
+      "two pointers"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [0,1,0,3,12]",
+        "output": "[1,3,12,0,0]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086f5"
+        }
+      },
+      {
+        "input": "nums = [0]",
+        "output": "[0]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086f6"
+        }
+      },
+      {
+        "input": "nums = [1,2,3]",
+        "output": "[1,2,3]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086f7"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 114
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086f8"
+    },
+    "title": "Find the Duplicate Number",
+    "defaultCode": {
+      "java": "class Solution {\n    public int findDuplicate(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int findDuplicate(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given an array of integers `nums` containing `n + 1` integers where each integer is in the range `[1, n]` inclusive. There is only one repeated number, find it.",
+    "difficulty": "medium",
+    "tags": [
+      "binary search"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [1,3,4,2,2]",
+        "output": "2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086f9"
+        }
+      },
+      {
+        "input": "nums = [3,1,3,4,2]",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086fa"
+        }
+      },
+      {
+        "input": "nums = [1,1]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086fb"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 115
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a086fc"
+    },
+    "title": "Game of Life",
+    "defaultCode": {
+      "java": "class Solution {\n    public void gameOfLife(int[][] board) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    void gameOfLife(vector<vector<int>>& board) {\n        \n    }\n};"
+    },
+    "description": "According to John Conway's rules, given a board state, return the next state of the board. The grid is updated simultaneously.",
+    "difficulty": "medium",
+    "tags": [
+      "array"
+    ],
+    "testCases": [
+      {
+        "input": "board = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]",
+        "output": "[[0,0,0],[1,0,1],[0,1,1],[0,1,0]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086fd"
+        }
+      },
+      {
+        "input": "board = [[1,1],[1,0]]",
+        "output": "[[1,1],[1,1]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086fe"
+        }
+      },
+      {
+        "input": "board = [[1]]",
+        "output": "[[0]]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a086ff"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 116
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08700"
+    },
+    "title": "Word Pattern",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean wordPattern(String pattern, String s) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool wordPattern(string pattern, string s) {\n        \n    }\n};"
+    },
+    "description": "Given a `pattern` and a string `s`, find if `s` follows the same pattern (bijection between pattern and words).",
+    "difficulty": "easy",
+    "tags": [
+      "hash table"
+    ],
+    "testCases": [
+      {
+        "input": "pattern = \"abba\", s = \"dog cat cat dog\"",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08701"
+        }
+      },
+      {
+        "input": "pattern = \"abba\", s = \"dog cat cat fish\"",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08702"
+        }
+      },
+      {
+        "input": "pattern = \"aaaa\", s = \"dog cat cat dog\"",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08703"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 117
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08704"
+    },
+    "title": "Nim Game",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean canWinNim(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool canWinNim(int n) {\n        \n    }\n};"
+    },
+    "description": "You and a friend play a game where you take turns removing 1-3 stones from a heap. The one who removes the last stone wins. Determine if you can win given `n` stones.",
+    "difficulty": "easy",
+    "tags": [
+      "math"
+    ],
+    "testCases": [
+      {
+        "input": "n = 4",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08705"
+        }
+      },
+      {
+        "input": "n = 1",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08706"
+        }
+      },
+      {
+        "input": "n = 2",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08707"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 118
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08708"
+    },
+    "title": "Find Median from Data Stream",
+    "defaultCode": {
+      "java": "class MedianFinder {\n    public MedianFinder() {}\n    public void addNum(int num) {}\n    public double findMedian() {}\n}",
+      "cpp": "class MedianFinder {\npublic:\n    MedianFinder() {}\n    void addNum(int num) {}\n    double findMedian() {}\n};"
+    },
+    "description": "Implement the `MedianFinder` class which supports adding integers from a data stream and finding the median of all elements added so far.",
+    "difficulty": "hard",
+    "tags": [
+      "heap"
+    ],
+    "testCases": [
+      {
+        "input": "[\"MedianFinder\",\"addNum\",\"addNum\",\"findMedian\",\"addNum\",\"findMedian\"]",
+        "output": "[null,null,null,1.5,null,2.0]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08709"
+        }
+      },
+      {
+        "input": "addNum(1), addNum(2)",
+        "output": "median is 1.5",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0870a"
+        }
+      },
+      {
+        "input": "addNum(3)",
+        "output": "median is 2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0870b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 119
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0870c"
+    },
+    "title": "Serialize and Deserialize Binary Tree",
+    "defaultCode": {
+      "java": "public class Codec {\n    public String serialize(TreeNode root) {\n        \n    }\n    public TreeNode deserialize(String data) {\n        \n    }\n}",
+      "cpp": "class Codec {\npublic:\n    string serialize(TreeNode* root) {\n        \n    }\n    TreeNode* deserialize(string data) {\n        \n    }\n};"
+    },
+    "description": "Design an algorithm to serialize a binary tree into a string and deserialize that string back into the original tree structure.",
+    "difficulty": "hard",
+    "tags": [
+      "tree"
+    ],
+    "testCases": [
+      {
+        "input": "root = [1,2,3,null,null,4,5]",
+        "output": "String '1,2,X,X,3,4,X,X,5,X,X'",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0870d"
+        }
+      },
+      {
+        "input": "root = []",
+        "output": "''",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0870e"
+        }
+      },
+      {
+        "input": "root = [1]",
+        "output": "'1,X,X'",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0870f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 120
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08710"
+    },
+    "title": "Bulls and Cows",
+    "defaultCode": {
+      "java": "class Solution {\n    public String getHint(String secret, String guess) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    string getHint(string secret, string guess) {\n        \n    }\n};"
+    },
+    "description": "You are playing the Bulls and Cows game. Given a `secret` number and a `guess`, return a hint in the format 'xAyB' (x Bulls, y Cows).",
+    "difficulty": "medium",
+    "tags": [
+      "hash table"
+    ],
+    "testCases": [
+      {
+        "input": "secret = \"1807\", guess = \"7810\"",
+        "output": "\"1A3B\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08711"
+        }
+      },
+      {
+        "input": "secret = \"1123\", guess = \"0111\"",
+        "output": "\"1A1B\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08712"
+        }
+      },
+      {
+        "input": "secret = \"1\", guess = \"1\"",
+        "output": "\"1A0B\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08713"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 121
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08714"
+    },
+    "title": "Longest Increasing Subsequence",
+    "defaultCode": {
+      "java": "class Solution {\n    public int lengthOfLIS(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int lengthOfLIS(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given an integer array `nums`, return the length of the longest strictly increasing subsequence.",
+    "difficulty": "medium",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [10,9,2,5,3,7,101,18]",
+        "output": "4",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08715"
+        }
+      },
+      {
+        "input": "nums = [0,1,0,3,2,3]",
+        "output": "4",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08716"
+        }
+      },
+      {
+        "input": "nums = [7,7,7]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08717"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.063Z"
+    },
+    "sno": 122
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08718"
+    },
+    "title": "Range Sum Query - Immutable",
+    "defaultCode": {
+      "java": "class NumArray {\n    public NumArray(int[] nums) {\n        \n    }\n    public int sumRange(int left, int right) {\n        \n    }\n}",
+      "cpp": "class NumArray {\npublic:\n    NumArray(vector<int>& nums) {\n        \n    }\n    int sumRange(int left, int right) {\n        \n    }\n};"
+    },
+    "description": "Given an integer array `nums`, handle multiple queries for the sum of elements between indices `left` and `right` inclusive.",
+    "difficulty": "easy",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "[\"NumArray\", \"sumRange\", \"sumRange\"]",
+        "output": "[null, 1, -1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08719"
+        }
+      },
+      {
+        "input": "sumRange(0, 2)",
+        "output": "Sum of first 3 elements",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0871a"
+        }
+      },
+      {
+        "input": "sumRange(2, 5)",
+        "output": "Sum of elements 2 to 5",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0871b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 123
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0871c"
+    },
+    "title": "Range Sum Query 2D - Immutable",
+    "defaultCode": {
+      "java": "class NumMatrix {\n    public NumMatrix(int[][] matrix) {\n        \n    }\n    public int sumRegion(int row1, int col1, int row2, int col2) {\n        \n    }\n}",
+      "cpp": "class NumMatrix {\npublic:\n    NumMatrix(vector<vector<int>>& matrix) {\n        \n    }\n    int sumRegion(int row1, int col1, int row2, int col2) {\n        \n    }\n};"
+    },
+    "description": "Given a 2D matrix, handle multiple queries for the sum of elements within a rectangle defined by its upper left and lower right corners.",
+    "difficulty": "medium",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "matrix, row1=2, col1=1, row2=4, col2=3",
+        "output": "8",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0871d"
+        }
+      },
+      {
+        "input": "sumRegion(1, 1, 2, 2)",
+        "output": "Sum of 2x2 sub-rectangle",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0871e"
+        }
+      },
+      {
+        "input": "sumRegion(0, 0, 0, 0)",
+        "output": "Single cell sum",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0871f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 124
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08720"
+    },
+    "title": "Additive Number",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean isAdditiveNumber(String num) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool isAdditiveNumber(string num) {\n        \n    }\n};"
+    },
+    "description": "An additive number is a string whose digits can form an additive sequence (e.g., 1+1=2, 1+2=3). Return true if the string is additive.",
+    "difficulty": "medium",
+    "tags": [
+      "backtracking"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"112358\"",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08721"
+        }
+      },
+      {
+        "input": "s = \"199100199\"",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08722"
+        }
+      },
+      {
+        "input": "s = \"1023\"",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08723"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 125
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08724"
+    },
+    "title": "Range Sum Query - Mutable",
+    "defaultCode": {
+      "java": "class NumArray {\n    public NumArray(int[] nums) {\n        \n    }\n    public void update(int index, int val) {\n        \n    }\n    public int sumRange(int left, int right) {\n        \n    }\n}",
+      "cpp": "class NumArray {\npublic:\n    NumArray(vector<int>& nums) {\n        \n    }\n    void update(int index, int val) {\n        \n    }\n    int sumRange(int left, int right) {\n        \n    }\n};"
+    },
+    "description": "Given an array `nums`, handle queries for the sum of elements in a range and updates to the value of a specific element.",
+    "difficulty": "medium",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "[\"NumArray\", \"sumRange\", \"update\", \"sumRange\"]",
+        "output": "[null, 9, null, 8]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08725"
+        }
+      },
+      {
+        "input": "update(1, 2)",
+        "output": "Index 1 becomes 2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08726"
+        }
+      },
+      {
+        "input": "sumRange(0, 2)",
+        "output": "Sum after update",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08727"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 126
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08728"
+    },
+    "title": "Best Time to Buy and Sell Stock with Cooldown",
+    "defaultCode": {
+      "java": "class Solution {\n    public int maxProfit(int[] prices) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int maxProfit(vector<int>& prices) {\n        \n    }\n};"
+    },
+    "description": "Find the maximum profit you can achieve. You may complete as many transactions as you like, but after selling, you cannot buy the next day.",
+    "difficulty": "medium",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "prices = [1,2,3,0,2]",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08729"
+        }
+      },
+      {
+        "input": "prices = [1]",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0872a"
+        }
+      },
+      {
+        "input": "prices = [1,2]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0872b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 127
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0872c"
+    },
+    "title": "Minimum Height Trees",
+    "description": "Given a tree with `n` nodes, find all the root nodes that result in a minimum height tree (MHT).",
+    "difficulty": "medium",
+    "tags": [
+      "graph"
+    ],
+    "testCases": [
+      {
+        "input": "n = 4, edges = [[1,0],[1,2],[1,3]]",
+        "output": "[1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0872d"
+        }
+      },
+      {
+        "input": "n = 6, edges = [[3,0],[3,1],[3,2],[3,4],[5,4]]",
+        "output": "[3,4]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0872e"
+        }
+      },
+      {
+        "input": "n = 1, edges = []",
+        "output": "[0]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0872f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 128
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08730"
+    },
+    "title": "Burst Balloons",
+    "defaultCode": {
+      "java": "class Solution {\n    public int maxCoins(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int maxCoins(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "You are given `n` balloons. If you burst balloon `i`, you get `nums[i-1] * nums[i] * nums[i+1]` coins. Find the maximum coins you can collect.",
+    "difficulty": "hard",
+    "tags": [
+      "dp"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [3,1,5,8]",
+        "output": "167",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08731"
+        }
+      },
+      {
+        "input": "nums = [1,5]",
+        "output": "10",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08732"
+        }
+      },
+      {
+        "input": "nums = [3]",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08733"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 129
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08734"
+    },
+    "title": "Super Ugly Number",
+    "defaultCode": {
+      "java": "class Solution {\n    public int nthSuperUglyNumber(int n, int[] primes) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int nthSuperUglyNumber(int n, vector<int>& primes) {\n        \n    }\n};"
+    },
+    "description": "A super ugly number is a positive integer whose prime factors are in a given list `primes`. Find the nth super ugly number.",
+    "difficulty": "medium",
+    "tags": [
+      "heap"
+    ],
+    "testCases": [
+      {
+        "input": "n = 12, primes = [2,7,13,19]",
+        "output": "32",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08735"
+        }
+      },
+      {
+        "input": "n = 1, primes = [2,3,5]",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08736"
+        }
+      },
+      {
+        "input": "n = 5, primes = [2]",
+        "output": "16",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08737"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 130
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08738"
+    },
+    "title": "Count of Smaller Numbers After Self",
+    "defaultCode": {
+      "java": "class Solution {\n    public List<Integer> countSmaller(int[] nums) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<int> countSmaller(vector<int>& nums) {\n        \n    }\n};"
+    },
+    "description": "Given an integer array `nums`, return an integer array `counts` where `counts[i]` is the number of smaller elements to the right of `nums[i]`.",
+    "difficulty": "hard",
+    "tags": [
+      "binary search"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [5,2,6,1]",
+        "output": "[2,1,1,0]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08739"
+        }
+      },
+      {
+        "input": "nums = [-1]",
+        "output": "[0]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0873a"
+        }
+      },
+      {
+        "input": "nums = [-1,-1]",
+        "output": "[0,0]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0873b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 131
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0873c"
+    },
+    "title": "Remove Duplicate Letters",
+    "defaultCode": {
+      "java": "class Solution {\n    public String removeDuplicateLetters(String s) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    string removeDuplicateLetters(string s) {\n        \n    }\n};"
+    },
+    "description": "Remove duplicate letters so that every letter appears once and the result is the smallest in lexicographical order.",
+    "difficulty": "medium",
+    "tags": [
+      "stack"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"bcabc\"",
+        "output": "\"abc\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0873d"
+        }
+      },
+      {
+        "input": "s = \"cbacdcbc\"",
+        "output": "\"acdb\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0873e"
+        }
+      },
+      {
+        "input": "s = \"abacaba\"",
+        "output": "\"abc\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0873f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 132
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08740"
+    },
+    "title": "Maximum Product of Word Lengths",
+    "defaultCode": {
+      "java": "class Solution {\n    public int maxProduct(String[] words) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int maxProduct(vector<string>& words) {\n        \n    }\n};"
+    },
+    "description": "Given a string array `words`, find the maximum value of `length(word[i]) * length(word[j])` where the two words do not share any common letters.",
+    "difficulty": "medium",
+    "tags": [
+      "bit manipulation"
+    ],
+    "testCases": [
+      {
+        "input": "words = [\"abcw\",\"baz\",\"foo\",\"bar\",\"xtfn\",\"abcdef\"]",
+        "output": "16",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08741"
+        }
+      },
+      {
+        "input": "words = [\"a\",\"ab\",\"abc\",\"d\",\"cd\",\"bcd\",\"abcd\"]",
+        "output": "4",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08742"
+        }
+      },
+      {
+        "input": "words = [\"a\",\"aa\",\"aaa\",\"aaaa\"]",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08743"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 133
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08744"
+    },
+    "title": "Bulb Switcher",
+    "defaultCode": {
+      "java": "class Solution {\n    public int bulbSwitch(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int bulbSwitch(int n) {\n        \n    }\n};"
+    },
+    "description": "There are `n` bulbs that are initially off. You do `n` passes. In the ith pass, you toggle every ith bulb. Return the number of bulbs that are on after `n` passes.",
+    "difficulty": "medium",
+    "tags": [
+      "math"
+    ],
+    "testCases": [
+      {
+        "input": "n = 3",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08745"
+        }
+      },
+      {
+        "input": "n = 0",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08746"
+        }
+      },
+      {
+        "input": "n = 1",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08747"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 134
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08748"
+    },
+    "title": "Kth Smallest Element in a Sorted Matrix",
+    "defaultCode": {
+      "java": "class Solution {\n    public int kthSmallest(int[][] matrix, int k) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int kthSmallest(vector<vector<int>>& matrix, int k) {\n        \n    }\n};"
+    },
+    "description": "Given an n x n matrix where each of the rows and columns is sorted in ascending order, return the kth smallest element in the matrix.",
+    "difficulty": "medium",
+    "tags": [
+      "heap"
+    ],
+    "testCases": [
+      {
+        "input": "matrix = [[1,5,9],[10,11,13],[12,13,15]], k = 8",
+        "output": "13",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08749"
+        }
+      },
+      {
+        "input": "matrix = [[-5]], k = 1",
+        "output": "-5",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0874a"
+        }
+      },
+      {
+        "input": "matrix = [[1,2],[1,2]], k = 2",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0874b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 135
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0874c"
+    },
+    "title": "Insert Delete GetRandom O(1)",
+    "defaultCode": {
+      "java": "class RandomizedSet {\n    public RandomizedSet() {}\n    public boolean insert(int val) {}\n    public boolean remove(int val) {}\n    public int getRandom() {}\n}",
+      "cpp": "class RandomizedSet {\npublic:\n    RandomizedSet() {}\n    bool insert(int val) {}\n    bool remove(int val) {}\n    int getRandom() {}\n};"
+    },
+    "description": "Implement the `RandomizedSet` class that supports insert, delete, and getRandom in average O(1) time.",
+    "difficulty": "medium",
+    "tags": [
+      "hash table"
+    ],
+    "testCases": [
+      {
+        "input": "[\"RandomizedSet\", \"insert\", \"remove\", \"getRandom\"]",
+        "output": "[null, true, false, 1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0874d"
+        }
+      },
+      {
+        "input": "insert(1)",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0874e"
+        }
+      },
+      {
+        "input": "getRandom()",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0874f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 136
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08750"
+    },
+    "title": "Insert Delete GetRandom O(1) - Duplicates allowed",
+    "defaultCode": {
+      "java": "class RandomizedCollection {\n    public RandomizedCollection() {}\n    public boolean insert(int val) {}\n    public boolean remove(int val) {}\n    public int getRandom() {}\n}",
+      "cpp": "class RandomizedCollection {\npublic:\n    RandomizedCollection() {}\n    bool insert(int val) {}\n    bool remove(int val) {}\n    int getRandom() {}\n};"
+    },
+    "description": "Similar to RandomizedSet, but the set allows duplicate elements.",
+    "difficulty": "hard",
+    "tags": [
+      "hash table"
+    ],
+    "testCases": [
+      {
+        "input": "[\"RandomizedCollection\", \"insert\", \"insert\", \"getRandom\"]",
+        "output": "[null, true, false, 1]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08751"
+        }
+      },
+      {
+        "input": "insert(1), insert(1)",
+        "output": "Both stored",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08752"
+        }
+      },
+      {
+        "input": "remove(1)",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08753"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 137
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08754"
+    },
+    "title": "Linked List Random Node",
+    "defaultCode": {
+      "java": "class Solution {\n    public Solution(ListNode head) {}\n    public int getRandom() {}\n}",
+      "cpp": "class Solution {\npublic:\n    Solution(ListNode* head) {}\n    int getRandom() {}\n};"
+    },
+    "description": "Given a singly linked list, return a random node's value from the list. Each node must have the same probability of being chosen. (Reservoir Sampling)",
+    "difficulty": "medium",
+    "tags": [
+      "linked list"
+    ],
+    "testCases": [
+      {
+        "input": "head = [1,2,3], getRandom()",
+        "output": "1, 2, or 3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08755"
+        }
+      },
+      {
+        "input": "head = [10], getRandom()",
+        "output": "10",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08756"
+        }
+      },
+      {
+        "input": "getRandom()",
+        "output": "Any value from list",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08757"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 138
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08758"
+    },
+    "title": "Ransom Note",
+    "defaultCode": {
+      "java": "class Solution {\n    public boolean canConstruct(String ransomNote, String magazine) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool canConstruct(string ransomNote, string magazine) {\n        \n    }\n};"
+    },
+    "description": "Given two strings `ransomNote` and `magazine`, return true if `ransomNote` can be constructed by using the letters from `magazine` and false otherwise.",
+    "difficulty": "easy",
+    "tags": [
+      "string"
+    ],
+    "testCases": [
+      {
+        "input": "ransomNote = \"a\", magazine = \"b\"",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08759"
+        }
+      },
+      {
+        "input": "ransomNote = \"aa\", magazine = \"aab\"",
+        "output": "true",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0875a"
+        }
+      },
+      {
+        "input": "ransomNote = \"abc\", magazine = \"def\"",
+        "output": "false",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0875b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 139
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0875c"
+    },
+    "title": "Shuffle an Array",
+    "defaultCode": {
+      "java": "class Solution {\n    public Solution(int[] nums) {}\n    public int[] reset() {}\n    public int[] shuffle() {}\n}",
+      "cpp": "class Solution {\npublic:\n    Solution(vector<int>& nums) {}\n    vector<int> reset() {}\n    vector<int> shuffle() {}\n};"
+    },
+    "description": "Given an integer array `nums`, design an algorithm to randomly shuffle the array. All permutations should be equally likely.",
+    "difficulty": "medium",
+    "tags": [
+      "array"
+    ],
+    "testCases": [
+      {
+        "input": "nums = [1,2,3], shuffle()",
+        "output": "[3,1,2]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0875d"
+        }
+      },
+      {
+        "input": "reset()",
+        "output": "[1,2,3]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0875e"
+        }
+      },
+      {
+        "input": "shuffle()",
+        "output": "[2,1,3]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0875f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 140
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08760"
+    },
+    "title": "Lexicographical Numbers",
+    "defaultCode": {
+      " java": "class Solution {\n    public List<Integer> lexicalOrder(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    vector<int> lexicalOrder(int n) {\n        \n    }\n};"
+    },
+    "description": "Given an integer `n`, return all the numbers in the range [1, n] sorted in lexicographical order.",
+    "difficulty": "medium",
+    "tags": [
+      "tree"
+    ],
+    "testCases": [
+      {
+        "input": "n = 13",
+        "output": "[1,10,11,12,13,2,3,4,5,6,7,8,9]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08761"
+        }
+      },
+      {
+        "input": "n = 2",
+        "output": "[1,2]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08762"
+        }
+      },
+      {
+        "input": "n = 20",
+        "output": "[1,10,11...19,2,20]",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08763"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 141
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08764"
+    },
+    "title": "First Unique Character in a String",
+    "defaultCode": {
+      "java": "class Solution {\n    public int firstUniqChar(String s) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int firstUniqChar(string s) {\n        \n    }\n};"
+    },
+    "description": "Given a string `s`, find the first non-repeating character in it and return its index. If it does not exist, return -1.",
+    "difficulty": "easy",
+    "tags": [
+      "string"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"leetcode\"",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08765"
+        }
+      },
+      {
+        "input": "s = \"loveleetcode\"",
+        "output": "2",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08766"
+        }
+      },
+      {
+        "input": "s = \"aabb\"",
+        "output": "-1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08767"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 142
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08768"
+    },
+    "title": "Longest Absolute File Path",
+    "defaultCode": {
+      "java": "class Solution {\n    public int lengthLongestPath(String input) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int lengthLongestPath(string input) {\n        \n    }\n};"
+    },
+    "description": "Suppose we have a file system represented by a string. Find the length of the longest absolute path to a file in the abstracted file system.",
+    "difficulty": "medium",
+    "tags": [
+      "stack"
+    ],
+    "testCases": [
+      {
+        "input": "dir = \"dir\\n\\tsubdir1\\n\\tsubdir2\\n\\t\\tfile.ext\"",
+        "output": "20",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08769"
+        }
+      },
+      {
+        "input": "dir = \"a\"",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0876a"
+        }
+      },
+      {
+        "input": "dir = \"file.txt\"",
+        "output": "8",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0876b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 143
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a0876c"
+    },
+    "title": "Find the Difference",
+    "defaultCode": {
+      "java": "class Solution {\n    public char findTheDifference(String s, String t) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    char findTheDifference(string s, string t) {\n        \n    }\n};"
+    },
+    "description": "You are given two strings `s` and `t`. String `t` is generated by random shuffling string `s` and then adding one more letter at a random position. Return the letter that was added.",
+    "difficulty": "easy",
+    "tags": [
+      "hash table"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"abcd\", t = \"abcde\"",
+        "output": "\"e\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0876d"
+        }
+      },
+      {
+        "input": "s = \"\", t = \"y\"",
+        "output": "\"y\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0876e"
+        }
+      },
+      {
+        "input": "s = \"a\", t = \"aa\"",
+        "output": "\"a\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0876f"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 144
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08770"
+    },
+    "title": "Elimination Game",
+    "defaultCode": {
+      "java": "class Solution {\n    public int lastRemaining(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int lastRemaining(int n) {\n        \n    }\n};"
+    },
+    "description": "You have a list of numbers from 1 to `n`. You eliminate numbers from left to right, then right to left, until only one remains. Return the last remaining number.",
+    "difficulty": "medium",
+    "tags": [
+      "math"
+    ],
+    "testCases": [
+      {
+        "input": "n = 9",
+        "output": "6",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08771"
+        }
+      },
+      {
+        "input": "n = 1",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08772"
+        }
+      },
+      {
+        "input": "n = 10",
+        "output": "8",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08773"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 145
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08774"
+    },
+    "title": "Decode String",
+    "defaultCode": {
+      "java": "class Solution {\n    public String decodeString(String s) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    string decodeString(string s) {\n        \n    }\n};"
+    },
+    "description": "Given an encoded string, return its decoded string. The encoding rule is: `k[encoded_string]`, where the `encoded_string` inside the square brackets is being repeated exactly `k` times.",
+    "difficulty": "medium",
+    "tags": [
+      "stack"
+    ],
+    "testCases": [
+      {
+        "input": "s = \"3[a]2[bc]\"",
+        "output": "\"aaabcbc\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08775"
+        }
+      },
+      {
+        "input": "s = \"3[a2[c]]\"",
+        "output": "\"accaccacc\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08776"
+        }
+      },
+      {
+        "input": "s = \"2[abc]3[cd]ef\"",
+        "output": "\"abcabccdcdcdef\"",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08777"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 146
+  },
+  {
+    "_id": {
+      "$oid": "69ea1cff02f5fd73d2a08778"
+    },
+    "title": "Nth Digit",
+    "defaultCode": {
+      "java": "class Solution {\n    public int findNthDigit(int n) {\n        \n    }\n}",
+      "cpp": "class Solution {\npublic:\n    int findNthDigit(int n) {\n        \n    }\n};"
+    },
+    "description": "Given an integer `n`, return the nth digit of the infinite integer sequence [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...].",
+    "difficulty": "medium",
+    "tags": [
+      "math"
+    ],
+    "testCases": [
+      {
+        "input": "n = 3",
+        "output": "3",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a08779"
+        }
+      },
+      {
+        "input": "n = 11",
+        "output": "0",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0877a"
+        }
+      },
+      {
+        "input": "n = 10",
+        "output": "1",
+        "_id": {
+          "$oid": "69ea1cff02f5fd73d2a0877b"
+        }
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-23T13:22:07.064Z"
+    },
+    "sno": 147
+  }
+]

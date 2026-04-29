@@ -22,10 +22,10 @@ function ProblemEditor() {
         dispatch(fetchProblemDetails(_id))
     }, [])
 
+    
+
     const handleRunCode = async () => {
         dispatch(runCode())
-        // console.log(code);
-
     };
 
     const handleSubmitCode = async () => {
@@ -66,7 +66,6 @@ function ProblemEditor() {
                 cursor="e-resize"
                 className={`main`}
             >
-
                 <div className="left">
                     <div className="tabs">
                         <button className={`${activeTab == "description" ? "active" : ""} `} onClick={() => setActiveTab("description")}>

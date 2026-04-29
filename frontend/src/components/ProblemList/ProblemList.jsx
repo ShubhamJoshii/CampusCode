@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { NavLink, useParams } from "react-router-dom";
-import { problems } from '../../assets/Problem';
 import { AlertTriangle, ChevronLeft, ChevronRight, Clock } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import Pagination from '../Pagination/Pagination';
@@ -35,7 +34,7 @@ const ProblemList = ({ problemsList, totalPages, tag, attemptedProblemsCount, st
             scrollRef.current.scrollBy({ left: direction === 'left' ? -200 : 200, behavior: 'smooth' });
         }
     };
-    
+
     const changePagination = (page) => {
         dispatch(changePage(page));
     }
@@ -85,39 +84,43 @@ const ProblemList = ({ problemsList, totalPages, tag, attemptedProblemsCount, st
                         Solved: {attemptedProblemsCount} / {totalProblems}
                     </div>
 
-                    <div className="problemBox">
-                        {problemsList?.map((curr, id) => {
-                            const diffClass = curr.difficulty;
-                            let link = `/problems/${curr._id}`;
-                            if(groupId != "") link = `/problems/${curr._id}/${groupId}`
-                            return (
-                                <NavLink to={link} key={curr._id} className="problemRow">
-                                    <div className="attemptIcon relative inline-block">
-                                        {statusIcon[curr.attempt] || (
-                                            <Circle className="text-gray-400 w-3.5 h-3.5" />
-                                        )}
+                    <div className='problemBoxContainer hide-scrollbar'>
 
-                                        <span className="tooltip">
-                                            {curr.attempt == "TLE" ? "Time Limit Exceeded" : curr.attempt || "Not Attempted"}
-                                        </span>
-                                    </div>
+                        <div className="problemBox">
+                            {problemsList?.map((curr, id) => {
+                                const diffClass = curr.difficulty;
+                                let link = `/problems/${curr._id}`;
+                                if (groupId != "") link = `/problems/${curr._id}/${groupId}`
+                                return (
+                                    <NavLink to={link} key={curr._id} className="problemRow">
+                                        <div className="attemptIcon relative inline-block">
+                                            {statusIcon[curr.attempt] || (
+                                                <Circle className="text-gray-400 w-3.5 h-3.5" />
+                                            )}
 
-                                    <div className="problemTitle">
-                                        {curr.sno || (id + 1) + ((pageNo - 1) * limit)}. {curr.title}
-                                    </div>
-                                    <div className='listRight'>
-                                        <span className={`difficultyTag ${diffClass}`}>
-                                            {curr.difficulty}
-                                        </span>
-                                        <span className='categoryTag'>
-                                            {curr.tags[0]}
-                                        </span>
-                                    </div>
-                                </NavLink>
-                            );
-                        })}
+                                            <span className="tooltip">
+                                                {curr.attempt == "TLE" ? "Time Limit Exceeded" : curr.attempt || "Not Attempted"}
+                                            </span>
+                                        </div>
+
+                                        <div className="problemTitle">
+                                            {curr.sno || (id + 1) + ((pageNo - 1) * limit)}. {curr.title}
+                                        </div>
+                                        <div className='listRight'>
+                                            <span className={`difficultyTag ${diffClass}`}>
+                                                {curr.difficulty}
+                                            </span>
+                                            <span className='categoryTag'>
+                                                {curr.tags[0]}
+                                            </span>
+                                        </div>
+                                    </NavLink>
+                                );
+                            })}
+                        </div>
                     </div>
                     <Pagination totalPages={totalPages} initialPage={pageNo} limit={limit} changePagination={changePagination} changePaginationLimit={changePaginationLimit} />
+
                 </div>
             </div>
         </div>

@@ -37,9 +37,6 @@ function Leaderboard() {
     <div className="mainContent hide-scrollbar leaderBoard">
       <div className="flex justify-between items-center mb-6">
         <h1>World Leaderboard 🏆</h1>
-        <button onClick={() => navigate(-1)} className="px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition">
-          Back
-        </button>
       </div>
 
       {search === "" && podiumOrder.length >= 1 && (
@@ -58,7 +55,7 @@ function Leaderboard() {
         </div>
       )}
 
-      <div className="user-list">
+      <div className="user-list  mb-8">
         {leaderboard?.map((curr, index) => {
           return <div key={index} className={`user-card ${curr?.userID === user?._id ? "is-current-user" : ""}`} onClick={() => {
             curr?.userID === user?._id && navigate("/progress")

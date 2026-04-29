@@ -39,15 +39,28 @@ const problemEditorSlice = createSlice({
     initialState: {
         problemDetails: {},
         code: {
-            input: "",
-            language: "java",
-            output: "",
-            text: `class Solution {
-    public int twoSum(int num1, int num2) {
-        System.out.println("Hello World");
-        return num1 + num2;
-    }
-}`},
+            "java": {
+                input: "",
+                language: "java",
+                output: "",
+                text: ""
+            },
+            "cpp": {
+                input: "",
+                language: "java",
+                output: "",
+                text: ""
+            }
+        },
+        //     code: {
+        //         input: "",
+        //         language: "java",
+        //         output: "",
+        //         text: `class Solution {
+        // public int twoSum(int num1, int num2) {
+        //     System.out.println("Hello World");
+        //     return num1 + num2;
+        // }
         status: "idle",
         error: null,
     },
@@ -60,6 +73,7 @@ const problemEditorSlice = createSlice({
         },
         updateSelectLanguage(state, action) {
             state.code.language = action.payload;
+            // state.code
         },
     },
     extraReducers: (builder) => {
@@ -76,6 +90,42 @@ const problemEditorSlice = createSlice({
             .addCase(fetchProblemDetails.fulfilled, (state, action) => {
                 state.status = "succeeded";
                 state.problemDetails = action.payload;
+                // console.log(action.payload.defaultCode);
+
+                const serverResponse = action.payload.defaultCode || {};
+
+                const formatted = Object.fromEntries(
+                    Object.entries(serverResponse).map(([serverKey, code]) => {
+
+                        const normalizeLang = (key) => {
+                            const map = {
+                                c: "cpp",
+                                cpp: "cpp",
+                                java: "java",
+                                js: "javascript",
+                                javascript: "javascript",
+                                py: "python",
+                                python: "python"
+                            };
+                            return map[key] || key;
+                        };
+
+                        const lang = normalizeLang(serverKey);
+
+                        return [
+                            lang,
+                            {
+                                input: "",
+                                language: lang,
+                                output: "",
+                                text: code || ""
+                            }
+                        ];
+                    })
+                );
+
+                state.code = formatted;
+
                 state.error = null;
             })
             .addCase(fetchProblemDetails.rejected, handleRejected)

@@ -53,7 +53,6 @@ const AddQuestion = () => {
 
     const handleAdd = () => {
         if (!selected) return alert("Select a question first");
-        console.log("Selected Question:", selected);
     };
 
     const categoriesSet = new Set();
@@ -89,7 +88,7 @@ const AddQuestion = () => {
         dateToSubmit.setUTCHours(0, 0, 0, 0);
 
         const formattedDate = dateToSubmit.toISOString();
-        console.log(formattedDate);
+       
         try {
             await dispatch(addProblem({ _id, problemId, date: formattedDate })).unwrap();
             dispatch(fetchAllProblems(_id));
@@ -149,75 +148,78 @@ const AddQuestion = () => {
                 </div>
             </div>
 
-            <div className="question-list">
-                {filteredData?.map((q, id) => (
-                    <div key={id}>
-                        <div
-                            className={`question-row ${selected?._id === q._id ? "active" : ""
-                                }`}
-                            onClick={() => {
-                                setSelected(q);
-                                setOpenId(openId === q._id ? null : q._id);
-                            }}
-                        >
-                            <div className="flex items-center gap-2">
-                                <pre>{q.sno || (id)}</pre>
-                                <span className="title">{q.title}</span>
-                                <div className="attemptIcon relative inline-block">
-                                    {q.isSchduled && (
-                                        <Clock className="text-yellow-400 w-3.5 h-3.5" />
-                                    )}
+            <div className="question-list-container hide-scrollbar">
+                <div className="question-list">
+                    {filteredData?.map((q, id) => (
+                        <div key={id}>
+                            <div
+                                className={`question-row ${selected?._id === q._id ? "active" : ""
+                                    }`}
+                                onClick={() => {
+                                    setSelected(q);
+                                    setOpenId(openId === q._id ? null : q._id);
+                                }}
+                            >
+                                <div className="flex items-center gap-2">
+                                    <pre>{q.sno || (id)}</pre>
+                                    <span className="title">{q.title}</span>
+                                    <div className="attemptIcon relative inline-block">
+                                        {q.isSchduled && (
+                                            <Clock className="text-yellow-400 w-3.5 h-3.5" />
+                                        )}
 
-                                    <span className="tooltip">
-                                        {new Date(q.isSchduled).toDateString()}
+                                        <span className="tooltip">
+                                            {new Date(q.isSchduled).toDateString()}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div className="tags">
+                                    <span className={`difficulty ${q.difficulty.toLowerCase()}`}>
+                                        {q.difficulty}
                                     </span>
+                                    {q.tags.map((tag, i) => (
+                                        <span key={i} className="tag">
+                                            {tag}
+                                        </span>
+                                    ))}
                                 </div>
                             </div>
 
-                            <div className="tags">
-                                <span className={`difficulty ${q.difficulty.toLowerCase()}`}>
-                                    {q.difficulty}
-                                </span>
-                                {q.tags.map((tag, i) => (
-                                    <span key={i} className="tag">
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
+                            {/* 🔽 DROPDOWN */}
+                            <div className={`dropdown ${openId === q._id ? "open" : ""}`}>
+                                    <p className="text-sm"><b>Description:</b> {q?.description}</p>
+                                {q.isSchduled && <p className="text-sm text-gray-800">Previous Scheduled for <b>{new Date(q.isSchduled).toDateString()}</b></p>}
+                                <div className="flex justify-between">
 
-                        {/* 🔽 DROPDOWN */}
-                        <div className={`dropdown ${openId === q._id ? "open" : ""}`}>
-                            {q.isSchduled && <p className="text-sm text-gray-800">Previous Scheduled for <b>{new Date(q.isSchduled).toDateString()}</b></p>}
-                            <div className="flex justify-between">
+                                    <div className="dropdown-left">
+                                        <button className={`${!showDateInput && date == "today" ? "active" : ""}`} onClick={() => { setDate("today"); setShowDateInput(false); }}>Today</button>
+                                        <button className={`${!showDateInput && date == "tomorrow" ? "active" : ""}`} onClick={() => { setDate("tomorrow"); setShowDateInput(false); }}>Tomorrow</button>
 
-                                <div className="dropdown-left">
-                                    <button className={`${!showDateInput && date == "today" ? "active" : ""}`} onClick={() => { setDate("today"); setShowDateInput(false); }}>Today</button>
-                                    <button className={`${!showDateInput && date == "tomorrow" ? "active" : ""}`} onClick={() => { setDate("tomorrow"); setShowDateInput(false); }}>Tomorrow</button>
+                                        <button className={`${showDateInput ? "active" : ""}`} onClick={() => setShowDateInput(!showDateInput)}>
+                                            Select Date
+                                        </button>
 
-                                    <button className={`${showDateInput ? "active" : ""}`} onClick={() => setShowDateInput(!showDateInput)}>
-                                        Select Date
-                                    </button>
+                                        {showDateInput && (
+                                            <input
+                                                type="date"
+                                                className="date-input"
+                                                onChange={(e) => setDate(e.target.value)}
+                                            />
+                                        )}
+                                    </div>
 
-                                    {showDateInput && (
-                                        <input
-                                            type="date"
-                                            className="date-input"
-                                            onChange={(e) => setDate(e.target.value)}
-                                        />
-                                    )}
+                                    <div className="dropdown-right">
+                                        <button className="confirm" onClick={() => handleAddQuestion(q._id)}>Add Question</button>
+                                    </div>
                                 </div>
 
-                                <div className="dropdown-right">
-                                    <button className="confirm" onClick={() => handleAddQuestion(q._id)}>Add Question</button>
-                                </div>
-                            </div>
 
+                            </div>
 
                         </div>
-
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
 
 

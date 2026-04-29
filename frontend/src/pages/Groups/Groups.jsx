@@ -19,7 +19,7 @@ const Groups = () => {
 
   const stats = [
     { head: "Total groups", text: groups.length },
-    { head: "🔥 Streak", text: "5 days" },
+    { head: "🔥 Streak", text: "5" },
     { head: "Status", text: "active" },
   ];
 
@@ -54,23 +54,20 @@ const Groups = () => {
           setCreateGroupShow={setCreateGroupShow}
         />
 
-        {/* Stats Section */}
-        <div className="stats-row">
-          {stats.map((curr, id) => {
-            let typeClass = "";
-            if (curr.head === "Total groups") typeClass = "groups-card";
-            if (curr.head === "🔥 Streak") typeClass = "streak-card";
-            if (curr.head === "Status") typeClass = "status-card";
-
-            return (
-              <div className={`cardBorder stat-item ${typeClass}`} key={id}>
-                <h2 className="cardHeading">{curr.head}</h2>
-                <div className='stat-value'>
-                  <p>{curr.text}</p>
-                </div>
+        <div className="metrics">
+          {[
+            { label: "Total Groups", value: 4, icon: "📊" },
+            { label: "Current Streak", value: 5, icon: "🔥" },
+            {label: "Total Submissions",value: 5,icon: "🎯",}
+          ].map((item, i) => (
+            <div key={i} className="card metric-card">
+              <div>
+                <div className="metric-label">{item.label}</div>
+                <div className="metric-value">{item.value}</div>
               </div>
-            );
-          })}
+              <span className="metric-icon">{item.icon}</span>
+            </div>
+          ))}
         </div>
 
         {/* Actions Section */}

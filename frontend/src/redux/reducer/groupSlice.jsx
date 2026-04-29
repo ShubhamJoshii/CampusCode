@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { problems } from "../../assets/Problem";
 
 export const fetchGroups = createAsyncThunk(
     "groups/fetchGroups",

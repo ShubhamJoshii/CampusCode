@@ -38,7 +38,7 @@ const Progress = () => {
           <div className="metrics-grid">
             {[
               { label: "Total Submissions", value: totalSolved, icon: "📊" },
-              { label: "Current Streak", value: `${streak} Days`, icon: "🔥" },
+              { label: "Current Streak", value: `${streak}`, icon: "🔥" },
               {
                 label: "Total Completion",
                 value: `${Number(
@@ -110,27 +110,28 @@ const Progress = () => {
           </div>
 
           {/* 3. HEATMAP */}
-          <div className="card">
+          <div className="card m-auto">
             <div className="calendar-header">
               <h3 className="calendar-title">Activity Calendar</h3>
-
             </div>
 
-            <div className="calendar-wrapper">
-              <CalendarHeatmap
-                startDate={new Date("2026-01-01")}
-                endDate={new Date("2026-12-31")}
-                values={Array.isArray(heatmapData) ? heatmapData : []}
-                classForValue={(value) => {
-                  if (!value || value.count === 0) return "color-empty";
-                  return `color-scale-${Math.min(value.count, 4)}`;
-                }}
-                titleForValue={(value) => {
-                  if (!value) return "No activity";
-                  return `${value.date}: ${value.count} submissions`;
-                }}
-                showWeekdayLabels={true}
-              />
+            <div className="calendarContainer hide-scrollbar">
+              <div className="calendar-wrapper w-240!">
+                <CalendarHeatmap
+                  startDate={new Date("2026-01-01")}
+                  endDate={new Date("2026-12-31")}
+                  values={Array.isArray(heatmapData) ? heatmapData : []}
+                  classForValue={(value) => {
+                    if (!value || value.count === 0) return "color-empty";
+                    return `color-scale-${Math.min(value.count, 4)}`;
+                  }}
+                  titleForValue={(value) => {
+                    if (!value) return "No activity";
+                    return `${value.date}: ${value.count} submissions`;
+                  }}
+                  showWeekdayLabels={true}
+                />
+              </div>
             </div>
 
             {/* Legend */}
@@ -154,6 +155,7 @@ const Progress = () => {
                 <span>More</span>
               </div>
             </div>
+
           </div>
         </div>
 
