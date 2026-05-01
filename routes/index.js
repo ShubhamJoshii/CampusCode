@@ -20,7 +20,8 @@ router.use("/",require("./Problems/problemDetails"));
 router.use("/",require("./Problems/fetchAllProblems"));
 router.use("/",require("./Problems/searchProblems"));
 
-router.use("/",require("./Submission/fetchAllSubmissions"));
+router.use("/",require("./Progress/fetchAllSubmissions"));
+
 router.use("/",require("./Submission/submitSolution"));
 router.use("/",require("./Submission/streak"));
 // router.use("/",require("./Submission/runCode(judge0)"));

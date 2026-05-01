@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./ProblemEditor.css";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProblemDetails, runCode } from "../../redux/reducer/problemEditorSlice";
+import { fetchProblemDetails, runCode, submitCodeSolution } from "../../redux/reducer/problemEditorSlice";
 import Loading from "../Loading";
 import WritterScreen from "./WritterScreen";
 import { checkAuth } from "../../CheckAuth";
@@ -27,8 +27,9 @@ function ProblemEditor() {
     const handleRunCode = async () => {
         dispatch(runCode(_id))
     };
-
+    
     const handleSubmitCode = async () => {
+        dispatch(submitCodeSolution({_id,groupId}))
         console.log(code);
     };
 

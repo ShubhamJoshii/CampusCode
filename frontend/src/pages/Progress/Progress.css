@@ -140,6 +140,7 @@
     .calendarContainer {
       overflow: auto;
       .calendar-wrapper {
+        margin: auto;
         width: 100%;
       }
     }

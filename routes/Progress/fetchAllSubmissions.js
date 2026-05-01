@@ -2,12 +2,12 @@ const express = require("express");
 const authMiddleware = require("../../middleware/authMiddleware");
 const Submission = require("../../models/Submission");
 const Problems = require("../../models/Problems");
-const calculateStreak = require("./calculateStreak ");
+const calculateStreak = require("../Submission/calculateStreak ");
 const router = express.Router();
 
 router.get("/submission", authMiddleware, async (req, res) => {
   try {
-    const fetchedData = await Submission.find({ user: req.userID }).populate(
+    const fetchedData = await Submission.find({ user: req.userID ,groupId:null }).populate(
       "problem",
       "difficulty tags",
     );

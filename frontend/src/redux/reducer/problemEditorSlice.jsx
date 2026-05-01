@@ -22,7 +22,7 @@ export const runCode = createAsyncThunk(
 
       const lang = state.currentLanguage;
       const curr = state.code?.[lang];
-
+        // console.log(lang, curr);
       if (!curr) {
         return thunkAPI.rejectWithValue("Invalid language or code not found");
       }
@@ -35,6 +35,40 @@ export const runCode = createAsyncThunk(
       });
 
       return response.data.results;
+
+    } catch (error) {
+        console.log(error)
+    //   console.log(error.response?.data || error.message);
+
+      return thunkAPI.rejectWithValue(
+        error.response?.data || "Something went wrong"
+      );
+    }
+  }
+);
+
+export const submitCodeSolution = createAsyncThunk(
+  "problemEditor/submitCodeSolution",
+  async (args = {}, thunkAPI) => {
+    try {
+      const state = thunkAPI.getState().problemEditorDetails;
+
+      const lang = state.currentLanguage;
+      const curr = state.code?.[lang];
+
+      if (!curr) {
+        return thunkAPI.rejectWithValue("Invalid language or code not found");
+      }
+
+      const response = await axios.post(`/api/submitSolution`, {
+        code: curr.text || "",
+        language: curr.language || "java",
+        input: curr.input || "",
+        _id:args._id,
+        groupId:args.groupId || null,
+      });
+
+      return response.data;
 
     } catch (error) {
       console.log(error.response?.data || error.message);
@@ -68,7 +102,8 @@ const problemEditorSlice = createSlice({
         currentLanguage: "java",
         status: "idle",
         error: null,
-        result:[]
+        result:[],
+        isSubmitted:false
     },
     reducers: {
         updateCode(state, action) {
@@ -152,6 +187,21 @@ const problemEditorSlice = createSlice({
                 state.error = null;
             })
             .addCase(runCode.rejected, (state,action)=>{
+                console.log(action.payload)
+                state.result = action.payload || action.payload.error;
+                state.status = "failed";
+            })
+            .addCase(submitCodeSolution.pending, (state) => {
+                state.status = "loadingRun";
+            })
+            .addCase(submitCodeSolution.fulfilled, (state, action) => {
+                state.status = "succeeded";
+                console.log(action.payload);
+                state.result = action.payload.results || action.payload.error;
+                state.isSubmitted = action.payload.isSubmitted;
+                state.error = null;
+            })
+            .addCase(submitCodeSolution.rejected, (state,action)=>{
                 console.log(action.payload)
                 state.result = action.payload || action.payload.error;
                 state.status = "failed";

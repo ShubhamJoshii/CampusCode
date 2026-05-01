@@ -25,13 +25,13 @@ router.get("/problemDetails/:id", async (req, res) => {
     const results = [];
 
     for (const tc of problem.testCases) {
-      console.log(tc);
+      // console.log(tc);
       const input = buildJavaInput(tc, problem.tags[0]);
       results.push({
         input,
-        expected: "fdgfsdsfg",
-        actual: "actualArr",
-        passed: true,
+        expected: "",
+        actual: "",
+        passed: null,
       });
     }
     // console.log(results);

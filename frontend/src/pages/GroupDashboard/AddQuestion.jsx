@@ -27,7 +27,6 @@ const AddQuestion = () => {
 
     const dispatch = useDispatch();
 
-    console.log(allProblems.length);
 
     useEffect(() => {
         const filtered = allProblems.filter((q) => {
