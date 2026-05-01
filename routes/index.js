@@ -23,7 +23,8 @@ router.use("/",require("./Problems/searchProblems"));
 router.use("/",require("./Submission/fetchAllSubmissions"));
 router.use("/",require("./Submission/submitSolution"));
 router.use("/",require("./Submission/streak"));
-router.use("/",require("./Submission/runCode"));
+// router.use("/",require("./Submission/runCode(judge0)"));
+router.use("/",require("./Submission/runCode(Terminal)"));
 
 router.use("/",require("./Leaderboard/fetchLeaderBoard"));
 

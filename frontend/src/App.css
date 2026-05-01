@@ -21,6 +21,7 @@
   display: flex;
   flex-direction: column;
   .wrapperSection {
+    padding-bottom: 80px !important;
     width: calc(100vw - 48px);
     height: calc(100vh - 140px);
     display: flex;
@@ -32,6 +33,7 @@
   @media (max-width: 1024px) {
     padding: 16px;
     .wrapperSection{
+      top: 110px;
       width: calc(100vw - 32px);
     }
   }
@@ -39,12 +41,17 @@
   @media (max-width: 768px) {
     padding: 12px;
     .wrapperSection{
+      top: 86px;
       padding: 12px;
       width: 100vw;
-      top: 100px;
       left: 0;
       /* height: auto; */
       overflow: scroll;
+    }
+  }
+  @media (max-width: 425px) {
+    .wrapperSection{
+      top: 80px;
     }
   }
 }

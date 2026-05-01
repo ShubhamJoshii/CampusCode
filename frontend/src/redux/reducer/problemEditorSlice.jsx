@@ -15,23 +15,35 @@ export const fetchProblemDetails = createAsyncThunk(
 );
 
 export const runCode = createAsyncThunk(
-    "problemEditor/runCode",
-    async (args = {}, thunkAPI) => {
-        try {
-            const state = thunkAPI.getState().problemEditorDetails;
-            console.log(state.code);
-            const response = await axios.post(`/api/runcode`, {
-                code: state.code.text || "",
-                language: state.code.language || "das",
-                input: state.code.input || 0
-            });
-            console.log(response.data);
-            return response.data;
-        } catch (error) {
-            console.log(error);
-            return thunkAPI.rejectWithValue(error.response?.data || "Something went wrong");
-        }
+  "problemEditor/runCode",
+  async (args = {}, thunkAPI) => {
+    try {
+      const state = thunkAPI.getState().problemEditorDetails;
+
+      const lang = state.currentLanguage;
+      const curr = state.code?.[lang];
+
+      if (!curr) {
+        return thunkAPI.rejectWithValue("Invalid language or code not found");
+      }
+
+      const response = await axios.post(`/api/runcode`, {
+        code: curr.text || "",
+        language: curr.language || "java",
+        input: curr.input || "",
+        _id:args
+      });
+
+      return response.data.results;
+
+    } catch (error) {
+      console.log(error.response?.data || error.message);
+
+      return thunkAPI.rejectWithValue(
+        error.response?.data || "Something went wrong"
+      );
     }
+  }
 );
 
 const problemEditorSlice = createSlice({
@@ -47,33 +59,33 @@ const problemEditorSlice = createSlice({
             },
             "cpp": {
                 input: "",
-                language: "java",
+                language: "cpp",
                 output: "",
                 text: ""
             }
         },
-        //     code: {
-        //         input: "",
-        //         language: "java",
-        //         output: "",
-        //         text: `class Solution {
-        // public int twoSum(int num1, int num2) {
-        //     System.out.println("Hello World");
-        //     return num1 + num2;
-        // }
+        output:"",
+        currentLanguage: "java",
         status: "idle",
         error: null,
+        result:[]
     },
     reducers: {
         updateCode(state, action) {
-            state.code.text = action.payload;
+            const lang = state.currentLanguage;
+
+            if (state.code[lang]) {
+                state.code[lang] = {
+                    ...state.code[lang],
+                    text: action.payload
+                };
+            }
         },
         updateCustomInput(state, action) {
             state.code.input = action.payload;
         },
         updateSelectLanguage(state, action) {
-            state.code.language = action.payload;
-            // state.code
+            state.currentLanguage = action.payload;
         },
     },
     extraReducers: (builder) => {
@@ -90,7 +102,8 @@ const problemEditorSlice = createSlice({
             .addCase(fetchProblemDetails.fulfilled, (state, action) => {
                 state.status = "succeeded";
                 state.problemDetails = action.payload;
-                // console.log(action.payload.defaultCode);
+                state.result = action.payload.results;
+                // console.log(action.payload.results);
 
                 const serverResponse = action.payload.defaultCode || {};
 
@@ -135,10 +148,14 @@ const problemEditorSlice = createSlice({
             .addCase(runCode.fulfilled, (state, action) => {
                 state.status = "succeeded";
                 console.log(action.payload);
-                state.code.output = action.payload.output || action.payload.error;
+                state.result = action.payload || action.payload.error;
                 state.error = null;
             })
-            .addCase(runCode.rejected, handleRejected);
+            .addCase(runCode.rejected, (state,action)=>{
+                console.log(action.payload)
+                state.result = action.payload || action.payload.error;
+                state.status = "failed";
+            });
     }
 });
 

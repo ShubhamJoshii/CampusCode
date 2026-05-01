@@ -1,96 +1,6 @@
 [
-  {
-    "_id": {
-      "$oid": "69ea1cff02f5fd73d2a08530"
-    },
-    "title": "Two Sum",
-    "defaultCode": {
-      "java": "class Solution {\n    public int[] twoSum(int[] nums, int target) {\n        \n    }\n}",
-      "cpp": "class Solution {\npublic:\n    vector<int> twoSum(vector<int>& nums, int target) {\n        \n    }\n};"
-    },
-    "description": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`. You may assume that each input would have exactly one solution.",
-    "difficulty": "easy",
-    "tags": [
-      "array"
-    ],
-    "testCases": [
-      {
-        "input": "nums = [2,7,11,15], target = 9",
-        "output": "[0,1]",
-        "_id": {
-          "$oid": "69ea1cff02f5fd73d2a08531"
-        }
-      },
-      {
-        "input": "nums = [3,2,4], target = 6",
-        "output": "[1,2]",
-        "_id": {
-          "$oid": "69ea1cff02f5fd73d2a08532"
-        }
-      },
-      {
-        "input": "nums = [3,3], target = 6",
-        "output": "[0,1]",
-        "_id": {
-          "$oid": "69ea1cff02f5fd73d2a08533"
-        }
-      }
-    ],
-    "__v": 0,
-    "createdAt": {
-      "$date": "2026-04-23T13:22:07.059Z"
-    },
-    "updatedAt": {
-      "$date": "2026-04-23T13:22:07.059Z"
-    },
-    "sno": 1
-  },
-  {
-    "_id": {
-      "$oid": "69ea1cff02f5fd73d2a08534"
-    },
-    "title": "Add Two Numbers",
-    "defaultCode": {
-      "java": "/**\n * Definition for singly-linked list.\n * public class ListNode {\n * int val;\n * ListNode next;\n * ListNode() {}\n * ListNode(int val) { this.val = val; }\n * ListNode(int val, ListNode next) { this.val = val; this.next = next; }\n * }\n */\nclass Solution {\n    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {\n        \n    }\n}",
-      "c": "/**\n * Definition for singly-linked list.\n * struct ListNode {\n * int val;\n * struct ListNode *next;\n * };\n */\nstruct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {\n\n}"
-    },
-    "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.",
-    "difficulty": "medium",
-    "tags": [
-      "linked list"
-    ],
-    "testCases": [
-      {
-        "input": "l1 = [2,4,3], l2 = [5,6,4]",
-        "output": "[7,0,8]",
-        "_id": {
-          "$oid": "69ea1cff02f5fd73d2a08535"
-        }
-      },
-      {
-        "input": "l1 = [0], l2 = [0]",
-        "output": "[0]",
-        "_id": {
-          "$oid": "69ea1cff02f5fd73d2a08536"
-        }
-      },
-      {
-        "input": "l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]",
-        "output": "[8,9,9,9,0,0,0,1]",
-        "_id": {
-          "$oid": "69ea1cff02f5fd73d2a08537"
-        }
-      }
-    ],
-    "__v": 0,
-    "createdAt": {
-      "$date": "2026-04-23T13:22:07.060Z"
-    },
-    "updatedAt": {
-      "$date": "2026-04-23T13:22:07.060Z"
-    },
-    "sno": 2
-  },
+  
+  
   {
     "_id": {
       "$oid": "69ea1cff02f5fd73d2a08538"
@@ -102,9 +12,7 @@
     },
     "description": "Given a string `s`, find the length of the longest substring without repeating characters.",
     "difficulty": "medium",
-    "tags": [
-      "string"
-    ],
+    "tags": ["string"],
     "testCases": [
       {
         "input": "s = \"abcabcbb\"",
@@ -148,12 +56,10 @@
     },
     "description": "Given two sorted arrays `nums1` and `nums2` of size `m` and `n` respectively, return the median of the two sorted arrays.",
     "difficulty": "hard",
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "testCases": [
       {
-        "input": "nums1 = [1,3], nums2 = [2]",
+        "input": { "nums1": [1, 3], "nums2": [2] },
         "output": "2.00000",
         "_id": {
           "$oid": "69ea1cff02f5fd73d2a0853d"
@@ -188,15 +94,17 @@
       "$oid": "69ea1cff02f5fd73d2a08540"
     },
     "title": "Valid Parentheses",
+    "judgeCode": {
+      "java": "import java.util.*;\n\n/*USER_CODE*/\n\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        String[] inputs = {\"()\", \"()[]{}\", \"(]\", \"([)]\", \"{[]}\"};\n        boolean[] expected = {true, true, false, false, true};\n        boolean allPassed = true;\n\n        for (int i = 0; i < inputs.length; i++) {\n            if (sol.isValid(inputs[i]) != expected[i]) {\n                System.out.println(\"FAIL: Input \" + inputs[i]);\n                allPassed = false;\n                break;\n            }\n        }\n        if (allPassed) System.out.println(\"PASS\");\n    }\n}",
+      "cpp": "#include <iostream>\n#include <string>\n#include <vector>\n#include <stack>\n\nusing namespace std;\n\n/*USER_CODE*/\n\nint main() {\n    Solution sol;\n    vector<string> inputs = {\"()\", \"()[]{}\", \"(]\", \"([)]\", \"{[]}\"};\n    vector<bool> expected = {true, true, false, false, true};\n    bool allPassed = true;\n\n    for (size_t i = 0; i < inputs.size(); i++) {\n        if (sol.isValid(inputs[i]) != expected[i]) {\n            cout << \"FAIL\" << endl;\n            allPassed = false;\n            break;\n        }\n    }\n    if (allPassed) cout << \"PASS\" << endl;\n    return 0;\n}"
+    },
     "defaultCode": {
       "java": "class Solution {\n    public boolean isValid(String s) {\n        \n    }\n}",
       "cpp": "class Solution {\npublic:\n    bool isValid(string s) {\n        \n    }\n};"
     },
     "description": "Given a string `s` containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.",
     "difficulty": "easy",
-    "tags": [
-      "stack"
-    ],
+    "tags": ["stack"],
     "testCases": [
       {
         "input": "s = \"()\"",
@@ -240,9 +148,7 @@
     },
     "description": "Implement pow(x, n), which calculates x raised to the power n (i.e., x^n).",
     "difficulty": "medium",
-    "tags": [
-      "math"
-    ],
+    "tags": ["math"],
     "testCases": [
       {
         "input": "x = 2.00000, n = 10",
@@ -286,9 +192,7 @@
     },
     "description": "The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other. Return all distinct solutions.",
     "difficulty": "hard",
-    "tags": [
-      "backtracking"
-    ],
+    "tags": ["backtracking"],
     "testCases": [
       {
         "input": "n = 4",
@@ -332,9 +236,7 @@
     },
     "description": "Given n, return the number of distinct solutions to the n-queens puzzle.",
     "difficulty": "hard",
-    "tags": [
-      "backtracking"
-    ],
+    "tags": ["backtracking"],
     "testCases": [
       {
         "input": "n = 4",
@@ -378,9 +280,7 @@
     },
     "description": "Given an integer array `nums`, find the subarray with the largest sum and return its sum.",
     "difficulty": "medium",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
@@ -424,9 +324,7 @@
     },
     "description": "Given an m x n matrix, return all elements of the matrix in spiral order.",
     "difficulty": "medium",
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "testCases": [
       {
         "input": "matrix = [[1,2,3],[4,5,6],[7,8,9]]",
@@ -470,9 +368,7 @@
     },
     "description": "You are given an integer array `nums`. You are initially positioned at the array's first index, and each element represents your maximum jump length. Return true if you can reach the last index.",
     "difficulty": "medium",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "nums = [2,3,1,1,4]",
@@ -516,9 +412,7 @@
     },
     "description": "Given an array of intervals where `intervals[i] = [start, end]`, merge all overlapping intervals.",
     "difficulty": "medium",
-    "tags": [
-      "sorting"
-    ],
+    "tags": ["sorting"],
     "testCases": [
       {
         "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
@@ -562,9 +456,7 @@
     },
     "description": "You are given an array of non-overlapping intervals sorted by start time. Insert a new interval into the array, merging if necessary.",
     "difficulty": "medium",
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "testCases": [
       {
         "input": "intervals = [[1,3],[6,9]], newInterval = [2,5]",
@@ -608,9 +500,7 @@
     },
     "description": "Given a string `s` consisting of words and spaces, return the length of the last word in the string.",
     "difficulty": "easy",
-    "tags": [
-      "string"
-    ],
+    "tags": ["string"],
     "testCases": [
       {
         "input": "s = \"Hello World\"",
@@ -654,9 +544,7 @@
     },
     "description": "Given a positive integer `n`, generate an n x n matrix filled with elements from 1 to n^2 in spiral order.",
     "difficulty": "medium",
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "testCases": [
       {
         "input": "n = 3",
@@ -700,9 +588,7 @@
     },
     "description": "The set [1, 2, 3, ..., n] contains n! unique permutations. Given n and k, return the kth permutation sequence.",
     "difficulty": "hard",
-    "tags": [
-      "backtracking"
-    ],
+    "tags": ["backtracking"],
     "testCases": [
       {
         "input": "n = 3, k = 3",
@@ -746,9 +632,7 @@
     },
     "description": "Given the head of a linked list, rotate the list to the right by `k` places.",
     "difficulty": "medium",
-    "tags": [
-      "linked list"
-    ],
+    "tags": ["linked list"],
     "testCases": [
       {
         "input": "head = [1,2,3,4,5], k = 2",
@@ -792,9 +676,7 @@
     },
     "description": "A robot is located at the top-left corner of an m x n grid. The robot can only move either down or right. Return the number of possible unique paths to reach the bottom-right corner.",
     "difficulty": "medium",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "m = 3, n = 7",
@@ -838,9 +720,7 @@
     },
     "description": "Same as Unique Paths, but now there are obstacles in the grid (marked by 1). A path cannot pass through an obstacle.",
     "difficulty": "medium",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "obstacleGrid = [[0,0,0],[0,1,0],[0,0,0]]",
@@ -884,9 +764,7 @@
     },
     "description": "Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path.",
     "difficulty": "medium",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "grid = [[1,3,1],[1,5,1],[4,2,1]]",
@@ -930,9 +808,7 @@
     },
     "description": "A valid number can be split into an integer or a decimal number and optionally an exponent part. Determine if a given string is a valid number.",
     "difficulty": "hard",
-    "tags": [
-      "string"
-    ],
+    "tags": ["string"],
     "testCases": [
       {
         "input": "s = \"0\"",
@@ -976,9 +852,7 @@
     },
     "description": "You are given a large integer represented as an integer array `digits`, where each `digits[i]` is the ith digit of the integer. Increment the large integer by one and return the resulting array of digits.",
     "difficulty": "easy",
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "testCases": [
       {
         "input": "digits = [1,2,3]",
@@ -1022,9 +896,7 @@
     },
     "description": "Given two binary strings `a` and `b`, return their sum as a binary string.",
     "difficulty": "easy",
-    "tags": [
-      "string"
-    ],
+    "tags": ["string"],
     "testCases": [
       {
         "input": "a = \"11\", b = \"1\"",
@@ -1068,9 +940,7 @@
     },
     "description": "Given an array of strings `words` and a width `maxWidth`, format the text such that each line has exactly `maxWidth` characters and is fully (left and right) justified.",
     "difficulty": "hard",
-    "tags": [
-      "string"
-    ],
+    "tags": ["string"],
     "testCases": [
       {
         "input": "words = [\"This\", \"is\", \"an\", \"example\"], maxWidth = 16",
@@ -1114,9 +984,7 @@
     },
     "description": "Given a non-negative integer `x`, compute and return the square root of `x`. Since the return type is an integer, the decimal digits are truncated.",
     "difficulty": "easy",
-    "tags": [
-      "binary search"
-    ],
+    "tags": ["binary search"],
     "testCases": [
       {
         "input": "x = 4",
@@ -1160,9 +1028,7 @@
     },
     "description": "You are climbing a staircase. It takes `n` steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
     "difficulty": "easy",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "n = 2",
@@ -1206,9 +1072,7 @@
     },
     "description": "Given a string `path`, which is an absolute path (starting with a slash '/') for a file or directory in a Unix-style file system, convert it to the simplified canonical path.",
     "difficulty": "medium",
-    "tags": [
-      "stack"
-    ],
+    "tags": ["stack"],
     "testCases": [
       {
         "input": "path = \"/home/\"",
@@ -1252,9 +1116,7 @@
     },
     "description": "Given two strings `word1` and `word2`, return the minimum number of operations required to convert `word1` to `word2`. Operations: Insert, Delete, Replace.",
     "difficulty": "medium",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "word1 = \"horse\", word2 = \"ros\"",
@@ -1298,9 +1160,7 @@
     },
     "description": "Given an `m x n` integer matrix, if an element is 0, set its entire row and column to 0's. Do it in-place.",
     "difficulty": "medium",
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "testCases": [
       {
         "input": "matrix = [[1,1,1],[1,0,1],[1,1,1]]",
@@ -1344,9 +1204,7 @@
     },
     "description": "Write an efficient algorithm that searches for a value `target` in an `m x n` integer matrix. Rows are sorted, and the first integer of each row is greater than the last integer of the previous row.",
     "difficulty": "medium",
-    "tags": [
-      "binary search"
-    ],
+    "tags": ["binary search"],
     "testCases": [
       {
         "input": "matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3",
@@ -1390,9 +1248,7 @@
     },
     "description": "Given an array `nums` with `n` objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent (order: red, white, blue represented as 0, 1, 2).",
     "difficulty": "medium",
-    "tags": [
-      "sorting"
-    ],
+    "tags": ["sorting"],
     "testCases": [
       {
         "input": "nums = [2,0,2,1,1,0]",
@@ -1436,9 +1292,7 @@
     },
     "description": "Given two strings `s` and `t`, return the minimum window substring of `s` such that every character in `t` (including duplicates) is included in the window.",
     "difficulty": "hard",
-    "tags": [
-      "string"
-    ],
+    "tags": ["string"],
     "testCases": [
       {
         "input": "s = \"ADOBECODEBANC\", t = \"ABC\"",
@@ -1482,9 +1336,7 @@
     },
     "description": "Given two integers `n` and `k`, return all possible combinations of `k` numbers chosen from the range `[1, n]`.",
     "difficulty": "medium",
-    "tags": [
-      "backtracking"
-    ],
+    "tags": ["backtracking"],
     "testCases": [
       {
         "input": "n = 4, k = 2",
@@ -1528,9 +1380,7 @@
     },
     "description": "Given an integer array `nums` of unique elements, return all possible subsets (the power set).",
     "difficulty": "medium",
-    "tags": [
-      "backtracking"
-    ],
+    "tags": ["backtracking"],
     "testCases": [
       {
         "input": "nums = [1,2,3]",
@@ -1574,9 +1424,7 @@
     },
     "description": "Given an `m x n` grid of characters `board` and a string `word`, return true if `word` exists in the grid.",
     "difficulty": "medium",
-    "tags": [
-      "backtracking"
-    ],
+    "tags": ["backtracking"],
     "testCases": [
       {
         "input": "board = [[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]], word = \"ABCCED\"",
@@ -1620,9 +1468,7 @@
     },
     "description": "Given a sorted array `nums`, remove some duplicates in-place such that each unique element appears at most twice.",
     "difficulty": "medium",
-    "tags": [
-      "two pointers"
-    ],
+    "tags": ["two pointers"],
     "testCases": [
       {
         "input": "nums = [1,1,1,2,2,3]",
@@ -1666,9 +1512,7 @@
     },
     "description": "Same as Search in Rotated Sorted Array, but the array may contain duplicates. Return true if the target is found.",
     "difficulty": "medium",
-    "tags": [
-      "binary search"
-    ],
+    "tags": ["binary search"],
     "testCases": [
       {
         "input": "nums = [2,5,6,0,0,1,2], target = 0",
@@ -1712,9 +1556,7 @@
     },
     "description": "Given the head of a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.",
     "difficulty": "medium",
-    "tags": [
-      "linked list"
-    ],
+    "tags": ["linked list"],
     "testCases": [
       {
         "input": "head = [1,2,3,3,4,4,5]",
@@ -1758,9 +1600,7 @@
     },
     "description": "Given the head of a sorted linked list, delete all duplicates such that each element appears only once.",
     "difficulty": "easy",
-    "tags": [
-      "linked list"
-    ],
+    "tags": ["linked list"],
     "testCases": [
       {
         "input": "head = [1,1,2]",
@@ -1804,9 +1644,7 @@
     },
     "description": "Given an array of integers `heights` representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram.",
     "difficulty": "hard",
-    "tags": [
-      "stack"
-    ],
+    "tags": ["stack"],
     "testCases": [
       {
         "input": "heights = [2,1,5,6,2,3]",
@@ -1850,9 +1688,7 @@
     },
     "description": "Given a `rows x cols` binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.",
     "difficulty": "hard",
-    "tags": [
-      "stack"
-    ],
+    "tags": ["stack"],
     "testCases": [
       {
         "input": "matrix = [[\"1\",\"0\",\"1\",\"0\",\"0\"],[\"1\",\"0\",\"1\",\"1\",\"1\"],[\"1\",\"1\",\"1\",\"1\",\"1\"],[\"1\",\"0\",\"0\",\"1\",\"0\"]]",
@@ -1896,9 +1732,7 @@
     },
     "description": "Given the head of a linked list and a value `x`, partition it such that all nodes less than `x` come before nodes greater than or equal to `x`.",
     "difficulty": "medium",
-    "tags": [
-      "linked list"
-    ],
+    "tags": ["linked list"],
     "testCases": [
       {
         "input": "head = [1,4,3,2,5,2], x = 3",
@@ -1942,9 +1776,7 @@
     },
     "description": "Given two strings `s1` and `s2` of the same length, determine if `s2` is a scrambled string of `s1`.",
     "difficulty": "hard",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "s1 = \"great\", s2 = \"rgeat\"",
@@ -1988,9 +1820,7 @@
     },
     "description": "You are given two integer arrays `nums1` and `nums2`, sorted in non-decreasing order, and two integers `m` and `n`. Merge `nums2` into `nums1` as one sorted array.",
     "difficulty": "easy",
-    "tags": [
-      "two pointers"
-    ],
+    "tags": ["two pointers"],
     "testCases": [
       {
         "input": "nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3",
@@ -2034,9 +1864,7 @@
     },
     "description": "An n-bit gray code sequence is a sequence of 2^n integers where every adjacent pair of integers differs by exactly one bit. Given `n`, return any valid gray code sequence.",
     "difficulty": "medium",
-    "tags": [
-      "backtracking"
-    ],
+    "tags": ["backtracking"],
     "testCases": [
       {
         "input": "n = 2",
@@ -2080,9 +1908,7 @@
     },
     "description": "Given an integer array `nums` that may contain duplicates, return all possible subsets. The solution set must not contain duplicate subsets.",
     "difficulty": "medium",
-    "tags": [
-      "backtracking"
-    ],
+    "tags": ["backtracking"],
     "testCases": [
       {
         "input": "nums = [1,2,2]",
@@ -2126,9 +1952,7 @@
     },
     "description": "A message containing letters from A-Z can be encoded into numbers (A=1, B=2, ...). Given a string `s` containing digits, return the number of ways to decode it.",
     "difficulty": "medium",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "s = \"12\"",
@@ -2172,9 +1996,7 @@
     },
     "description": "Given the head of a singly linked list and two integers `left` and `right` where `left <= right`, reverse the nodes of the list from position `left` to position `right`.",
     "difficulty": "medium",
-    "tags": [
-      "linked list"
-    ],
+    "tags": ["linked list"],
     "testCases": [
       {
         "input": "head = [1,2,3,4,5], left = 2, right = 4",
@@ -2218,9 +2040,7 @@
     },
     "description": "A valid IP address consists of four integers separated by dots. Given a string `s` containing only digits, return all possible valid IP addresses.",
     "difficulty": "medium",
-    "tags": [
-      "backtracking"
-    ],
+    "tags": ["backtracking"],
     "testCases": [
       {
         "input": "s = \"25525511135\"",
@@ -2264,9 +2084,7 @@
     },
     "description": "Given the root of a binary tree, return the inorder traversal of its nodes' values.",
     "difficulty": "easy",
-    "tags": [
-      "tree"
-    ],
+    "tags": ["tree"],
     "testCases": [
       {
         "input": "root = [1,null,2,3]",
@@ -2310,9 +2128,7 @@
     },
     "description": "Given an integer `n`, return all the structurally unique BST's (binary search trees) that have exactly `n` nodes of unique values from 1 to `n`.",
     "difficulty": "medium",
-    "tags": [
-      "tree"
-    ],
+    "tags": ["tree"],
     "testCases": [
       {
         "input": "n = 3",
@@ -2356,9 +2172,7 @@
     },
     "description": "Evaluate the value of an arithmetic expression in Reverse Polish Notation (RPN). Valid operators are +, -, *, and /. Each operand may be an integer or another expression.",
     "difficulty": "medium",
-    "tags": [
-      "stack"
-    ],
+    "tags": ["stack"],
     "testCases": [
       {
         "input": "tokens = [\"2\",\"1\",\"+\",\"3\",\"*\"]",
@@ -2402,9 +2216,7 @@
     },
     "description": "Given an input string `s`, reverse the order of the words. A word is defined as a sequence of non-space characters.",
     "difficulty": "medium",
-    "tags": [
-      "string"
-    ],
+    "tags": ["string"],
     "testCases": [
       {
         "input": "s = \"the sky is blue\"",
@@ -2448,9 +2260,7 @@
     },
     "description": "Given an integer array `nums`, find a contiguous non-empty subarray within the array that has the largest product, and return the product.",
     "difficulty": "medium",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "nums = [2,3,-2,4]",
@@ -2494,9 +2304,7 @@
     },
     "description": "Suppose an array of length `n` sorted in ascending order is rotated between 1 and `n` times. Given the sorted rotated array `nums` of unique elements, return the minimum element of this array.",
     "difficulty": "medium",
-    "tags": [
-      "binary search"
-    ],
+    "tags": ["binary search"],
     "testCases": [
       {
         "input": "nums = [3,4,5,1,2]",
@@ -2540,9 +2348,7 @@
     },
     "description": "Similar to the previous problem, but the array `nums` may contain duplicates. Return the minimum element.",
     "difficulty": "hard",
-    "tags": [
-      "binary search"
-    ],
+    "tags": ["binary search"],
     "testCases": [
       {
         "input": "nums = [1,3,5]",
@@ -2586,9 +2392,7 @@
     },
     "description": "Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.",
     "difficulty": "medium",
-    "tags": [
-      "stack"
-    ],
+    "tags": ["stack"],
     "testCases": [
       {
         "input": "[\"MinStack\",\"push\",\"push\",\"push\",\"getMin\",\"pop\",\"top\",\"getMin\"]",
@@ -2632,9 +2436,7 @@
     },
     "description": "Given the heads of two singly linked-lists `headA` and `headB`, return the node at which the two lists intersect. If they do not intersect, return null.",
     "difficulty": "easy",
-    "tags": [
-      "linked list"
-    ],
+    "tags": ["linked list"],
     "testCases": [
       {
         "input": "intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5]",
@@ -2678,9 +2480,7 @@
     },
     "description": "A peak element is an element that is strictly greater than its neighbors. Given an integer array `nums`, find a peak element and return its index.",
     "difficulty": "medium",
-    "tags": [
-      "binary search"
-    ],
+    "tags": ["binary search"],
     "testCases": [
       {
         "input": "nums = [1,2,3,1]",
@@ -2724,9 +2524,7 @@
     },
     "description": "Given an integer array `nums`, return the maximum difference between two successive elements in its sorted form. If the array contains less than two elements, return 0.",
     "difficulty": "hard",
-    "tags": [
-      "sorting"
-    ],
+    "tags": ["sorting"],
     "testCases": [
       {
         "input": "nums = [3,6,9,1]",
@@ -2770,9 +2568,7 @@
     },
     "description": "Given two version numbers, `version1` and `version2`, compare them. If version1 > version2 return 1; if version1 < version2 return -1; otherwise return 0.",
     "difficulty": "medium",
-    "tags": [
-      "string"
-    ],
+    "tags": ["string"],
     "testCases": [
       {
         "input": "v1 = \"1.01\", v2 = \"1.001\"",
@@ -2816,9 +2612,7 @@
     },
     "description": "Given two integers representing the `numerator` and `denominator` of a fraction, return the fraction in string format. If the fractional part is repeating, enclose it in parentheses.",
     "difficulty": "medium",
-    "tags": [
-      "math"
-    ],
+    "tags": ["math"],
     "testCases": [
       {
         "input": "num = 1, den = 2",
@@ -2862,9 +2656,7 @@
     },
     "description": "Given a 1-indexed array of integers `numbers` that is already sorted in non-decreasing order, find two numbers such that they add up to a specific `target`.",
     "difficulty": "medium",
-    "tags": [
-      "two pointers"
-    ],
+    "tags": ["two pointers"],
     "testCases": [
       {
         "input": "numbers = [2,7,11,15], target = 9",
@@ -2908,9 +2700,7 @@
     },
     "description": "Given an integer `columnNumber`, return its corresponding column title as it appears in an Excel sheet (e.g., 1 -> A, 27 -> AA).",
     "difficulty": "easy",
-    "tags": [
-      "math"
-    ],
+    "tags": ["math"],
     "testCases": [
       {
         "input": "columnNumber = 1",
@@ -2954,9 +2744,7 @@
     },
     "description": "Given an array `nums` of size `n`, return the majority element. The majority element is the element that appears more than `⌊n / 2⌋` times.",
     "difficulty": "easy",
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "testCases": [
       {
         "input": "nums = [3,2,3]",
@@ -3000,9 +2788,7 @@
     },
     "description": "Given a string `columnTitle` that represents the column title as appear in an Excel sheet, return its corresponding column number.",
     "difficulty": "easy",
-    "tags": [
-      "math"
-    ],
+    "tags": ["math"],
     "testCases": [
       {
         "input": "title = \"A\"",
@@ -3046,9 +2832,7 @@
     },
     "description": "Given an integer `n`, return the number of trailing zeroes in `n!`.",
     "difficulty": "medium",
-    "tags": [
-      "math"
-    ],
+    "tags": ["math"],
     "testCases": [
       {
         "input": "n = 3",
@@ -3092,9 +2876,7 @@
     },
     "description": "Implement the `BSTIterator` class that represents an iterator over the in-order traversal of a binary search tree (BST).",
     "difficulty": "medium",
-    "tags": [
-      "tree"
-    ],
+    "tags": ["tree"],
     "testCases": [
       {
         "input": "[\"BSTIterator\", \"next\", \"next\", \"hasNext\"]",
@@ -3138,9 +2920,7 @@
     },
     "description": "The demons had captured the princess and imprisoned her in the bottom-right corner of a dungeon. Determine the knight's minimum initial health so that he can reach the princess.",
     "difficulty": "hard",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "dungeon = [[-2,-3,3],[-5,-10,1],[10,30,-5]]",
@@ -3184,9 +2964,7 @@
     },
     "description": "Given a list of non-negative integers `nums`, arrange them such that they form the largest number and return it as a string.",
     "difficulty": "medium",
-    "tags": [
-      "sorting"
-    ],
+    "tags": ["sorting"],
     "testCases": [
       {
         "input": "nums = [10,2]",
@@ -3230,9 +3008,7 @@
     },
     "description": "The DNA sequence is composed of a series of nucleotides abbreviated as 'A', 'C', 'G', and 'T'. Find all the 10-letter-long sequences (substrings) that occur more than once.",
     "difficulty": "medium",
-    "tags": [
-      "hash table"
-    ],
+    "tags": ["hash table"],
     "testCases": [
       {
         "input": "s = \"AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT\"",
@@ -3276,9 +3052,7 @@
     },
     "description": "You are given an integer array `prices` and an integer `k`. Find the maximum profit you can achieve by completing at most `k` transactions.",
     "difficulty": "hard",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "k = 2, prices = [2,4,1]",
@@ -3322,9 +3096,7 @@
     },
     "description": "Given an array, rotate the array to the right by `k` steps, where `k` is non-negative.",
     "difficulty": "medium",
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "testCases": [
       {
         "input": "nums = [1,2,3,4,5,6,7], k = 3",
@@ -3368,9 +3140,7 @@
     },
     "description": "Reverse bits of a given 32 bits unsigned integer.",
     "difficulty": "easy",
-    "tags": [
-      "bit manipulation"
-    ],
+    "tags": ["bit manipulation"],
     "testCases": [
       {
         "input": "00000010100101000001111010011100",
@@ -3414,9 +3184,7 @@
     },
     "description": "Write a function that takes an unsigned integer and returns the number of '1' bits it has (also known as the Hamming weight).",
     "difficulty": "easy",
-    "tags": [
-      "bit manipulation"
-    ],
+    "tags": ["bit manipulation"],
     "testCases": [
       {
         "input": "n = 11",
@@ -3460,9 +3228,7 @@
     },
     "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. You cannot rob two adjacent houses.",
     "difficulty": "medium",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "nums = [1,2,3,1]",
@@ -3506,9 +3272,7 @@
     },
     "description": "Given a range [left, right], return the bitwise AND of all numbers in this range, inclusive.",
     "difficulty": "medium",
-    "tags": [
-      "bit manipulation"
-    ],
+    "tags": ["bit manipulation"],
     "testCases": [
       {
         "input": "left = 5, right = 7",
@@ -3552,9 +3316,7 @@
     },
     "description": "A happy number is a number defined by replacing it with the sum of the squares of its digits until it equals 1, or it loops endlessly in a cycle.",
     "difficulty": "easy",
-    "tags": [
-      "math"
-    ],
+    "tags": ["math"],
     "testCases": [
       {
         "input": "n = 19",
@@ -3598,9 +3360,7 @@
     },
     "description": "Given the head of a linked list and an integer `val`, remove all the nodes of the linked list that has `Node.val == val`.",
     "difficulty": "easy",
-    "tags": [
-      "linked list"
-    ],
+    "tags": ["linked list"],
     "testCases": [
       {
         "input": "head = [1,2,6,3,4,5,6], val = 6",
@@ -3644,9 +3404,7 @@
     },
     "description": "Count the number of prime numbers less than a non-negative number, `n`.",
     "difficulty": "medium",
-    "tags": [
-      "math"
-    ],
+    "tags": ["math"],
     "testCases": [
       {
         "input": "n = 10",
@@ -3690,9 +3448,7 @@
     },
     "description": "Two strings `s` and `t` are isomorphic if the characters in `s` can be replaced to get `t`.",
     "difficulty": "easy",
-    "tags": [
-      "string"
-    ],
+    "tags": ["string"],
     "testCases": [
       {
         "input": "s = \"egg\", t = \"add\"",
@@ -3736,9 +3492,7 @@
     },
     "description": "Given the head of a singly linked list, reverse the list and return the reversed list.",
     "difficulty": "easy",
-    "tags": [
-      "linked list"
-    ],
+    "tags": ["linked list"],
     "testCases": [
       {
         "input": "head = [1,2,3,4,5]",
@@ -3782,9 +3536,7 @@
     },
     "description": "There are a total of `numCourses` courses you have to take, labeled from 0 to `numCourses - 1`. Some courses may have prerequisites. Return true if you can finish all courses.",
     "difficulty": "medium",
-    "tags": [
-      "graph"
-    ],
+    "tags": ["graph"],
     "testCases": [
       {
         "input": "numCourses = 2, prerequisites = [[1,0]]",
@@ -3828,9 +3580,7 @@
     },
     "description": "A trie (pronounced as 'try') or prefix tree is a tree data structure used to efficiently store and retrieve keys in a dataset of strings. Implement insert, search, and startsWith.",
     "difficulty": "medium",
-    "tags": [
-      "tree"
-    ],
+    "tags": ["tree"],
     "testCases": [
       {
         "input": "[\"Trie\", \"insert\", \"search\", \"startsWith\"]",
@@ -3874,9 +3624,7 @@
     },
     "description": "Given an array of positive integers `nums` and a positive integer `target`, return the minimal length of a contiguous subarray of which the sum is greater than or equal to `target`.",
     "difficulty": "medium",
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "testCases": [
       {
         "input": "target = 7, nums = [2,3,1,2,4,3]",
@@ -3920,9 +3668,7 @@
     },
     "description": "Given the total number of courses and a list of prerequisite pairs, return the ordering of courses you should take to finish all courses.",
     "difficulty": "medium",
-    "tags": [
-      "graph"
-    ],
+    "tags": ["graph"],
     "testCases": [
       {
         "input": "numCourses = 2, prerequisites = [[1,0]]",
@@ -3966,9 +3712,7 @@
     },
     "description": "Design a data structure that supports adding new words and finding if a string matches any previously added string. The string may contain '.' as a wildcard.",
     "difficulty": "medium",
-    "tags": [
-      "tree"
-    ],
+    "tags": ["tree"],
     "testCases": [
       {
         "input": "addWord(\"bad\"), search(\".ad\")",
@@ -4012,9 +3756,7 @@
     },
     "description": "Given an `m x n` board of characters and a list of strings `words`, return all words on the board.",
     "difficulty": "hard",
-    "tags": [
-      "backtracking"
-    ],
+    "tags": ["backtracking"],
     "testCases": [
       {
         "input": "board = [[\"o\",\"a\",\"a\",\"n\"],[\"e\",\"t\",\"a\",\"e\"]], words = [\"oath\",\"pea\"]",
@@ -4058,9 +3800,7 @@
     },
     "description": "Same as House Robber, but houses are arranged in a circle. This means the first house is the neighbor of the last one.",
     "difficulty": "medium",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "nums = [2,3,2]",
@@ -4104,9 +3844,7 @@
     },
     "description": "You are given a string `s`. You can convert `s` to a palindrome by adding characters in front of it. Find and return the shortest palindrome you can find.",
     "difficulty": "hard",
-    "tags": [
-      "string"
-    ],
+    "tags": ["string"],
     "testCases": [
       {
         "input": "s = \"aacecaaa\"",
@@ -4150,9 +3888,7 @@
     },
     "description": "Given an integer array `nums` and an integer `k`, return the kth largest element in the array.",
     "difficulty": "medium",
-    "tags": [
-      "heap"
-    ],
+    "tags": ["heap"],
     "testCases": [
       {
         "input": "nums = [3,2,1,5,6,4], k = 2",
@@ -4196,9 +3932,7 @@
     },
     "description": "Find all valid combinations of `k` numbers that sum up to `n` such that only numbers from 1 to 9 are used and each number is used at most once.",
     "difficulty": "medium",
-    "tags": [
-      "backtracking"
-    ],
+    "tags": ["backtracking"],
     "testCases": [
       {
         "input": "k = 3, n = 7",
@@ -4242,9 +3976,7 @@
     },
     "description": "Given an integer array `nums`, return true if any value appears at least twice in the array.",
     "difficulty": "easy",
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "testCases": [
       {
         "input": "nums = [1,2,3,1]",
@@ -4288,9 +4020,7 @@
     },
     "description": "A city's skyline is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Return the key points.",
     "difficulty": "hard",
-    "tags": [
-      "heap"
-    ],
+    "tags": ["heap"],
     "testCases": [
       {
         "input": "buildings = [[2,9,10],[3,7,15]]",
@@ -4334,9 +4064,7 @@
     },
     "description": "Given an integer array `nums` and an integer `k`, return true if there are two distinct indices `i` and `j` such that `nums[i] == nums[j]` and `abs(i - j) <= k`.",
     "difficulty": "easy",
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "testCases": [
       {
         "input": "nums = [1,2,3,1], k = 3",
@@ -4380,9 +4108,7 @@
     },
     "description": "Given an `m x n` binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.",
     "difficulty": "medium",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "matrix = [[\"1\",\"0\",\"1\",\"0\"],[\"1\",\"0\",\"1\",\"1\"],[\"1\",\"1\",\"1\",\"1\"]]",
@@ -4426,9 +4152,7 @@
     },
     "description": "Given the root of a complete binary tree, return the number of nodes in the tree. Try to do it in less than O(n) time.",
     "difficulty": "easy",
-    "tags": [
-      "tree"
-    ],
+    "tags": ["tree"],
     "testCases": [
       {
         "input": "root = [1,2,3,4,5,6]",
@@ -4472,9 +4196,7 @@
     },
     "description": "Given the coordinates of two rectilinear rectangles in a 2D plane, return the total area covered by the two rectangles.",
     "difficulty": "medium",
-    "tags": [
-      "math"
-    ],
+    "tags": ["math"],
     "testCases": [
       {
         "input": "ax1=-3, ay1=0, ax2=3, ay2=4, bx1=0, by1=-1, bx2=9, by2=2",
@@ -4518,9 +4240,7 @@
     },
     "description": "Implement a basic calculator to evaluate a simple expression string containing parentheses, plus, and minus.",
     "difficulty": "hard",
-    "tags": [
-      "stack"
-    ],
+    "tags": ["stack"],
     "testCases": [
       {
         "input": "s = \"1 + 1\"",
@@ -4564,9 +4284,7 @@
     },
     "description": "Given the root of a binary tree, invert the tree (swap left and right children) and return its root.",
     "difficulty": "easy",
-    "tags": [
-      "tree"
-    ],
+    "tags": ["tree"],
     "testCases": [
       {
         "input": "root = [4,2,7,1,3,6,9]",
@@ -4610,9 +4328,7 @@
     },
     "description": "Given the root of a binary search tree, and an integer `k`, return the kth smallest value (1-indexed) of all the values of the nodes in the tree.",
     "difficulty": "medium",
-    "tags": [
-      "tree"
-    ],
+    "tags": ["tree"],
     "testCases": [
       {
         "input": "root = [3,1,4,null,2], k = 1",
@@ -4656,9 +4372,7 @@
     },
     "description": "Given the head of a singly linked list, return true if it is a palindrome.",
     "difficulty": "easy",
-    "tags": [
-      "linked list"
-    ],
+    "tags": ["linked list"],
     "testCases": [
       {
         "input": "head = [1,2,2,1]",
@@ -4702,9 +4416,7 @@
     },
     "description": "Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.",
     "difficulty": "medium",
-    "tags": [
-      "tree"
-    ],
+    "tags": ["tree"],
     "testCases": [
       {
         "input": "root = [3,5,1,6,2,0,8], p = 5, q = 1",
@@ -4748,9 +4460,7 @@
     },
     "description": "Given an integer array `nums`, return an array `answer` such that `answer[i]` is equal to the product of all the elements of `nums` except `nums[i]`. Do it in O(n) without division.",
     "difficulty": "medium",
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "testCases": [
       {
         "input": "nums = [1,2,3,4]",
@@ -4794,9 +4504,7 @@
     },
     "description": "You are given an array of integers `nums`, there is a sliding window of size `k` which is moving from the very left of the array to the very right. Return the max in each window.",
     "difficulty": "hard",
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "testCases": [
       {
         "input": "nums = [1,3,-1,-3,5,3,6,7], k = 3",
@@ -4840,9 +4548,7 @@
     },
     "description": "Given two strings `s` and `t`, return true if `t` is an anagram of `s`, and false otherwise.",
     "difficulty": "easy",
-    "tags": [
-      "string"
-    ],
+    "tags": ["string"],
     "testCases": [
       {
         "input": "s = \"anagram\", t = \"nagaram\"",
@@ -4886,9 +4592,7 @@
     },
     "description": "Convert a non-negative integer `num` to its English words representation.",
     "difficulty": "hard",
-    "tags": [
-      "string"
-    ],
+    "tags": ["string"],
     "testCases": [
       {
         "input": "num = 123",
@@ -4932,9 +4636,7 @@
     },
     "description": "Given an array of integers `citations`, return the researcher's h-index. The h-index is defined as the maximum value of h such that the researcher has published h papers that have each been cited at least h times.",
     "difficulty": "medium",
-    "tags": [
-      "sorting"
-    ],
+    "tags": ["sorting"],
     "testCases": [
       {
         "input": "citations = [3,0,6,1,5]",
@@ -4978,9 +4680,7 @@
     },
     "description": "Same as H-Index, but the `citations` array is already sorted in ascending order. Solve in O(log n) time.",
     "difficulty": "medium",
-    "tags": [
-      "binary search"
-    ],
+    "tags": ["binary search"],
     "testCases": [
       {
         "input": "citations = [0,1,3,5,6]",
@@ -5024,9 +4724,7 @@
     },
     "description": "You are a product manager and currently leading a team to develop a new product. Find the first version that failed the quality test.",
     "difficulty": "easy",
-    "tags": [
-      "binary search"
-    ],
+    "tags": ["binary search"],
     "testCases": [
       {
         "input": "n = 5, bad = 4",
@@ -5070,9 +4768,7 @@
     },
     "description": "Given an integer `n`, return the least number of perfect square numbers that sum to `n`.",
     "difficulty": "medium",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "n = 12",
@@ -5116,9 +4812,7 @@
     },
     "description": "Given an integer array `nums`, reorder it such that `nums[0] <= nums[1] >= nums[2] <= nums[3]...`",
     "difficulty": "medium",
-    "tags": [
-      "sorting"
-    ],
+    "tags": ["sorting"],
     "testCases": [
       {
         "input": "nums = [3,5,2,1,6,4]",
@@ -5162,9 +4856,7 @@
     },
     "description": "Given a string `num` containing only digits and an integer `target`, return all possibilities to insert binary operators '+', '-', and/or '*' between the digits so that the resultant expression evaluates to the target value.",
     "difficulty": "hard",
-    "tags": [
-      "backtracking"
-    ],
+    "tags": ["backtracking"],
     "testCases": [
       {
         "input": "num = \"123\", target = 6",
@@ -5208,9 +4900,7 @@
     },
     "description": "Given an integer array `nums`, move all 0's to the end of it while maintaining the relative order of the non-zero elements.",
     "difficulty": "easy",
-    "tags": [
-      "two pointers"
-    ],
+    "tags": ["two pointers"],
     "testCases": [
       {
         "input": "nums = [0,1,0,3,12]",
@@ -5254,9 +4944,7 @@
     },
     "description": "Given an array of integers `nums` containing `n + 1` integers where each integer is in the range `[1, n]` inclusive. There is only one repeated number, find it.",
     "difficulty": "medium",
-    "tags": [
-      "binary search"
-    ],
+    "tags": ["binary search"],
     "testCases": [
       {
         "input": "nums = [1,3,4,2,2]",
@@ -5300,9 +4988,7 @@
     },
     "description": "According to John Conway's rules, given a board state, return the next state of the board. The grid is updated simultaneously.",
     "difficulty": "medium",
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "testCases": [
       {
         "input": "board = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]",
@@ -5346,9 +5032,7 @@
     },
     "description": "Given a `pattern` and a string `s`, find if `s` follows the same pattern (bijection between pattern and words).",
     "difficulty": "easy",
-    "tags": [
-      "hash table"
-    ],
+    "tags": ["hash table"],
     "testCases": [
       {
         "input": "pattern = \"abba\", s = \"dog cat cat dog\"",
@@ -5392,9 +5076,7 @@
     },
     "description": "You and a friend play a game where you take turns removing 1-3 stones from a heap. The one who removes the last stone wins. Determine if you can win given `n` stones.",
     "difficulty": "easy",
-    "tags": [
-      "math"
-    ],
+    "tags": ["math"],
     "testCases": [
       {
         "input": "n = 4",
@@ -5438,9 +5120,7 @@
     },
     "description": "Implement the `MedianFinder` class which supports adding integers from a data stream and finding the median of all elements added so far.",
     "difficulty": "hard",
-    "tags": [
-      "heap"
-    ],
+    "tags": ["heap"],
     "testCases": [
       {
         "input": "[\"MedianFinder\",\"addNum\",\"addNum\",\"findMedian\",\"addNum\",\"findMedian\"]",
@@ -5484,9 +5164,7 @@
     },
     "description": "Design an algorithm to serialize a binary tree into a string and deserialize that string back into the original tree structure.",
     "difficulty": "hard",
-    "tags": [
-      "tree"
-    ],
+    "tags": ["tree"],
     "testCases": [
       {
         "input": "root = [1,2,3,null,null,4,5]",
@@ -5530,9 +5208,7 @@
     },
     "description": "You are playing the Bulls and Cows game. Given a `secret` number and a `guess`, return a hint in the format 'xAyB' (x Bulls, y Cows).",
     "difficulty": "medium",
-    "tags": [
-      "hash table"
-    ],
+    "tags": ["hash table"],
     "testCases": [
       {
         "input": "secret = \"1807\", guess = \"7810\"",
@@ -5576,9 +5252,7 @@
     },
     "description": "Given an integer array `nums`, return the length of the longest strictly increasing subsequence.",
     "difficulty": "medium",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "nums = [10,9,2,5,3,7,101,18]",
@@ -5622,9 +5296,7 @@
     },
     "description": "Given an integer array `nums`, handle multiple queries for the sum of elements between indices `left` and `right` inclusive.",
     "difficulty": "easy",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "[\"NumArray\", \"sumRange\", \"sumRange\"]",
@@ -5668,9 +5340,7 @@
     },
     "description": "Given a 2D matrix, handle multiple queries for the sum of elements within a rectangle defined by its upper left and lower right corners.",
     "difficulty": "medium",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "matrix, row1=2, col1=1, row2=4, col2=3",
@@ -5714,9 +5384,7 @@
     },
     "description": "An additive number is a string whose digits can form an additive sequence (e.g., 1+1=2, 1+2=3). Return true if the string is additive.",
     "difficulty": "medium",
-    "tags": [
-      "backtracking"
-    ],
+    "tags": ["backtracking"],
     "testCases": [
       {
         "input": "s = \"112358\"",
@@ -5760,9 +5428,7 @@
     },
     "description": "Given an array `nums`, handle queries for the sum of elements in a range and updates to the value of a specific element.",
     "difficulty": "medium",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "[\"NumArray\", \"sumRange\", \"update\", \"sumRange\"]",
@@ -5806,9 +5472,7 @@
     },
     "description": "Find the maximum profit you can achieve. You may complete as many transactions as you like, but after selling, you cannot buy the next day.",
     "difficulty": "medium",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "prices = [1,2,3,0,2]",
@@ -5848,9 +5512,7 @@
     "title": "Minimum Height Trees",
     "description": "Given a tree with `n` nodes, find all the root nodes that result in a minimum height tree (MHT).",
     "difficulty": "medium",
-    "tags": [
-      "graph"
-    ],
+    "tags": ["graph"],
     "testCases": [
       {
         "input": "n = 4, edges = [[1,0],[1,2],[1,3]]",
@@ -5894,9 +5556,7 @@
     },
     "description": "You are given `n` balloons. If you burst balloon `i`, you get `nums[i-1] * nums[i] * nums[i+1]` coins. Find the maximum coins you can collect.",
     "difficulty": "hard",
-    "tags": [
-      "dp"
-    ],
+    "tags": ["dp"],
     "testCases": [
       {
         "input": "nums = [3,1,5,8]",
@@ -5940,9 +5600,7 @@
     },
     "description": "A super ugly number is a positive integer whose prime factors are in a given list `primes`. Find the nth super ugly number.",
     "difficulty": "medium",
-    "tags": [
-      "heap"
-    ],
+    "tags": ["heap"],
     "testCases": [
       {
         "input": "n = 12, primes = [2,7,13,19]",
@@ -5986,9 +5644,7 @@
     },
     "description": "Given an integer array `nums`, return an integer array `counts` where `counts[i]` is the number of smaller elements to the right of `nums[i]`.",
     "difficulty": "hard",
-    "tags": [
-      "binary search"
-    ],
+    "tags": ["binary search"],
     "testCases": [
       {
         "input": "nums = [5,2,6,1]",
@@ -6032,9 +5688,7 @@
     },
     "description": "Remove duplicate letters so that every letter appears once and the result is the smallest in lexicographical order.",
     "difficulty": "medium",
-    "tags": [
-      "stack"
-    ],
+    "tags": ["stack"],
     "testCases": [
       {
         "input": "s = \"bcabc\"",
@@ -6078,9 +5732,7 @@
     },
     "description": "Given a string array `words`, find the maximum value of `length(word[i]) * length(word[j])` where the two words do not share any common letters.",
     "difficulty": "medium",
-    "tags": [
-      "bit manipulation"
-    ],
+    "tags": ["bit manipulation"],
     "testCases": [
       {
         "input": "words = [\"abcw\",\"baz\",\"foo\",\"bar\",\"xtfn\",\"abcdef\"]",
@@ -6124,9 +5776,7 @@
     },
     "description": "There are `n` bulbs that are initially off. You do `n` passes. In the ith pass, you toggle every ith bulb. Return the number of bulbs that are on after `n` passes.",
     "difficulty": "medium",
-    "tags": [
-      "math"
-    ],
+    "tags": ["math"],
     "testCases": [
       {
         "input": "n = 3",
@@ -6170,9 +5820,7 @@
     },
     "description": "Given an n x n matrix where each of the rows and columns is sorted in ascending order, return the kth smallest element in the matrix.",
     "difficulty": "medium",
-    "tags": [
-      "heap"
-    ],
+    "tags": ["heap"],
     "testCases": [
       {
         "input": "matrix = [[1,5,9],[10,11,13],[12,13,15]], k = 8",
@@ -6216,9 +5864,7 @@
     },
     "description": "Implement the `RandomizedSet` class that supports insert, delete, and getRandom in average O(1) time.",
     "difficulty": "medium",
-    "tags": [
-      "hash table"
-    ],
+    "tags": ["hash table"],
     "testCases": [
       {
         "input": "[\"RandomizedSet\", \"insert\", \"remove\", \"getRandom\"]",
@@ -6262,9 +5908,7 @@
     },
     "description": "Similar to RandomizedSet, but the set allows duplicate elements.",
     "difficulty": "hard",
-    "tags": [
-      "hash table"
-    ],
+    "tags": ["hash table"],
     "testCases": [
       {
         "input": "[\"RandomizedCollection\", \"insert\", \"insert\", \"getRandom\"]",
@@ -6308,9 +5952,7 @@
     },
     "description": "Given a singly linked list, return a random node's value from the list. Each node must have the same probability of being chosen. (Reservoir Sampling)",
     "difficulty": "medium",
-    "tags": [
-      "linked list"
-    ],
+    "tags": ["linked list"],
     "testCases": [
       {
         "input": "head = [1,2,3], getRandom()",
@@ -6354,9 +5996,7 @@
     },
     "description": "Given two strings `ransomNote` and `magazine`, return true if `ransomNote` can be constructed by using the letters from `magazine` and false otherwise.",
     "difficulty": "easy",
-    "tags": [
-      "string"
-    ],
+    "tags": ["string"],
     "testCases": [
       {
         "input": "ransomNote = \"a\", magazine = \"b\"",
@@ -6400,9 +6040,7 @@
     },
     "description": "Given an integer array `nums`, design an algorithm to randomly shuffle the array. All permutations should be equally likely.",
     "difficulty": "medium",
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "testCases": [
       {
         "input": "nums = [1,2,3], shuffle()",
@@ -6446,9 +6084,7 @@
     },
     "description": "Given an integer `n`, return all the numbers in the range [1, n] sorted in lexicographical order.",
     "difficulty": "medium",
-    "tags": [
-      "tree"
-    ],
+    "tags": ["tree"],
     "testCases": [
       {
         "input": "n = 13",
@@ -6492,9 +6128,7 @@
     },
     "description": "Given a string `s`, find the first non-repeating character in it and return its index. If it does not exist, return -1.",
     "difficulty": "easy",
-    "tags": [
-      "string"
-    ],
+    "tags": ["string"],
     "testCases": [
       {
         "input": "s = \"leetcode\"",
@@ -6538,9 +6172,7 @@
     },
     "description": "Suppose we have a file system represented by a string. Find the length of the longest absolute path to a file in the abstracted file system.",
     "difficulty": "medium",
-    "tags": [
-      "stack"
-    ],
+    "tags": ["stack"],
     "testCases": [
       {
         "input": "dir = \"dir\\n\\tsubdir1\\n\\tsubdir2\\n\\t\\tfile.ext\"",
@@ -6584,9 +6216,7 @@
     },
     "description": "You are given two strings `s` and `t`. String `t` is generated by random shuffling string `s` and then adding one more letter at a random position. Return the letter that was added.",
     "difficulty": "easy",
-    "tags": [
-      "hash table"
-    ],
+    "tags": ["hash table"],
     "testCases": [
       {
         "input": "s = \"abcd\", t = \"abcde\"",
@@ -6630,9 +6260,7 @@
     },
     "description": "You have a list of numbers from 1 to `n`. You eliminate numbers from left to right, then right to left, until only one remains. Return the last remaining number.",
     "difficulty": "medium",
-    "tags": [
-      "math"
-    ],
+    "tags": ["math"],
     "testCases": [
       {
         "input": "n = 9",
@@ -6676,9 +6304,7 @@
     },
     "description": "Given an encoded string, return its decoded string. The encoding rule is: `k[encoded_string]`, where the `encoded_string` inside the square brackets is being repeated exactly `k` times.",
     "difficulty": "medium",
-    "tags": [
-      "stack"
-    ],
+    "tags": ["stack"],
     "testCases": [
       {
         "input": "s = \"3[a]2[bc]\"",
@@ -6722,9 +6348,7 @@
     },
     "description": "Given an integer `n`, return the nth digit of the infinite integer sequence [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...].",
     "difficulty": "medium",
-    "tags": [
-      "math"
-    ],
+    "tags": ["math"],
     "testCases": [
       {
         "input": "n = 3",

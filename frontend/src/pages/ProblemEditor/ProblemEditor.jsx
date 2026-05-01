@@ -22,10 +22,10 @@ function ProblemEditor() {
         dispatch(fetchProblemDetails(_id))
     }, [])
 
-    
+
 
     const handleRunCode = async () => {
-        dispatch(runCode())
+        dispatch(runCode(_id))
     };
 
     const handleSubmitCode = async () => {
@@ -42,9 +42,9 @@ function ProblemEditor() {
 
                 <div className="topbarRight">
                     {position == "vertical" ?
-                        <AlignVerticalJustifyCenter width={35} height={35} onClick={()=>setPosition("horizontal")} className="positionVerticalHorizontal"/>
+                        <AlignVerticalJustifyCenter width={35} height={35} onClick={() => setPosition("horizontal")} className="positionVerticalHorizontal" />
                         :
-                        <AlignHorizontalJustifyCenter width={35} height={35} onClick={()=>setPosition("vertical")} className="positionVerticalHorizontal"/>
+                        <AlignHorizontalJustifyCenter width={35} height={35} onClick={() => setPosition("vertical")} className="positionVerticalHorizontal" />
                     }
                     {
                         checkAuth(user) &&
@@ -87,9 +87,10 @@ function ProblemEditor() {
                                 <h3>Test Cases:</h3>
                                 {
                                     problemDetails?.testCases?.map((curr, id) => {
+                                        // console.log(curr)
                                         return <p className="code-box" key={id}>
-                                            Input: {curr.input}<br />
-                                            Output: {curr.output}
+                                            Input: {curr?.input}<br />
+                                            Output: {curr?.output}
                                         </p>
                                     })
                                 }

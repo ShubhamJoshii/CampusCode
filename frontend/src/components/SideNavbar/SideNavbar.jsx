@@ -7,7 +7,7 @@ import { checkAuth } from '../../CheckAuth';
 
 const Button = ({ icon, label, link }) => (
   <NavLink to={link} className={({ isActive }) =>
-    `sideNavbarBtn mb-4 ${isActive ? "active" : ""}`
+    `sideNavbarBtn ${isActive ? "active" : ""}`
   }>
     {icon}
     <span>{label}</span>
