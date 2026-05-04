@@ -80,13 +80,6 @@ const verifyEmailMail = (userName, verificationLink) => `
   </head>
   <body>
     <div class="email-container">
-      <div class="header">
-        <img
-          src="https://res.cloudinary.com/dhwyjphl6/image/upload/v1726142212/Email%20Images/zxnxohqdmdwgenqsobcf.png"
-          alt="Company Logo"
-        />
-      </div>
-
       <!-- Main Content Section -->
       <div class="content">
         <h1>Hey, thanks for signing up!</h1>
@@ -97,7 +90,7 @@ const verifyEmailMail = (userName, verificationLink) => `
         <img
           src="https://res.cloudinary.com/dhwyjphl6/image/upload/v1726142213/Email%20Images/tj1eattsf76flvilnlgw.png"
           alt="Illustration"
-          style="width: 100%; max-width: 400px; margin-top: 20px"
+          style="width: 100%; max-width: 300px; margin-top: 20px"
         />
         <p style="margin-top: 30px; font-weight: bold; letter-spacing: 1px;">Dear ${userName},</p>
         <p>

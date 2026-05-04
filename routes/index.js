@@ -22,10 +22,10 @@ router.use("/",require("./Problems/searchProblems"));
 
 router.use("/",require("./Progress/fetchAllSubmissions"));
 
-router.use("/",require("./Submission/submitSolution"));
 router.use("/",require("./Submission/streak"));
 // router.use("/",require("./Submission/runCode(judge0)"));
-router.use("/",require("./Submission/runCode(Terminal)"));
+// router.use("/",require("./Submission/NotToDeploy/submitSolution"));
+// router.use("/",require("./Submission/NotToDeploy/runCode(Terminal)"));
 
 router.use("/",require("./Leaderboard/fetchLeaderBoard"));
 router.use("/",require("./Leaderboard/fetchGroupLeaderBoard"));

@@ -9,7 +9,7 @@ import {
   FlaskConical, ClipboardList, Code, Settings, Sun, LogOut, ChevronRight,
   ChartColumn
 } from "lucide-react";
-import { logoutUser } from "../../redux/reducer/userSlice";
+import { fetchUser, logoutUser } from "../../redux/reducer/userSlice";
 import { fetchStreak } from "../../redux/reducer/progressSlice";
 
 const GridItem = ({ icon, label, link, onClick }) => (
@@ -34,7 +34,7 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const {streak} = useSelector(state => state.progress);
+  const { streak } = useSelector(state => state.progress);
 
   const isAuthenticated = Boolean(
     user?.email &&
@@ -45,17 +45,19 @@ const Header = () => {
   const logout = async () => {
     await dispatch(logoutUser()).unwrap();
     localStorage.clear();
+    dispatch(fetchUser())
+    setIsOpen(false);
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(fetchStreak());
-  },[])
-  
+  }, [])
+
 
   return (
     <header className="cardBorder z-10">
       <NavLink to="/">
-        <img src={Logo} alt="Logo" className="headerLogo"/>
+        <img src={Logo} alt="Logo" className="headerLogo" />
       </NavLink>
 
       <div className="flex items-center gap-5 z-100 ">
@@ -79,7 +81,7 @@ const Header = () => {
                         <User size={32} />
                       </div>
                       <span className="username">{user?.firstName
-                        ? `${user?.userName || user?.firstName + " " + user?.lastName }`
+                        ? `${user?.userName || user?.firstName + " " + user?.lastName}`
                         : "Username"}</span>
                     </div>
                     <div className="dropdown-grid">

@@ -80,13 +80,6 @@ const OTPMail = (userName, otp) => `
   </head>
   <body>
     <div class="email-container">
-      <div class="header">
-        <img
-          src="https://res.cloudinary.com/dhwyjphl6/image/upload/v1726142212/Email%20Images/zxnxohqdmdwgenqsobcf.png"
-          alt="Company Logo"
-        />
-      </div>
-
       <!-- Main Content Section -->
       <div class="content">
         <h1>Hey, thanks for Contacting Us!</h1>

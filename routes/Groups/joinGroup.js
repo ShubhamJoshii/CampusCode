@@ -18,6 +18,13 @@ router.post("/joingroup", authMiddleware, async (req, res) => {
         msg: "User already in group",
       });
     }
+    
+    if (!groupUserExist.isPublic) {
+      return res.status(409).json({
+        success: false,
+        msg: "Group is Private",
+      });
+    }
 
     const group = await Group.updateOne(
       { invitationCode },
