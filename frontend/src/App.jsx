@@ -27,6 +27,7 @@ import "./App.css";
 import { RedirectIfAuthenticated, RedirectIfNotAuthenticated } from "./CheckAuth";
 import GroupDashboard from "./pages/GroupDashboard/GroupDashboard";
 import MemberList from "./pages/MemberList/MemberList";
+import JoinGroup from "./pages/JoinGroup/JoinGroup";
 
 // const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -78,7 +79,7 @@ function App() {
               }
             />
             <Route
-              path="/leaderboard/:_id"
+              path="/leaderboard/:groupId"
               element={
                 <Wrapper>
                   <Leaderboard />
@@ -94,6 +95,14 @@ function App() {
               }
             />
 
+            <Route
+              path="/joingroup"
+              element={ 
+                <Wrapper>
+                  <JoinGroup />
+                </Wrapper>
+              }
+            />
             <Route
               path="/groups"
               element={

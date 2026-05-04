@@ -11,7 +11,7 @@ import ForgetPassword from './ForgetPassword';
 import { toast } from 'react-toastify';
 import AuthWrapper from './AuthWrapper';
 
-const Content = () => {
+const Content = ({ onAuthSuccess }) => {
     const {
         register,
         handleSubmit,
@@ -19,15 +19,16 @@ const Content = () => {
         formState: { errors },
     } = useForm();
 
+    const [rememberMe, setRememberMe] = useState(false);
     const { status, error } = useSelector((state) => state.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const onSubmit = async (data1) => {
         try {
-            const response = await dispatch(loginUser(data1)).unwrap();
+            const response = await dispatch(loginUser({...data1, rememberMe})).unwrap();
             toast.success(response?.msg || "Login successful");
-            // setTimeout(() => window.location.href = "/", 1000);
+            onAuthSuccess();
         } catch (error) {
             toast.error(error?.msg?.message || "Login failed");
         }
@@ -60,10 +61,16 @@ const Content = () => {
                         required: "Password is required",
                     })}
                 />
-                <button type="button" className='text-[#ecb014] text-right text-[14px] font-semibold hover:text-[#ecaf14bd] cursor-pointer' onClick={() => {
-                    console.log("Click");
-                    navigate("/forgotPassword");
-                }}>Forgot Password?</button>
+                <div className='flex justify-between ml-1 items-center mt-2'>
+                    <div className='flex gap-1'>
+                        <input type="checkbox" name="rememberMe" id="rememberMe" defaultChecked={rememberMe} onChange={() => { setRememberMe(!rememberMe) }} />
+                        <label htmlFor="rememberMe" className='text-xs'> REMEMBER ME</label>
+                    </div>
+                    <button type="button" className='text-[#ecb014] text-right text-[14px] font-semibold hover:text-[#ecaf14bd] cursor-pointer' onClick={() => {
+                        console.log("Click");
+                        navigate("/forgotPassword");
+                    }}>Forgot Password?</button>
+                </div>
 
                 <SubmitBtn text={"Login"} />
             </form>
@@ -75,11 +82,11 @@ const Content = () => {
     )
 }
 
-const Login = () => {
+const Login = ({ onAuthSuccess }) => {
     const { page } = useSelector((state) => state.user);
     return (
         <AuthWrapper>
-            <Content />
+            <Content onAuthSuccess />
         </AuthWrapper>
     )
 }

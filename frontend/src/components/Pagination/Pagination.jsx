@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react';
-import './Pagination.css'; // Import your new CSS file here
+import './Pagination.css';
 
 const Pagination = ({ totalPages = 10, initialPage = 1, limit = 10, changePagination, changePaginationLimit }) => {
   const [currentPage, setCurrentPage] = useState(initialPage);

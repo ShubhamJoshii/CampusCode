@@ -1,20 +1,23 @@
 const calculateStreak = (submissions) => {
   if (!submissions.length) return 0;
 
-  const dates = new Set(
-    submissions.map(sub =>
-      new Date(sub.createdAt).toISOString().split("T")[0]
-    )
-  );
+  const formatDate = (date) =>
+    new Date(date).toLocaleDateString("en-CA");
 
-  // 2. Convert to sorted array (latest first)
-  const sortedDates = Array.from(dates).sort((a, b) => new Date(b) - new Date(a));
+  const dates = new Set(
+    submissions.map(sub => formatDate(sub.createdAt))
+  );
 
   let streak = 0;
   let currentDate = new Date();
 
+  // If no submission today, start from yesterday
+  if (!dates.has(formatDate(currentDate))) {
+    currentDate.setDate(currentDate.getDate() - 1);
+  }
+
   while (true) {
-    const dateStr = currentDate.toISOString().split("T")[0];
+    const dateStr = formatDate(currentDate);
 
     if (dates.has(dateStr)) {
       streak++;

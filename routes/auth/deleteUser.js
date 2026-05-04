@@ -14,7 +14,6 @@ router.delete("/user/:id", async (req, res) => {
       });
     }
 
-    // Prevent deleting verified users (optional rule)
     if (user.isVerified) {
       return res.status(400).send({
         success: false,

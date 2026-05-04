@@ -1,10 +1,12 @@
 const mongoose = require("mongoose");
 const crypto = require("crypto");
+const { boolean } = require("zod");
 
 const GroupSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     description: String,
+    isPublic: { type: boolean, default: true },
     admins: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     members: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     problems: [

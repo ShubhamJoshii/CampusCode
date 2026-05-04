@@ -2,15 +2,18 @@ const express = require("express");
 const Submission = require("../../models/Submission");
 const router = express.Router();
 
+const User = require("../../models/User");
+
 router.get("/leaderboard", async (req, res) => {
   try {
-    const leaderboardData = await Submission.find({}, "pointEarned").populate(
-      "user",
-      "firstName lastName userName",
-    );
+    const leaderboardData = await Submission.find({ groupId: null }, "pointEarned")
+      .populate("user", "firstName lastName userName");
 
     let leaderData = leaderboardData.reduce((acc, curr) => {
-      const userID = curr.user._id;
+      if (!curr.user) return acc;
+
+      const userID = curr.user._id.toString();
+
       if (!acc[userID]) {
         acc[userID] = {
           userID,
@@ -23,11 +26,24 @@ router.get("/leaderboard", async (req, res) => {
       return acc;
     }, {});
 
+    const allUsers = await User.find({}, "firstName lastName userName");
+
+    allUsers.forEach((user) => {
+      const userID = user._id.toString();
+
+      if (!leaderData[userID]) {
+        leaderData[userID] = {
+          userID,
+          name: `${user.userName || user.firstName + " " + user.lastName}`,
+          totalPointEarned: 0,
+        };
+      }
+    });
+
     leaderData = Object.values(leaderData).sort(
-      (a, b) => b.totalPointEarned - a.totalPointEarned,
+      (a, b) => b.totalPointEarned - a.totalPointEarned
     );
 
-    // console.log(leaderData);
     res.status(200).json({
       success: true,
       data: leaderData,

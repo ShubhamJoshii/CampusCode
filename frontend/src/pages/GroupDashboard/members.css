@@ -6,7 +6,6 @@
   box-sizing: border-box;
 }
 
-/* FILTER */
 .filters {
   margin-bottom: 16px;
   display: flex;
@@ -44,14 +43,12 @@
   white-space: nowrap;
 }
 
-/* LIST */
 .members-list {
   background: white;
   border-radius: 6px;
   overflow: hidden;
 }
 
-/* ROW */
 .member-row {
   display: flex;
   justify-content: space-between;
@@ -78,7 +75,6 @@
   font-size: 14px;
 }
 
-/* ROLE BADGE */
 .roleAdmin {
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -90,16 +86,10 @@
   white-space: nowrap;
 }
 
-/* FOOTER */
 .footer {
   margin-top: 16px;
 }
 
-/* ===================== */
-/* RESPONSIVE DESIGN */
-/* ===================== */
-
-/* Tablets */
 @media (max-width: 768px) {
   .members-container {
     padding: 14px;
@@ -120,7 +110,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
   .members-container {
     padding: 10px;

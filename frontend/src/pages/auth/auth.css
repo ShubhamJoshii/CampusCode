@@ -78,7 +78,7 @@
       color: #64748b;
 
       .signup-link {
-        color: #4f46e5; /* Professional Indigo */
+        color: #4f46e5;
         font-weight: 700;
         text-decoration: none;
         margin-left: 4px;
@@ -87,6 +87,40 @@
           text-decoration: underline;
         }
       }
+    }
+  }
+  @media (max-width:900px){
+    .authContainer-inner{
+      form{
+        .twoInputWrapper{
+          flex-direction: column;
+          .inputContainer{
+            min-width:0;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width:536px){
+    .authContainer-inner{
+      min-width: 90%;
+      padding: 40px 5%;
+      .auth-header .authSubHeading{
+        width: unset;
+        font-size: 13px;
+      }
+      form{
+        .twoInputWrapper{
+          flex-direction: column;
+        }
+      }
+      .submitBtn{
+        height: 40px;
+        font-size: 16px;
+      }
+    }
+    .auth-footer-text{
+      font-size: 12px !important;
     }
   }
 }

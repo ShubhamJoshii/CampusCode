@@ -202,7 +202,6 @@ function Settings() {
         </button>
       </div>
 
-      {/* PROFILE */}
       <div className="card">
         <h2>Profile</h2>
 
@@ -235,32 +234,6 @@ function Settings() {
         </div>
       </div>
 
-      {/* CAMPUS CODE FEATURES */}
-      {/* <div className="card">
-        <h2>Campus Code</h2>
-
-        <div className="row row-hover">
-          <span>My Groups</span>
-          <FiChevronRight />
-        </div>
-
-        <div className="row row-hover">
-          <span>Create Group</span>
-          <FiChevronRight />
-        </div>
-
-        <div className="row row-hover">
-          <span>Competition History</span>
-          <FiChevronRight />
-        </div>
-
-        <div className="row row-hover">
-          <span>Leaderboard Settings</span>
-          <FiChevronRight />
-        </div>
-      </div> */}
-
-      {/* SECURITY */}
       <div className="card">
         <h2>Security</h2>
 
@@ -272,7 +245,6 @@ function Settings() {
           }} />
         </div>
 
-        {/* ACTIVE SESSIONS DROPDOWN */}
         <div
           className="row row-hover"
           onClick={() => setShowSessions(!showSessions)}
@@ -284,7 +256,6 @@ function Settings() {
           />
         </div>
 
-        {/* DROPDOWN CONTENT */}
         {showSessions && <> {
           setting?.setting?.map((curr, id) => {
             return <div className="session-dropdown" key={id}>
@@ -304,28 +275,6 @@ function Settings() {
         }
       </div>
 
-      {/* CONNECTED ACCOUNTS */}
-      {/* <div className="card">
-        <h2>Connected Accounts</h2>
-
-        <div className="row">
-          <span>Google</span>
-          <button className="connect-btn connected">Connected</button>
-        </div>
-
-        <div className="row">
-          <span>GitHub</span>
-          <button className="connect-btn">Connect</button>
-        </div>
-
-        <div className="row">
-          <span>LinkedIn</span>
-          <button className="connect-btn">Connect</button>
-        </div>
-      </div> */}
-
-
-      {/* DANGER */}
       <div className="danger">
         <h2>Delete this account</h2>
         <p>

@@ -23,7 +23,7 @@
   .wrapperSection {
     padding-bottom: 80px !important;
     width: calc(100vw - 48px);
-    height: calc(100vh - 140px);
+    height: calc(100vh - 40px);
     display: flex;
     gap: 20px;
     align-items: start;
@@ -45,8 +45,14 @@
       padding: 12px;
       width: 100vw;
       left: 0;
+      height: calc(100vh - 10px);
       /* height: auto; */
       overflow: scroll;
+    }
+  }
+  @media (max-width: 536px) {
+    .wrapperSection{
+      height: calc(100vh - 50px);
     }
   }
   @media (max-width: 425px) {

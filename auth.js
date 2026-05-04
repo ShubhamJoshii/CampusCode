@@ -7,7 +7,6 @@ const env = process.env.NODE_ENV;
 
 router.get("/userExist/:email", async (req, res) => {
   const email = req.params.email;
-  // console.log(email);
   try {
     const userExist = await UserModel.findOne({ email });
     if (userExist) {

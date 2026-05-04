@@ -1,4 +1,3 @@
-/* ================= SIDENAVBAR ================= */
 .sideNavbar {
   padding: 16px;
   display: flex;
@@ -48,7 +47,6 @@
     padding: 12px;
 
     .sideNavbarBtn {
-      /* width: 70px; */
       padding: 0.6rem;
       span {
         font-size: 0.6rem;
@@ -56,7 +54,6 @@
     }
   }
 
-  /* ================= 768px ================= */
   @media (max-width: 768px) {
     padding: 10px;
 
@@ -75,9 +72,9 @@
     position: fixed;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%,-5px);
+    transform: translate(-50%, -5px);
     width: calc(100vw - 16px);
-    /* height: 60px; */
+
     padding: 6px 8px;
     flex-direction: row;
     justify-content: space-around;
@@ -96,6 +93,5 @@
         margin-top: 2px;
       }
     }
-
   }
 }

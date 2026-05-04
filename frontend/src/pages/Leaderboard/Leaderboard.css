@@ -1,12 +1,9 @@
-/* Leaderboard.css */
-
 .leaderBoard {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   font-family: "Inter", system-ui, sans-serif;
 
-  /* Header Section */
   h1 {
     font-size: 1.8rem;
     color: #111827;
@@ -20,8 +17,6 @@
     align-items: flex-end;
     justify-content: center;
     gap: 12px;
-    /* height: 240px; */
-    /* margin: 3rem 0; */
 
     .podium-step {
       flex: 1;
@@ -48,9 +43,8 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       }
 
-      /* Specific Rank Logic */
       &.gold {
-        order: 2; /* Moves Gold to the center */
+        order: 2;
         height: 170px;
         background: linear-gradient(180deg, #fefce8, #fef08a);
         border-color: #fde047;
@@ -67,20 +61,19 @@
       }
 
       &.silver {
-        order: 1; /* Moves Silver to the left */
+        order: 1;
         height: 120px;
         background: linear-gradient(180deg, #f8fafc, #e2e8f0);
       }
 
       &.bronze {
-        order: 3; /* Moves Bronze to the right */
+        order: 3;
         height: 90px;
         background: linear-gradient(180deg, #fffaf5, #ffedd5);
       }
     }
   }
 
-  /* List Styles */
   .user-list {
     display: flex;
     flex-direction: column;
@@ -108,18 +101,19 @@
         background-color: #f0fdf4;
       }
 
-      .details{
+      .details {
         display: flex;
         align-items: center;
         gap: 16px;
         flex: 1;
-        .rank{
+        .rank {
           font-weight: bold;
-          width:24px;
-          font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+          width: 24px;
+          font-family:
+            Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
           color: rgb(128, 128, 128);
         }
-        .nameProgress{
+        .nameProgress {
           flex: 1;
           .progress-track {
             flex: 1;
@@ -129,7 +123,7 @@
             border-radius: 99px;
             margin-top: 8px;
             overflow: hidden;
-  
+
             .progress-fill {
               height: 100%;
               background: #22c55e;
@@ -138,7 +132,6 @@
           }
         }
       }
-
     }
   }
   @media (max-width: 768px) {
@@ -154,7 +147,7 @@
 
       .podium-step {
         height: auto !important;
-        p{
+        p {
           font-size: 16px;
         }
         &.gold {
@@ -182,7 +175,6 @@
     }
   }
 
-  /* ================= 425px ================= */
   @media (max-width: 425px) {
     padding: 0.75rem;
 
@@ -217,7 +209,6 @@
   }
 }
 
-/* Animations */
 @keyframes float {
   0%,
   100% {
@@ -228,7 +219,6 @@
   }
 }
 
-/* Scrollbar Helper */
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;

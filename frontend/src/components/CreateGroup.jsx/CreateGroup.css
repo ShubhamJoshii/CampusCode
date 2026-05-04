@@ -20,7 +20,7 @@
   animation: zoomIn 0.3s ease;
 }
 
-/* Header */
+
 .header {
   text-align: center;
   margin-bottom: 24px;
@@ -38,7 +38,7 @@
   margin-top: 4px;
 }
 
-/* Input */
+
 .input-group label {
   font-size: 10px;
   font-weight: bold;
@@ -67,7 +67,7 @@
   height: 14px;
 }
 
-/* Buttons */
+
 .buttons {
   display: flex;
   gap: 12px;
@@ -97,7 +97,7 @@
   cursor: not-allowed;
 }
 
-/* Success */
+
 .success {
   text-align: center;
   animation: fadeIn 0.5s ease;
@@ -116,7 +116,7 @@
   font-size: 24px;
 }
 
-/* Invite */
+
 .invite-box {
   margin: 24px 0;
   padding: 20px;
@@ -139,7 +139,7 @@
   color: #6366f1;
 }
 
-/* Share */
+
 .share-box {
   background: #eef2ff;
   padding: 20px;
@@ -182,7 +182,7 @@
   border-radius: 8px;
 }
 
-/* Done */
+
 .done-btn {
   margin-top: 20px;
   width: 100%;
@@ -193,7 +193,7 @@
   border: none;
 }
 
-/* Animations */
+
 @keyframes zoomIn {
   from {
     opacity: 0;

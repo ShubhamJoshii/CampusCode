@@ -117,6 +117,13 @@ const ProblemList = ({ problemsList, totalPages, tag, attemptedProblemsCount, st
                                     </NavLink>
                                 );
                             })}
+                            {
+                                problemsList.length === 0 && <div className="problemRow min-h-50 ">
+                                    <div className='problemTitle text-center'>
+                                        No Avaliable Problem Right Now
+                                    </div>
+                                </div>
+                            }
                         </div>
                     </div>
                     <Pagination totalPages={totalPages} initialPage={pageNo} limit={limit} changePagination={changePagination} changePaginationLimit={changePaginationLimit} />

@@ -4,11 +4,11 @@
   gap: 30px;
   margin: 0 auto;
 
-  /* ❌ FIX: remove mobile-breaking constraint */
+  
   min-width: 0;
   width: 100%;
 
-  /* ================= METRICS ================= */
+  
   .metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -40,7 +40,7 @@
     }
   }
 
-  /* ================= TOP GRID ================= */
+  
   .top-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -119,7 +119,7 @@
     }
   }
 
-  /* ================= CARD ================= */
+  
   .card {
     background: white;
     padding: 28px;
@@ -176,7 +176,7 @@
     }
   }
 
-  /* ================= 1021px ================= */
+  
   @media (max-width: 1021px) {
     .top-grid {
       grid-template-columns: 1fr;
@@ -187,7 +187,7 @@
     }
   }
 
-  /* ================= 768px ================= */
+  
   @media (max-width: 768px) {
     gap: 20px;
 
@@ -205,7 +205,7 @@
     .top-grid {
       grid-template-columns: 1fr;
       .progress-card {
-        /* flex-direction: column; */
+        
         gap: 25px;
         align-items: center;
         text-align: center;
@@ -221,7 +221,7 @@
     }
   }
 
-  /* ================= 425px ================= */
+  
   @media (max-width: 425px) {
     gap: 15px;
 
@@ -243,7 +243,7 @@
   }
 }
 
-/* ================= HEATMAP ================= */
+
 .react-calendar-heatmap {
   text {
     font-size: 11px;

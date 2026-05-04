@@ -42,7 +42,7 @@ const Groups = () => {
     }
   };
 
-  if (status == "loading") {
+  if (status == "loadingWhole") {
     return <Loading style="flex-1 !h-[100%] bg-white" />
   }
 
@@ -131,7 +131,7 @@ const Groups = () => {
                       </span>
                     )}
                   </div>
-                  <span className="group-code">CODE: {g.invitationCode}</span>
+                  <span className="group-code tracking-wider ">CODE: {g.invitationCode.toUpperCase()}</span>
                 </div>
               })}
             </div>

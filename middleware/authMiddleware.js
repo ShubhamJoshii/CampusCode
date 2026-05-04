@@ -13,10 +13,7 @@ const authMiddleware = async (req, res, next) => {
       });
     }
 
-    // ✅ Verify token
     const decoded = jwt.verify(token, SECRET_KEY);
-
-    // ✅ Match token with login session
     const user = await UserModel.findOne({
       _id: decoded._id,
       "login.token": token,
@@ -27,8 +24,6 @@ const authMiddleware = async (req, res, next) => {
         message: "Unauthorized: Session not found",
       });
     }
-
-    // ✅ (Optional but recommended) update lastActiveAt
     await UserModel.updateOne(
       {
         _id: user._id,

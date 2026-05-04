@@ -23,7 +23,6 @@ function getRandomSuffix() {
 }
 
 router.post("/signup", validator(registerValidator), async (req, res) => {
-  // router.post("/signup", async (req, res) => {
   const { firstName, lastName, email, password, confirmPassword } = req.body;
   let base = generateUsername(firstName, lastName);
   let userName = `${base}_${getRandomSuffix()}`;

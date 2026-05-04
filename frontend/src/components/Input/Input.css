@@ -55,6 +55,27 @@
       transform: translate(14px, -34px);
     }
   }
+  @media (max-width: 536px) {
+    flex: 1;
+    width: auto;
+    .inputContainer-inner {
+      min-width: 0;
+      padding: 8px;
+      input {
+        font-size: 14px;
+      }
+      .labelLine {
+        font-size: 14px;
+        transform: translate(10px, -12px);
+      }
+
+      input:focus + .labelLine,
+      input:valid + .labelLine {
+        transform: translate(10px, -30px);
+      }
+      
+    }
+  }
 }
 #formErrorMsg {
   font-size: 12px;

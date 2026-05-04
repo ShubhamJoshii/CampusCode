@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.post("/login", validator(loginValidator), async (req, res) => {
   const { email, password, rememberMe } = req.body;
-
+  console.log( req.body);
   try {
     const user = await UserModel.findOne({ email });
 
@@ -23,22 +23,19 @@ router.post("/login", validator(loginValidator), async (req, res) => {
       );
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
-    const isProduction = process.env.NODE_ENV === "production";
+    const isProduction = process.env.NODE_ENV === "PRODUCTION";
 
     if (!isPasswordValid) {
       throw new ValidationError("password", "Incorrect Password");
     }
 
-    // ✅ Generate token FIRST
     const token = user.generateAuthToken();
 
-    // ✅ Parse device info
     const parser = new UAParser(req.headers["user-agent"]);
     const device = parser.getDevice();
     const os = parser.getOS();
     const browser = parser.getBrowser();
 
-    // ✅ Create login entry WITH token
     const loginEntry = {
       token,
 
@@ -59,10 +56,8 @@ router.post("/login", validator(loginValidator), async (req, res) => {
       },
     };
 
-    // ✅ Push login session
     user.login.push(loginEntry);
 
-    // ✅ Set cookie
     res.cookie("LeetCodeToken", token, {
       expires: rememberMe
         ? new Date(Date.now() + 31 * 24 * 60 * 60 * 1000)

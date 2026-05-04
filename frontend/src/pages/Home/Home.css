@@ -1,13 +1,14 @@
-/* ================= CORE LAYOUT ================= */
 .hero-section {
-  background-color: #f8fafc;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   color: #0f172a;
   font-family:
     "Inter",
     system-ui,
     -apple-system,
     sans-serif;
-  max-width: 1440px;
+  /* max-width: 1440px; */
   margin: 0 auto;
   padding: 0 2rem 4rem 2rem;
   min-height: 85vh;
@@ -18,7 +19,6 @@
   overflow: hidden;
   flex: 1;
 
-  /* ================= 1021px ================= */
   @media (max-width: 1021px) {
     gap: 2rem;
 
@@ -43,7 +43,6 @@
     }
   }
 
-  /* ================= 768px ================= */
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 1.5rem 1rem 3rem 1rem;
@@ -80,7 +79,6 @@
     }
   }
 
-  /* ================= 425px ================= */
   @media (max-width: 425px) {
     padding: 1rem 0.75rem 2rem 0.75rem;
 
@@ -121,7 +119,6 @@
     }
   }
 
-  /* ================= CONTENT ================= */
   .hero-content {
     display: flex;
     flex-direction: column;
@@ -221,7 +218,6 @@
     }
   }
 
-  /* ================= VISUAL ================= */
   .hero-visual {
     position: relative;
     flex: 1;
@@ -272,7 +268,6 @@
   }
 }
 
-/* ================= BLOBS ================= */
 .blob {
   position: absolute;
   width: 25rem;
@@ -294,7 +289,6 @@
   background-color: #e9d5ff;
 }
 
-/* ================= ANIMATIONS ================= */
 .ping-container {
   position: relative;
   display: flex;

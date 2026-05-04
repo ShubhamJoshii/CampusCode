@@ -7,14 +7,14 @@ const CreateGroup = ({ createGroupShow, setCreateGroupShow }) => {
     const [isCreated, setIsCreated] = useState(false);
     const [copySuccess, setCopySuccess] = useState(false);
 
-    const { groups, status, groupName, invitationCode } = useSelector(state => state.groups);
+    const { groups, status, groupName, invitationCode, invitationLink } = useSelector(state => state.groups);
     const dispatch = useDispatch();
 
     const handleCreateSubmit = async () => {
         try {
             await dispatch(createNewGroup()).unwrap();
             setIsCreated(true);
-            await dispatch(fetchGroups()).unwrap();
+            
             // setCreateGroupShow(false);
 
         } catch (error) {
@@ -23,8 +23,7 @@ const CreateGroup = ({ createGroupShow, setCreateGroupShow }) => {
     };
 
     const copyToClipboard = () => {
-        const link = `${window.location.origin}/join/${invitationCode}`;
-        navigator.clipboard.writeText(link);
+        navigator.clipboard.writeText(invitationLink);
         setCopySuccess(true);
         setTimeout(() => setCopySuccess(false), 2000);
     };
@@ -69,7 +68,7 @@ const CreateGroup = ({ createGroupShow, setCreateGroupShow }) => {
 
                                     <button
                                         disabled={groupName.length < 3 || status === "loading"}
-                                        onClick={handleCreateSubmit} // ✅ Updated reference
+                                        onClick={handleCreateSubmit}
                                         className="create-btn"
                                     >
                                         {status === "loading" ? "Creating..." : "Create Now"}
@@ -94,14 +93,15 @@ const CreateGroup = ({ createGroupShow, setCreateGroupShow }) => {
                                     </div>
 
                                     <div className="share-input">
-                                        <p>{window.location.origin}/join/{invitationCode}</p>
+                                        <p>{invitationLink}</p>
                                         <button onClick={copyToClipboard}>Copy</button>
                                     </div>
                                 </div>
 
                                 <button
                                     className="done-btn"
-                                    onClick={() => {
+                                    onClick={async() => {
+                                        await dispatch(fetchGroups()).unwrap();
                                         setIsCreated(false);
                                         setCreateGroupShow(false);
                                     }}

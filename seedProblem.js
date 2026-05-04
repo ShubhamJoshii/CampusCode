@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Problem = require("./models/Problems.js");
-// The data from your uploaded file (truncated for brevity)
 const { problems: rawProblems } = require("./frontend/src/assets/Problem.js");
 
 const connectDB = require("./database.js");
@@ -8,7 +7,6 @@ const seedData = async () => {
   try {
     await connectDB();
 
-    // Transform raw data to match Mongoose Schema
     const formattedProblems = rawProblems.map((p, id) => {
       console.log(id);
       return {
@@ -23,10 +21,8 @@ const seedData = async () => {
       };
     });
 
-    // Clear existing problems to avoid duplicates
     await Problem.deleteMany({});
 
-    // Bulk Insert
     await Problem.insertMany(formattedProblems);
 
     console.log("150 Problems Seeded Successfully! 🚀");

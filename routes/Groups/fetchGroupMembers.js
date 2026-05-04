@@ -27,16 +27,13 @@ router.get("/groupdetails/:_id/members", authMiddleware, async (req, res) => {
       });
     }
 
-    // ✅ Convert to plain object
     const groupObj = group.toObject();
 
-    // ✅ Merge admins + members
     const allUsers = [
       ...(groupObj.admins || []).map(user => ({ ...user, role: "admin" })),
       ...(groupObj.members || []).map(user => ({ ...user, role: "member" })),
     ];
 
-    // ✅ Pagination on combined array
     const groupUsers = allUsers.slice(skip, skip + limit);
 
     const pagination = {

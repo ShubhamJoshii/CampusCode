@@ -8,7 +8,7 @@ router.get("/groupdetails/:_id", authMiddleware, async (req, res) => {
 
   try {
     const group = await Group.findById(_id).select(
-      "name admins members problems",
+      "name admins members problems description isPublic",
     );
 
     const isAdmin = !!group.admins.find(

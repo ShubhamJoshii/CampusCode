@@ -2,8 +2,26 @@
   background-color: #f9fafb;
   display: flex;
   flex-direction: column;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: #1e293b;
+
+  #settingLogo {
+    position: fixed;
+    right: 0;
+    top: 70%;
+    z-index: 9999;
+    background-color: red;
+    color: white;
+    background-color: #1e7e34;
+    border-radius: 10px 0 0 10px;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    svg {
+      animation: spin 4s linear infinite;
+    }
+  }
 
   .dashboard-header {
     background: #ffffff;
@@ -13,7 +31,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 50;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 
     .header-left {
       display: flex;
@@ -51,7 +69,6 @@
     }
   }
 
-  /* MAIN */
   .dashboard-main {
     display: flex;
     align-items: flex-start;
@@ -60,7 +77,6 @@
     gap: 24px;
     width: 100%;
 
-    /* SIDEBAR */
     .dashboard-sidebar {
       position: sticky;
       top: 0;
@@ -76,7 +92,7 @@
         border: 1px solid #e2e8f0;
         border-radius: 16px;
         padding: 20px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 
         .section-label {
           font-size: 10px;
@@ -164,7 +180,7 @@
           font-weight: 600;
           cursor: pointer;
           transition: all 0.2s;
-          box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 
           &:hover {
             border-color: #e2e8f0;
@@ -188,7 +204,6 @@
       }
     }
 
-    /* CONTENT */
     .dashboard-content {
       flex: 1;
       min-width: 0;
@@ -224,9 +239,15 @@
               height: 8px;
               border-radius: 50%;
 
-              &.red { background: #ff5f57; }
-              &.yellow { background: #ffbd2e; }
-              &.green { background: #28c940; }
+              &.red {
+                background: #ff5f57;
+              }
+              &.yellow {
+                background: #ffbd2e;
+              }
+              &.green {
+                background: #28c940;
+              }
             }
           }
         }
@@ -239,7 +260,15 @@
     }
   }
 
-  /* RESPONSIVE */
+  .settings {
+    background-color: white;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
   @media (max-width: 1024px) {
     .dashboard-main {
       flex-direction: column;
@@ -248,10 +277,10 @@
         flex-direction: row;
         width: 100%;
         position: relative;
-        .stats-card{
+        .stats-card {
           flex: 1;
         }
-        .stats-card{
+        .stats-card {
           flex: 1;
         }
       }
@@ -263,10 +292,10 @@
       /* flex-direction: column; */
       align-items: flex-start;
       gap: 12px;
-      .header-titles h1{
-        font-size: 20px ;
+      .header-titles h1 {
+        font-size: 20px;
       }
-      .leaderboard-btn{
+      .leaderboard-btn {
         font-size: 12px;
         padding: 8px;
       }
@@ -274,31 +303,40 @@
 
     .dashboard-main {
       padding: 0px;
-      .dashboard-content{
-        .content-card{
-          .list-wrapper{
+      .dashboard-content {
+        .content-card {
+          .list-wrapper {
             padding: 10px 0;
           }
         }
       }
-      .dashboard-sidebar{
-        .stats-card{
-          .section-label{
+      .dashboard-sidebar {
+        .stats-card {
+          .section-label {
             margin-bottom: 10px;
           }
-          .rank-display{
+          .rank-display {
             margin-bottom: 10px;
           }
-          span{
+          span {
             font-size: 14px;
           }
         }
-        .action-nav{
-          .nav-item{
+        .action-nav {
+          .nav-item {
             padding: 8px 10px;
           }
         }
       }
     }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

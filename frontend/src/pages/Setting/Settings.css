@@ -1,27 +1,27 @@
-/* ===== BASE LAYOUT ===== */
+
 .settings-container {
   padding: 24px;
   max-width: 900px;
   margin: 0 auto;
-  /* min-height: 100vh; */
-  background: #f8fafc; /* light background */
+  
+  background: #f8fafc; 
   color: #0f172a;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  .settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+  }
 }
 
-/* ===== HEADER ===== */
-.settings-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-}
 
-.settings-header h1 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #0f172a;
-}
+
 
 .back-btn {
   display: flex;
@@ -34,13 +34,13 @@
   border-radius: 10px;
   cursor: pointer;
   transition: 0.2s ease;
+  &:hover {
+    background: #f1f5f9;
+  }
 }
 
-.back-btn:hover {
-  background: #f1f5f9;
-}
 
-/* ===== CARD ===== */
+
 .card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
@@ -48,16 +48,16 @@
   padding: 18px;
   margin-bottom: 18px;
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  h2 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #334155;
+  }
 }
 
-.card h2 {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 14px;
-  color: #334155;
-}
 
-/* ===== ROW ===== */
+
 .row {
   display: flex;
   justify-content: space-between;
@@ -79,12 +79,12 @@
   background: #f8fafc;
 }
 
-/* clickable rows */
+
 .row-hover {
   cursor: pointer;
 }
 
-/* LEFT SIDE */
+
 .row-left {
   display: flex;
   align-items: center;
@@ -93,7 +93,7 @@
   font-size: 14px;
 }
 
-/* RIGHT SIDE */
+
 .row-right {
   display: flex;
   align-items: center;
@@ -102,7 +102,7 @@
   font-size: 14px;
 }
 
-/* ICONS */
+
 .icon {
   width: 16px;
   height: 16px;
@@ -115,12 +115,11 @@
   color: #2563eb;
 }
 
-/* CHEVRON */
+
 .arrow {
   color: #94a3b8;
 }
 
-/* ===== BUTTONS ===== */
 .connect-btn {
   background: white;
   border: 1px solid #cbd5e1;
@@ -143,10 +142,10 @@
   color: white;
 }
 
-/* ===== DANGER ZONE ===== */
 .danger {
   border: 1px solid #fecaca;
   background: #fff5f5;
+  margin-bottom: 40px;
 }
 
 .delete-btn {
@@ -165,7 +164,7 @@
   background: #dc2626;
 }
 
-/* ===== SCROLL ===== */
+
 .hide-scrollbar {
   scrollbar-width: none;
 }
@@ -174,7 +173,7 @@
   display: none;
 }
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 600px) {
   .settings-container {
     padding: 16px;
@@ -196,7 +195,7 @@
   }
 }
 
-/* ===== DANGER CARD ===== */
+
 .danger {
   background: #fff5f5;
   border: 1px solid #fecaca;
@@ -205,7 +204,7 @@
   padding: 18px;
 }
 
-/* Title */
+
 .danger h2 {
   font-size: 16px;
   font-weight: 700;
@@ -213,7 +212,7 @@
   margin-bottom: 8px;
 }
 
-/* Warning text */
+
 .danger p {
   font-size: 13px;
   color: #7f1d1d;
@@ -221,7 +220,7 @@
   margin-bottom: 14px;
 }
 
-/* Delete button */
+
 .delete-btn {
   width: 100%;
   background: #ef4444;

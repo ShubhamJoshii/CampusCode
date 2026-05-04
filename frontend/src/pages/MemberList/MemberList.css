@@ -1,7 +1,7 @@
 
-/* MemberList.css - Add these to your existing file */
 
-/* MODAL OVERLAY */
+
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -60,7 +60,7 @@
   background: #2d2d2d;
   color: white;
   font-size: 16px;
-  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  box-sizing: border-box; 
 }
 
 .modal-submit-btn {
@@ -74,7 +74,7 @@
   margin-top: 8px;
 }
 
-/* TRIGGER BUTTON */
+
 .open-modal-btn {
   background-color: #3b82f6;
   color: white;
@@ -99,7 +99,7 @@
   font-weight: 700;
 }
 
-/* FORM SECTION */
+
 .add-member-card {
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
@@ -141,7 +141,7 @@
   background-color: #16a34a;
 }
 
-/* TABLE SECTION */
+
 .table-wrapper {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;

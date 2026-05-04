@@ -19,6 +19,19 @@ export const fetchGroupDetails = createAsyncThunk(
     async (args = {}, thunkAPI) => {
         try {
             const response = await axios.get(`/api/groupdetails/${args}`);
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.response?.data || "Something went wrong");
+        }
+    }
+);
+
+export const fetchJoinGroupDetails = createAsyncThunk(
+    "groups/fetchJoinGroupDetails",
+    async (args = {}, thunkAPI) => {
+        try {
+            const response = await axios.get(`/api/joingroupdetails/${args}`);
             return response.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.response?.data || "Something went wrong");
@@ -126,17 +139,56 @@ export const addProblem = createAsyncThunk(
     }
 );
 
+export const changeGroupName = createAsyncThunk(
+    "groups/changeGroupName",
+    async ({ _id, name }, thunkAPI) => {
+        try {
+            const response = await axios.post(`/api/group/changename`, { _id, name });
+            return response.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.response?.data || "Something went wrong");
+        }
+    }
+);
 
+export const changeGroupDescription = createAsyncThunk(
+    "groups/changeGroupDescription",
+    async ({ _id, description }, thunkAPI) => {
+        console.log(_id, description);
+        try {
+            const response = await axios.post(`/api/group/changedescription`, { _id, description });
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.response?.data || "Something went wrong");
+        }
+    }
+);
+
+export const changeJoiningMethod = createAsyncThunk(
+    "groups/changeJoiningMethod",
+    async ({ _id }, thunkAPI) => {
+        console.log(_id);
+        try {
+            const response = await axios.post(`/api/group/changejoiningmethod`, { _id });
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.response?.data || "Something went wrong");
+        }
+    }
+);
 
 const groupSlice = createSlice({
     name: "groups",
     initialState: {
         groups: [],
-        groupDetails: [],
+        groupDetails: {},
         status: "idle",
         error: null,
         groupName: "",
         problems: [],
+        invitationLink: "",
         invitationCode: "",
         categories: [],
         tag: "all",
@@ -191,12 +243,18 @@ const groupSlice = createSlice({
         const handlePending = (state) => {
             state.status = "loading";
         };
+        const handleFulfilled = (state) => {
+            state.status = "succeeded";
+            state.error = null;
+        }
         const handleRejected = (state, action) => {
             state.status = "failed";
             state.error = action.payload?.msg || "Failed to fetch";
         };
         builder
-            .addCase(fetchGroups.pending, handlePending)
+            .addCase(fetchGroups.pending, (state) => {
+                state.status = "loadingWhole";
+            })
             .addCase(fetchGroups.fulfilled, (state, action) => {
                 state.status = "succeeded";
                 state.groups = action.payload.data || [];
@@ -207,6 +265,7 @@ const groupSlice = createSlice({
             .addCase(createNewGroup.fulfilled, (state, action) => {
                 state.status = "succeeded";
                 state.invitationCode = action.payload.invitationCode;
+                state.invitationLink = action.payload.invitationLink;
                 state.error = null;
             })
             .addCase(createNewGroup.rejected, handleRejected)
@@ -220,6 +279,16 @@ const groupSlice = createSlice({
                 state.error = null;
             })
             .addCase(fetchGroupDetails.rejected, handleRejected)
+            .addCase(fetchJoinGroupDetails.pending, (state) => {
+                state.status = "loadingWhole";
+            })
+            .addCase(fetchJoinGroupDetails.fulfilled, (state, action) => {
+                state.status = "succeeded";
+                state.groupDetails = action.payload.group;
+                state.membersDetails = action.payload.members;
+                state.error = null;
+            })
+            .addCase(fetchJoinGroupDetails.rejected, handleRejected)
             .addCase(fetchGroupProblems.pending, handlePending)
             .addCase(fetchGroupProblems.fulfilled, (state, action) => {
                 state.status = "succeeded";
@@ -232,12 +301,6 @@ const groupSlice = createSlice({
                 state.error = null;
             })
             .addCase(fetchGroupProblems.rejected, handleRejected)
-            .addCase(addProblem.pending, handlePending)
-            .addCase(addProblem.fulfilled, (state, action) => {
-                state.status = "succeeded";
-                state.error = null;
-            })
-            .addCase(addProblem.rejected, handleRejected)
             .addCase(fetchAllProblems.pending, handlePending)
             .addCase(fetchAllProblems.fulfilled, (state, action) => {
                 state.status = "succeeded";
@@ -256,13 +319,22 @@ const groupSlice = createSlice({
                 state.totalMembers = action.payload.pagination.total;
                 state.error = null;
             })
+            .addCase(addProblem.pending, handlePending)
+            .addCase(addProblem.fulfilled, handleFulfilled)
+            .addCase(addProblem.rejected, handleRejected)
             .addCase(fetchGroupMembers.rejected, handleRejected)
             .addCase(joinNewGroup.pending, handlePending)
-            .addCase(joinNewGroup.fulfilled, (state, action) => {
-                state.status = "succeeded";
-                state.error = null;
-            })
-            .addCase(joinNewGroup.rejected, handleRejected);
+            .addCase(joinNewGroup.fulfilled, handleFulfilled)
+            .addCase(joinNewGroup.rejected, handleRejected)
+            .addCase(changeGroupName.pending, handlePending)
+            .addCase(changeGroupName.fulfilled, handleFulfilled)
+            .addCase(changeGroupName.rejected, handleRejected)
+            .addCase(changeGroupDescription.pending, handlePending)
+            .addCase(changeGroupDescription.fulfilled, handleFulfilled)
+            .addCase(changeGroupDescription.rejected, handleRejected)
+            .addCase(changeJoiningMethod.pending, handlePending)
+            .addCase(changeJoiningMethod.fulfilled, handleFulfilled)
+            .addCase(changeJoiningMethod.rejected, handleRejected);
     }
 });
 

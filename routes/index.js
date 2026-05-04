@@ -28,16 +28,21 @@ router.use("/",require("./Submission/streak"));
 router.use("/",require("./Submission/runCode(Terminal)"));
 
 router.use("/",require("./Leaderboard/fetchLeaderBoard"));
+router.use("/",require("./Leaderboard/fetchGroupLeaderBoard"));
 
 router.use("/",require("./Settings/fetchSettings"));
 
 router.use("/",require("./Groups/createGroup"));
 router.use("/",require("./Groups/fetchGroups"));
 router.use("/",require("./Groups/fetchGroupDetails"));
+router.use("/",require("./Groups/fetchJoinGroupDetails"));
 router.use("/",require("./Groups/joinGroup"));
 router.use("/",require("./Groups/fetchGroupProblems"));
 router.use("/",require("./Groups/fetchGroupMembers"));
 router.use("/",require("./Groups/fetchGroupProblem(addtion)"));
 router.use("/",require("./Groups/addQuestion"));
+router.use("/",require("./Groups/changeName"));
+router.use("/",require("./Groups/changeDescription"));
+router.use("/",require("./Groups/changeJoiningMethod"));
 
 module.exports = router;

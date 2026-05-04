@@ -25,15 +25,8 @@ router.post("/runcode", async (req, res) => {
     };
     const response = await axios.request(options);
     console.log(response.data.token);
-    // 3. Save the "In Progress" submission to your DB
-    // const newSubmission = await Submission.create({
-    //   userId: req.user.id,
-    //   problemId,
-    //   token: response.data.token, // This is key!
-    //   status: "Processing",
-    // });
 
-    // 4. Send token to Frontend
+
     res.status(201).json({ token: response.data.token });
   } catch (error) {
     console.log(error)

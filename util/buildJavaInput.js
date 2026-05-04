@@ -5,7 +5,6 @@ function buildJavaInput(tc, type) {
   for (const key in input) {
     const value = input[key];
 
-    // Handle 2D array (matrix)
     if (Array.isArray(value) && Array.isArray(value[0])) {
       const rows = value.length;
       const cols = value[0]?.length || 0;
@@ -14,21 +13,12 @@ function buildJavaInput(tc, type) {
       for (const row of value) {
         lines.push(row.join(" "));
       }
-    }
-
-    // Handle 1D array
-    else if (Array.isArray(value)) {
+    } else if (Array.isArray(value)) {
       lines.push(value.length);
       lines.push(value.join(" "));
-    }
-
-    // Handle string
-    else if (typeof value === "string") {
+    } else if (typeof value === "string") {
       lines.push(value);
-    }
-
-    // Handle numbers / others
-    else {
+    } else {
       lines.push(value);
     }
   }

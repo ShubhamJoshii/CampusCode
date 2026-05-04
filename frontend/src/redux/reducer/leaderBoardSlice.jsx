@@ -3,9 +3,13 @@ import axios from "axios";
 
 export const fetchLeaderBoard = createAsyncThunk(
     "leaderboard/fetchLeaderboard",
-    async (args = {}, thunkAPI) => {
+    async (groupId, thunkAPI) => {
         try {
-            const response = await axios.get(`/api/leaderboard`);
+            const url = groupId
+                ? `/api/leaderboard/${groupId}`
+                : `/api/leaderboard`;
+
+            const response = await axios.get(url);
             return response.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.response?.data || "Something went wrong");
@@ -34,7 +38,7 @@ const leaderBoardSlice = createSlice({
             .addCase(fetchLeaderBoard.pending, handlePending)
             .addCase(fetchLeaderBoard.fulfilled, (state, action) => {
                 state.status = "succeeded";
-                state.leaderboard = action.payload.data || 0;
+                state.leaderboard = action.payload.data || [];
                 state.error = null;
             })
             .addCase(fetchLeaderBoard.rejected, handleRejected);

@@ -12,10 +12,16 @@ router.post("/creategroup", authMiddleware, async (req, res) => {
     });
 
     const response = await group.save();
-    // console.log(response);
+    console.log(response);
+    
+    const invitationLink = process.env.NODE_ENV === "PRODUCTION"
+      ? `https://${req.headers.host}/api/joingroup?invite=${response._id}`
+      : `http://localhost:3000/joingroup?invite=${response._id}`;
     res.status(200).json({
       success: true,
-      invitationCode:response.invitationCode
+      invitationCode:response.invitationCode,
+      invitationLink
+      
     });
   } catch (error) {
     console.error(error);

@@ -4,7 +4,6 @@ const { exec } = require("child_process");
 
 const tempDir = path.join(__dirname, "temp");
 
-// ensure temp exists
 if (!fs.existsSync(tempDir)) {
   fs.mkdirSync(tempDir);
 }
@@ -28,7 +27,6 @@ class Runner {
 
 function runDocker() {
   return new Promise((resolve, reject) => {
-    // 🔥 CRITICAL FIX (Windows path)
     const dockerPath = tempDir.replace(/\\/g, "/").replace("C:", "/c");
 
     const command = `
